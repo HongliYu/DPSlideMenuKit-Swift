@@ -30,7 +30,6 @@ public class DPLeftMenuViewController: UITableViewController {
   var drawerControllerWillOpen:(()->Void)? {
     set(drawerControllerWillOpen) {
       if let aDrawerControllerWillOpen = drawerControllerWillOpen {
-        self.view.userInteractionEnabled = false
         self.drawerControllerWillOpenStored = aDrawerControllerWillOpen
       }
     }
@@ -43,7 +42,6 @@ public class DPLeftMenuViewController: UITableViewController {
   var drawerControllerDidOpen:(()->Void)? {
     set(drawerControllerDidOpen) {
       if let aDrawerControllerDidOpen = drawerControllerDidOpen {
-        self.view.userInteractionEnabled = true
         self.drawerControllerDidOpenStored = aDrawerControllerDidOpen
       }
     }
@@ -56,7 +54,6 @@ public class DPLeftMenuViewController: UITableViewController {
   var drawerControllerWillClose:(()->Void)? {
     set(drawerControllerWillClose) {
       if let aDrawerControllerWillClose = drawerControllerWillClose {
-        self.view.userInteractionEnabled = false
         self.drawerControllerWillCloseStored = aDrawerControllerWillClose
       }
     }
@@ -69,7 +66,6 @@ public class DPLeftMenuViewController: UITableViewController {
   var drawerControllerDidClose:(()->Void)? {
     set(drawerControllerDidClose) {
       if let aDrawerControllerDidClose = drawerControllerDidClose {
-        self.view.userInteractionEnabled = true
         self.drawerControllerDidCloseStored = aDrawerControllerDidClose
       }
     }
@@ -108,6 +104,34 @@ public class DPLeftMenuViewController: UITableViewController {
                                                   green: 202 / 255.0,
                                                   blue: 139 / 255.0,
                                                   alpha: 1.0)
+    self.drawerControllerWillOpen = {
+      [weak self] in
+      if let this = self {
+        this.view.userInteractionEnabled = false
+      }
+    }
+    
+    self.drawerControllerDidOpen = {
+      [weak self] in
+      if let this = self {
+        this.view.userInteractionEnabled = true
+      }
+    }
+    
+    self.drawerControllerWillClose = {
+      [weak self] in
+      if let this = self {
+        this.view.userInteractionEnabled = false
+      }
+    }
+    
+    self.drawerControllerDidClose = {
+      [weak self] in
+      if let this = self {
+        this.view.userInteractionEnabled = true
+      }
+    }
+    
   }
   
   override public func preferredStatusBarStyle() -> UIStatusBarStyle {

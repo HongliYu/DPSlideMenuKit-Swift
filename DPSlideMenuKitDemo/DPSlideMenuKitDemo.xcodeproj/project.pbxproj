@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F71E08141D6A3EE000A1843A /* dp_iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F71E08131D6A3EE000A1843A /* dp_iconfont.ttf */; };
 		F71E08151D6A450900A1843A /* DPLeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B3F41D63B114008EA646 /* DPLeftMenuViewController.swift */; };
 		F7D0B3AF1D63A0C7008EA646 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B3AE1D63A0C7008EA646 /* AppDelegate.swift */; };
 		F7D0B3B11D63A0C7008EA646 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B3B01D63A0C7008EA646 /* ViewController.swift */; };
@@ -25,6 +24,7 @@
 		F7D0B4021D64CCE0008EA646 /* DPSupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B4001D64CCE0008EA646 /* DPSupportViewController.swift */; };
 		F7D0B4031D64CCE0008EA646 /* DPSupportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7D0B4011D64CCE0008EA646 /* DPSupportViewController.xib */; };
 		F7D0B4051D65D74D008EA646 /* DPSlideMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B4041D65D74D008EA646 /* DPSlideMenuModel.swift */; };
+		F7EAB6731D6BE3D700C0C70C /* DPMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EAB6721D6BE3D700C0C70C /* DPMenuButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F71E08131D6A3EE000A1843A /* dp_iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dp_iconfont.ttf; sourceTree = "<group>"; };
 		F7D0B3AB1D63A0C7008EA646 /* DPSlideMenuKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DPSlideMenuKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7D0B3AE1D63A0C7008EA646 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7D0B3B01D63A0C7008EA646 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +67,7 @@
 		F7D0B4001D64CCE0008EA646 /* DPSupportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPSupportViewController.swift; sourceTree = "<group>"; };
 		F7D0B4011D64CCE0008EA646 /* DPSupportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPSupportViewController.xib; sourceTree = "<group>"; };
 		F7D0B4041D65D74D008EA646 /* DPSlideMenuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPSlideMenuModel.swift; sourceTree = "<group>"; };
+		F7EAB6721D6BE3D700C0C70C /* DPMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPMenuButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,12 +154,12 @@
 		F7D0B3DC1D63A107008EA646 /* DPSlideMenuKit */ = {
 			isa = PBXGroup;
 			children = (
-				F71E08131D6A3EE000A1843A /* dp_iconfont.ttf */,
 				F7D0B3F01D63A1C1008EA646 /* DPContentViewController.swift */,
 				F7D0B3F21D63A30A008EA646 /* DPDrawerViewController.swift */,
 				F7D0B3F41D63B114008EA646 /* DPLeftMenuViewController.swift */,
 				F7D0B3F61D63B126008EA646 /* DPDropShadowView.swift */,
 				F7D0B4041D65D74D008EA646 /* DPSlideMenuModel.swift */,
+				F7EAB6721D6BE3D700C0C70C /* DPMenuButton.swift */,
 			);
 			path = DPSlideMenuKit;
 			sourceTree = "<group>";
@@ -270,7 +270,6 @@
 			files = (
 				F7D0B3B91D63A0C7008EA646 /* LaunchScreen.storyboard in Resources */,
 				F7D0B3FF1D64CCC2008EA646 /* DPHomeViewController.xib in Resources */,
-				F71E08141D6A3EE000A1843A /* dp_iconfont.ttf in Resources */,
 				F7D0B3B61D63A0C7008EA646 /* Assets.xcassets in Resources */,
 				F7D0B4031D64CCE0008EA646 /* DPSupportViewController.xib in Resources */,
 				F7D0B3B41D63A0C7008EA646 /* Main.storyboard in Resources */,
@@ -300,6 +299,7 @@
 			files = (
 				F7D0B4021D64CCE0008EA646 /* DPSupportViewController.swift in Sources */,
 				F7D0B4051D65D74D008EA646 /* DPSlideMenuModel.swift in Sources */,
+				F7EAB6731D6BE3D700C0C70C /* DPMenuButton.swift in Sources */,
 				F7D0B3B11D63A0C7008EA646 /* ViewController.swift in Sources */,
 				F7D0B3F51D63B114008EA646 /* DPLeftMenuViewController.swift in Sources */,
 				F7D0B3FE1D64CCC2008EA646 /* DPHomeViewController.swift in Sources */,
