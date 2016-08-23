@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "DPSlideMenuKit"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "slide menu"
 
   s.description  = <<-DESC
@@ -19,12 +19,12 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/HongliYu/DPSlideMenuKit-Swift"
   s.license      = "MIT"
   s.author       = { "HongliYu" => "yhlssdone@gmail.com" }
-  s.source       = { :git => "https://github.com/HongliYu/DPSlideMenuKit-Swift.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/HongliYu/DPSlideMenuKit-Swift.git", :tag => "0.0.2" }
 
   s.platform     = :ios, "8.0"
   s.requires_arc = true
   s.source_files = "DPSlideMenuKit/"
-  s.frameworks   = 'UIKit', 'Foundation'
+  s.frameworks   = 'UIKit', 'Foundation', 'QuartzCore'
   s.module_name  = 'DPSlideMenuKit'
 
 end
