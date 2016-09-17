@@ -11,7 +11,7 @@ import UIKit
 class DPHomeViewController: DPContentViewController {
   
   override init(nibName nibNameOrNil: String?,
-                        bundle nibBundleOrNil: NSBundle?) {
+                        bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: "DPHomeViewController",
                bundle: nibBundleOrNil)
   }

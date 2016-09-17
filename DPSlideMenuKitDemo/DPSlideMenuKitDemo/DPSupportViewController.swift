@@ -11,7 +11,7 @@ import UIKit
 class DPSupportViewController: DPContentViewController {
   
   override init(nibName nibNameOrNil: String?,
-                        bundle nibBundleOrNil: NSBundle?) {
+                        bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: "DPSupportViewController",
                bundle: nibBundleOrNil)
   }

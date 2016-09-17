@@ -44,7 +44,7 @@ class ViewController: UIViewController {
       cellHeight: 88.0,
       actionBlock: {
         let urlString: String = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=910117892" // replace 910117892 with your appid
-        UIApplication.sharedApplication().openURL(NSURL(string: urlString)!)
+        UIApplication.shared.openURL(URL(string: urlString)!)
     })
     let slideMenuModelDonate: DPSlideMenuModel = DPSlideMenuModel.init(
       color: UIColor.init(colorLiteralRed: 237.0 / 255.0,
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
       cellHeight: 88.0,
       actionBlock: {
         let targetURL: String = "https://qr.alipay.com/apeez0tpttrt2yove2"
-        UIApplication.sharedApplication().openURL(NSURL(string: targetURL)!) // Donate with alipay
+        UIApplication.shared.openURL(URL(string: targetURL)!) // Donate with alipay
     })
     let slideMenuModels: [DPSlideMenuModel] = [slideMenuModelProjects, slideMenuModelSupport,
                                                slideMenuModelRate, slideMenuModelDonate]
@@ -65,9 +65,9 @@ class ViewController: UIViewController {
                                               centerViewController: homeViewController)
   }
   
-  override func viewDidAppear(animated: Bool) {
+  override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    self.presentViewController(self.drawer!, animated: false, completion: nil)
+    self.present(self.drawer!, animated: false, completion: nil)
   }
   
   override func didReceiveMemoryWarning() {

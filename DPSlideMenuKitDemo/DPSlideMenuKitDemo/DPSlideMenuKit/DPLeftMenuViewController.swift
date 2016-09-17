@@ -14,7 +14,7 @@ extension String {
   var localized: String {
     return NSLocalizedString(self,
                              tableName: nil,
-                             bundle: NSBundle.mainBundle(),
+                             bundle: Bundle.main,
                              value: "",
                              comment: "")
   }
@@ -25,7 +25,7 @@ let kDPColorsViewControllerCellReuseID: String = "kDPColorsViewControllerCellReu
 let kDefaultCellHeight: CGFloat = 88.0
 let kDefaultHeaderHeight: CGFloat = 44.0
 
-public class DPLeftMenuViewController: UITableViewController {
+open class DPLeftMenuViewController: UITableViewController {
   
   var drawerControllerWillOpen:(()->Void)? {
     set(drawerControllerWillOpen) {
@@ -37,7 +37,7 @@ public class DPLeftMenuViewController: UITableViewController {
       return self.drawerControllerWillOpenStored
     }
   }
-  private var drawerControllerWillOpenStored:(()->Void)?
+  fileprivate var drawerControllerWillOpenStored:(()->Void)?
   
   var drawerControllerDidOpen:(()->Void)? {
     set(drawerControllerDidOpen) {
@@ -49,7 +49,7 @@ public class DPLeftMenuViewController: UITableViewController {
       return self.drawerControllerDidOpenStored
     }
   }
-  private var drawerControllerDidOpenStored:(()->Void)?
+  fileprivate var drawerControllerDidOpenStored:(()->Void)?
   
   var drawerControllerWillClose:(()->Void)? {
     set(drawerControllerWillClose) {
@@ -61,7 +61,7 @@ public class DPLeftMenuViewController: UITableViewController {
       return self.drawerControllerWillCloseStored
     }
   }
-  private var drawerControllerWillCloseStored:(()->Void)?
+  fileprivate var drawerControllerWillCloseStored:(()->Void)?
   
   var drawerControllerDidClose:(()->Void)? {
     set(drawerControllerDidClose) {
@@ -73,15 +73,15 @@ public class DPLeftMenuViewController: UITableViewController {
       return self.drawerControllerDidCloseStored
     }
   }
-  private var drawerControllerDidCloseStored:(()->Void)?
+  fileprivate var drawerControllerDidCloseStored:(()->Void)?
   
   weak var drawer: DPDrawerViewController?
-  private(set) public var slideMenuModels: [DPSlideMenuModel]?
-  private(set) public var lastRow: Int = 0
+  fileprivate(set) open var slideMenuModels: [DPSlideMenuModel]?
+  fileprivate(set) open var lastRow: Int = 0
   
   // MARK: Life Cycle
   public init(slideMenuModels: [DPSlideMenuModel]?) {
-    super.init(style:.Grouped)
+    super.init(style:.grouped)
     self.slideMenuModels = slideMenuModels
   }
   
@@ -90,16 +90,16 @@ public class DPLeftMenuViewController: UITableViewController {
   }
   
   override init(nibName nibNameOrNil: String?,
-                        bundle nibBundleOrNil: NSBundle?) {
+                        bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil,
                bundle: nibBundleOrNil)
   }
   
-  override public func viewDidLoad() {
+  override open func viewDidLoad() {
     super.viewDidLoad()
-    self.tableView.registerClass(UITableViewCell.self,
+    self.tableView.register(UITableViewCell.self,
                                  forCellReuseIdentifier: kDPColorsViewControllerCellReuseID)
-    self.tableView.separatorStyle = .None
+    self.tableView.separatorStyle = .none
     self.tableView.backgroundColor = UIColor.init(red: 86 / 255.0,
                                                   green: 202 / 255.0,
                                                   blue: 139 / 255.0,
@@ -107,43 +107,43 @@ public class DPLeftMenuViewController: UITableViewController {
     self.drawerControllerWillOpen = {
       [weak self] in
       if let this = self {
-        this.view.userInteractionEnabled = false
+        this.view.isUserInteractionEnabled = false
       }
     }
     
     self.drawerControllerDidOpen = {
       [weak self] in
       if let this = self {
-        this.view.userInteractionEnabled = true
+        this.view.isUserInteractionEnabled = true
       }
     }
     
     self.drawerControllerWillClose = {
       [weak self] in
       if let this = self {
-        this.view.userInteractionEnabled = false
+        this.view.isUserInteractionEnabled = false
       }
     }
     
     self.drawerControllerDidClose = {
       [weak self] in
       if let this = self {
-        this.view.userInteractionEnabled = true
+        this.view.isUserInteractionEnabled = true
       }
     }
     
   }
   
-  override public func preferredStatusBarStyle() -> UIStatusBarStyle {
-    return .LightContent
+  override open var preferredStatusBarStyle : UIStatusBarStyle {
+    return .lightContent
   }
 
-  override public func didReceiveMemoryWarning() {
+  override open func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
   
   // MARK: Data Source
-  public override func tableView(tableView: UITableView,
+  open override func tableView(_ tableView: UITableView,
                                  numberOfRowsInSection section: Int) -> Int {
     if let slideMenuModels = self.slideMenuModels {
       return slideMenuModels.count
@@ -151,26 +151,26 @@ public class DPLeftMenuViewController: UITableViewController {
     return 0
   }
   
-  override public func tableView(tableView: UITableView,
-                                 cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell: UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(kDPColorsViewControllerCellReuseID,
-                                                                             forIndexPath: indexPath)
-    let slideMenuModel: DPSlideMenuModel? = slideMenuModels?[indexPath.row]
+  override open func tableView(_ tableView: UITableView,
+                                 cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell: UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: kDPColorsViewControllerCellReuseID,
+                                                                             for: indexPath)
+    let slideMenuModel: DPSlideMenuModel? = slideMenuModels?[(indexPath as NSIndexPath).row]
     cell?.textLabel?.text = slideMenuModel?.title?.localized
-    cell?.textLabel?.textColor = UIColor.whiteColor()
-    cell?.textLabel?.font = UIFont.boldSystemFontOfSize(20.0)
-    cell?.backgroundColor = self.slideMenuModels?[indexPath.row].color
+    cell?.textLabel?.textColor = UIColor.white
+    cell?.textLabel?.font = UIFont.boldSystemFont(ofSize: 20.0)
+    cell?.backgroundColor = self.slideMenuModels?[(indexPath as NSIndexPath).row].color
     return cell!
   }
   
   // MARK: Delegate
-  override public func tableView(tableView: UITableView,
-                                 didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    if indexPath.row == self.lastRow {
+  override open func tableView(_ tableView: UITableView,
+                                 didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+    if (indexPath as NSIndexPath).row == self.lastRow {
       self.drawer?.close()
     } else {
-      let slideMenuModel: DPSlideMenuModel? = slideMenuModels?[indexPath.row]
+      let slideMenuModel: DPSlideMenuModel? = slideMenuModels?[(indexPath as NSIndexPath).row]
 
       // Reload the current center view controller and update its background color
 //      self.drawer?.reloadCenterViewControllerUsingBlock {
@@ -189,19 +189,19 @@ public class DPLeftMenuViewController: UITableViewController {
         slideMenuModel?.actionBlock?()
       }
     }
-    self.lastRow = indexPath.row
+    self.lastRow = (indexPath as NSIndexPath).row
   }
   
-  override public func tableView(tableView: UITableView,
-                                 heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-    let slideMenuModel: DPSlideMenuModel? = slideMenuModels?[indexPath.row]
+  override open func tableView(_ tableView: UITableView,
+                                 heightForRowAt indexPath: IndexPath) -> CGFloat {
+    let slideMenuModel: DPSlideMenuModel? = slideMenuModels?[(indexPath as NSIndexPath).row]
     if slideMenuModel?.cellHeight != nil {
       return (slideMenuModel?.cellHeight!)!
     }
     return kDefaultCellHeight
   }
   
-  override public func tableView(tableView: UITableView,
+  override open func tableView(_ tableView: UITableView,
                                  heightForHeaderInSection section: Int) -> CGFloat {
     return kDefaultHeaderHeight
   }
