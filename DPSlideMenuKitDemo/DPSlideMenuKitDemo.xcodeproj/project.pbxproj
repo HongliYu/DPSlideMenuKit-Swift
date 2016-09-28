@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7176C0B1D9BFFA600C60E08 /* DPContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B3F01D63A1C1008EA646 /* DPContentViewController.swift */; };
+		F7176C0C1D9BFFA600C60E08 /* DPDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B3F21D63A30A008EA646 /* DPDrawerViewController.swift */; };
+		F7176C0D1D9BFFA600C60E08 /* DPDropShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B3F61D63B126008EA646 /* DPDropShadowView.swift */; };
+		F7176C0E1D9BFFA600C60E08 /* DPSlideMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B4041D65D74D008EA646 /* DPSlideMenuModel.swift */; };
+		F7176C0F1D9BFFA600C60E08 /* DPMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EAB6721D6BE3D700C0C70C /* DPMenuButton.swift */; };
+		F7176C101D9BFFB300C60E08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B3AE1D63A0C7008EA646 /* AppDelegate.swift */; };
+		F7176C111D9BFFB300C60E08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B3B01D63A0C7008EA646 /* ViewController.swift */; };
+		F7176C121D9BFFB300C60E08 /* DPHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B3FC1D64CCC2008EA646 /* DPHomeViewController.swift */; };
+		F7176C131D9BFFBA00C60E08 /* DPHomeViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B3FD1D64CCC2008EA646 /* DPHomeViewController.xib */; };
+		F7176C141D9BFFBA00C60E08 /* DPSupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B4001D64CCE0008EA646 /* DPSupportViewController.swift */; };
+		F7176C151D9BFFBA00C60E08 /* DPSupportViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B4011D64CCE0008EA646 /* DPSupportViewController.xib */; };
 		F71E08151D6A450900A1843A /* DPLeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B3F41D63B114008EA646 /* DPLeftMenuViewController.swift */; };
 		F7D0B3AF1D63A0C7008EA646 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B3AE1D63A0C7008EA646 /* AppDelegate.swift */; };
 		F7D0B3B11D63A0C7008EA646 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B3B01D63A0C7008EA646 /* ViewController.swift */; };
@@ -232,6 +243,7 @@
 				TargetAttributes = {
 					F7D0B3AA1D63A0C7008EA646 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = FC9QT6TC28;
 						LastSwiftMigration = 0800;
 					};
 					F7D0B3BE1D63A0C8008EA646 = {
@@ -241,6 +253,7 @@
 					};
 					F7D0B3C91D63A0C8008EA646 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = FC9QT6TC28;
 						LastSwiftMigration = 0800;
 						TestTargetID = F7D0B3AA1D63A0C7008EA646;
 					};
@@ -325,6 +338,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7176C131D9BFFBA00C60E08 /* DPHomeViewController.xib in Sources */,
+				F7176C141D9BFFBA00C60E08 /* DPSupportViewController.swift in Sources */,
+				F7176C151D9BFFBA00C60E08 /* DPSupportViewController.xib in Sources */,
+				F7176C101D9BFFB300C60E08 /* AppDelegate.swift in Sources */,
+				F7176C111D9BFFB300C60E08 /* ViewController.swift in Sources */,
+				F7176C121D9BFFB300C60E08 /* DPHomeViewController.swift in Sources */,
+				F7176C0B1D9BFFA600C60E08 /* DPContentViewController.swift in Sources */,
+				F7176C0C1D9BFFA600C60E08 /* DPDrawerViewController.swift in Sources */,
+				F7176C0D1D9BFFA600C60E08 /* DPDropShadowView.swift in Sources */,
+				F7176C0E1D9BFFA600C60E08 /* DPSlideMenuModel.swift in Sources */,
+				F7176C0F1D9BFFA600C60E08 /* DPMenuButton.swift in Sources */,
 				F71E08151D6A450900A1843A /* DPLeftMenuViewController.swift in Sources */,
 				F7D0B3CF1D63A0C8008EA646 /* DPSlideMenuKitDemoUITests.swift in Sources */,
 			);
@@ -457,6 +481,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FC9QT6TC28;
 				INFOPLIST_FILE = DPSlideMenuKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -470,6 +495,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FC9QT6TC28;
 				INFOPLIST_FILE = DPSlideMenuKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -508,6 +534,7 @@
 		F7D0B3DA1D63A0C8008EA646 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = FC9QT6TC28;
 				INFOPLIST_FILE = DPSlideMenuKitDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.hlyu.DPSlideMenuKitDemoUITests;
@@ -520,6 +547,7 @@
 		F7D0B3DB1D63A0C8008EA646 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = FC9QT6TC28;
 				INFOPLIST_FILE = DPSlideMenuKitDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.hlyu.DPSlideMenuKitDemoUITests;
