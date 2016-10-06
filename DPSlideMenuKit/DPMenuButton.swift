@@ -15,12 +15,12 @@ let animateDelay: Double = 0.05
 
 // MARK: Extension
 extension CALayer {
-  func applyAnimation(animation: CABasicAnimation) {
+  func applyAnimation(_ animation: CABasicAnimation) {
     let copy = animation.copy() as! CABasicAnimation
     if copy.fromValue == nil {
-      copy.fromValue = self.presentationLayer()!.valueForKeyPath(copy.keyPath!)
+      copy.fromValue = self.presentation()!.value(forKeyPath: copy.keyPath!)
     }
-    self.addAnimation(copy, forKey: copy.keyPath)
+    self.add(copy, forKey: copy.keyPath)
     self.setValue(copy.toValue, forKeyPath:copy.keyPath!)
   }
 }
@@ -33,22 +33,22 @@ class DPMenuButton: UIButton {
   let sideLayer = CAShapeLayer()
 
   var menuPath : CGPath {
-    let path = CGPathCreateMutable()
-    CGPathMoveToPoint(path, nil, thickness / 2.0, thickness / 2.0)
-    CGPathAddLineToPoint(path, nil, lineWidth - thickness / 2.0, thickness / 2.0)
+    let path = CGMutablePath()
+    path.move(to: CGPoint.init(x: thickness / 2.0, y: thickness / 2.0))
+    path.addLine(to: CGPoint.init(x: lineWidth - thickness / 2.0, y: thickness / 2.0))
     return path
   }
   
   var sidePath: CGPath {
-    let path = CGPathCreateMutable()
-    CGPathMoveToPoint(path, nil, 0, self.bounds.height / 2.0)
-    CGPathAddLineToPoint(path, nil, self.bounds.width, self.bounds.height / 2.0)
+    let path = CGMutablePath()
+    path.move(to: CGPoint.init(x: 0, y: self.bounds.height / 2.0))
+    path.addLine(to: CGPoint.init(x: self.bounds.width, y: self.bounds.height / 2.0))
     return path
   }
   
-  override var selected: Bool {
+  override var isSelected: Bool {
     didSet {
-      self.showMenu(self.selected)
+      self.showMenu(self.isSelected)
     }
   }
 
@@ -82,13 +82,13 @@ class DPMenuButton: UIButton {
     }
   }
   
-  @IBInspectable var strokeColor : UIColor = UIColor.whiteColor() {
+  @IBInspectable var strokeColor : UIColor = UIColor.white {
     didSet {
       self.updateSubLayers()
     }
   }
   
-  @IBInspectable var sideLayerStrokeColor : UIColor = UIColor.clearColor() {
+  @IBInspectable var sideLayerStrokeColor : UIColor = UIColor.clear {
     didSet {
       self.updateSubLayers()
     }
@@ -139,7 +139,7 @@ class DPMenuButton: UIButton {
   }
 
   // MARK: Animation
-  func showMenu(isShow: Bool) {
+  func showMenu(_ isShow: Bool) {
     if isShow {
       let sideAnim = CABasicAnimation(keyPath: slideLeftToRight ? "strokeEnd" : "strokeStart")
       sideAnim.duration = animateDuration - 0.1
@@ -148,7 +148,7 @@ class DPMenuButton: UIButton {
       sideAnim.fillMode = kCAFillModeBackwards
       sideLayer.applyAnimation(sideAnim)
       
-      for (idx, layer) in [topLayer, midLayer, bottomLayer].enumerate() {
+      for (idx, layer) in [topLayer, midLayer, bottomLayer].enumerated() {
         let anim = CABasicAnimation(keyPath: slideLeftToRight ? "strokeEnd" : "strokeStart")
         anim.toValue = slideLeftToRight ? 0.3 : 0.7
         anim.duration = animateDuration
@@ -165,7 +165,7 @@ class DPMenuButton: UIButton {
       sideAnim.fillMode = kCAFillModeBackwards
       sideLayer.applyAnimation(sideAnim)
       
-      for (idx, layer) in [topLayer, midLayer, bottomLayer].enumerate() {
+      for (idx, layer) in [topLayer, midLayer, bottomLayer].enumerated() {
         let anim = CABasicAnimation(keyPath: slideLeftToRight ? "strokeEnd" : "strokeStart")
         anim.toValue = slideLeftToRight ? 1.0 : 0.0
         anim.duration = animateDuration
@@ -179,13 +179,13 @@ class DPMenuButton: UIButton {
   
   func updateSubLayers() {
     let path = self.menuPath
-    let strokingPath = CGPathCreateCopyByStrokingPath(path, nil, thickness, CGLineCap.Round, CGLineJoin.Miter, 10)
-    let bounds = CGPathGetPathBoundingBox(strokingPath)
-    sideLayer.strokeColor = self.sideLayerStrokeColor.CGColor
+    let strokingPath = CGPath(__byStroking: path, transform: nil, lineWidth: thickness, lineCap: CGLineCap.round, lineJoin: CGLineJoin.miter, miterLimit: 10)
+    let bounds = strokingPath?.boundingBoxOfPath
+    sideLayer.strokeColor = self.sideLayerStrokeColor.cgColor
     for layer in [topLayer, midLayer, bottomLayer] {
       layer.path = path
-      layer.bounds = bounds
-      layer.strokeColor = self.strokeColor.CGColor
+      layer.bounds = bounds!
+      layer.strokeColor = self.strokeColor.cgColor
       layer.lineWidth = thickness
       layer.lineCap = lineCapRound ? kCALineCapRound : kCALineCapSquare
     }

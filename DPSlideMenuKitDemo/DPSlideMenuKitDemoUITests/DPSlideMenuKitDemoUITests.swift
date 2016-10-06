@@ -29,8 +29,26 @@ class DPSlideMenuKitDemoUITests: XCTestCase {
     }
     
     func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+      XCUIDevice.shared().orientation = .portrait
+      XCUIDevice.shared().orientation = .portrait
+      XCUIDevice.shared().orientation = .faceUp
+      
+      let app = XCUIApplication()
+      let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
+      let button = element.children(matching: .button).element
+      button.tap()
+      
+      let tablesQuery = app.tables
+      let supportStaticText = tablesQuery.staticTexts["Support"]
+      supportStaticText.tap()
+      button.tap()
+      tablesQuery.staticTexts["Projects"].tap()
+      element.swipeRight()
+      
+      let donateStaticText = tablesQuery.staticTexts["Donate"]
+      donateStaticText.swipeLeft()
+      element.swipeRight()
+      supportStaticText.tap()
     }
     
 }

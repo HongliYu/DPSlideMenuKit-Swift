@@ -8,12 +8,12 @@
 
 import UIKit
 
-public class DPSlideMenuModel {
+open class DPSlideMenuModel {
   
-  private(set) public var color: UIColor?
-  private(set) public var controllerClassName: String?
-  private(set) public var title: String?
-  private(set) public var cellHeight: CGFloat?
+  fileprivate(set) open var color: UIColor?
+  fileprivate(set) open var controllerClassName: String?
+  fileprivate(set) open var title: String?
+  fileprivate(set) open var cellHeight: CGFloat?
 
   var actionBlock:(()->Void)? {
     set(actionBlock) {
@@ -25,7 +25,7 @@ public class DPSlideMenuModel {
       return self.actionBlockStored
     }
   }
-  private var actionBlockStored:(()->Void)?
+  fileprivate var actionBlockStored:(()->Void)?
 
   public init(color: UIColor?,
               controllerClassName: String?,
@@ -33,7 +33,7 @@ public class DPSlideMenuModel {
               cellHeight: CGFloat?,
               actionBlock: (()->Void)?) {
     self.color = color
-    let prodName: String? = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleName") as? String
+    let prodName: String? = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String
     if controllerClassName != nil && prodName != nil {
       self.controllerClassName = prodName! + "." + controllerClassName!
     }

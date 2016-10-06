@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class DPContentViewController: UIViewController {
+open class DPContentViewController: UIViewController {
   
   var drawerControllerWillOpen:(()->Void)? {
     set(drawerControllerWillOpen) {
@@ -20,7 +20,7 @@ public class DPContentViewController: UIViewController {
       return self.drawerControllerWillOpenStored
     }
   }
-  private var drawerControllerWillOpenStored:(()->Void)?
+  fileprivate var drawerControllerWillOpenStored:(()->Void)?
 
   var drawerControllerDidOpen:(()->Void)? {
     set(drawerControllerDidOpen) {
@@ -32,7 +32,7 @@ public class DPContentViewController: UIViewController {
       return self.drawerControllerDidOpenStored
     }
   }
-  private var drawerControllerDidOpenStored:(()->Void)?
+  fileprivate var drawerControllerDidOpenStored:(()->Void)?
 
   var drawerControllerWillClose:(()->Void)? {
     set(drawerControllerWillClose) {
@@ -44,7 +44,7 @@ public class DPContentViewController: UIViewController {
       return self.drawerControllerWillCloseStored
     }
   }
-  private var drawerControllerWillCloseStored:(()->Void)?
+  fileprivate var drawerControllerWillCloseStored:(()->Void)?
 
   var drawerControllerDidClose:(()->Void)? {
     set(drawerControllerDidClose) {
@@ -56,14 +56,14 @@ public class DPContentViewController: UIViewController {
       return self.drawerControllerDidCloseStored
     }
   }
-  private var drawerControllerDidCloseStored:(()->Void)?
+  fileprivate var drawerControllerDidCloseStored:(()->Void)?
   
   weak var drawer: DPDrawerViewController?
-  private var openDrawerButton: DPMenuButton = DPMenuButton.init(type:.Custom)
+  fileprivate var openDrawerButton: DPMenuButton = DPMenuButton.init(type:.custom)
   
   // MARK: Life Cycle
   override init(nibName nibNameOrNil: String?,
-                        bundle nibBundleOrNil: NSBundle?) {
+                        bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil,
                bundle: nibBundleOrNil)
   }
@@ -72,25 +72,25 @@ public class DPContentViewController: UIViewController {
     super.init(coder: aDecoder)!
   }
 
-  override public func viewDidLoad() {
+  override open func viewDidLoad() {
     super.viewDidLoad()
-    self.openDrawerButton.frame = CGRectMake(8.0, 25.0, 34.0, 34.0)
+    self.openDrawerButton.frame = CGRect(x: 8.0, y: 25.0, width: 34.0, height: 34.0)
     self.openDrawerButton.addTarget(self, action: #selector(openDrawer(_:)),
-                                     forControlEvents: .TouchUpInside)
+                                     for: .touchUpInside)
     self.openDrawerButton.lineWidth = 34.0
     self.openDrawerButton.lineMargin = 12
     self.openDrawerButton.lineCapRound = true
     self.openDrawerButton.thickness = 6
     self.openDrawerButton.slideLeftToRight = false
-    self.openDrawerButton.backgroundColor = UIColor.clearColor()
+    self.openDrawerButton.backgroundColor = UIColor.clear
     self.openDrawerButton.cornerRadius = 0
     self.view.addSubview(self.openDrawerButton)
     
     self.drawerControllerWillOpen = {
       [weak self] in
       if let this = self {
-        this.view.userInteractionEnabled = false
-        this.openDrawerButton.selected = true
+        this.view.isUserInteractionEnabled = false
+        this.openDrawerButton.isSelected = true
       }
     }
     
@@ -101,27 +101,27 @@ public class DPContentViewController: UIViewController {
     self.drawerControllerWillClose = {
       [weak self] in
       if let this = self {
-        this.openDrawerButton.selected = false
+        this.openDrawerButton.isSelected = false
       }
     }
     
     self.drawerControllerDidClose = {
       [weak self] in
       if let this = self {
-        this.view.userInteractionEnabled = true
+        this.view.isUserInteractionEnabled = true
       }
     }
 
   }
   
   // MARK: Actions
-  func openDrawer(sender: DPMenuButton) {
-    if self.drawer?.drawerState == .DPDrawerControllerStateOpen {
+  func openDrawer(_ sender: DPMenuButton) {
+    if self.drawer?.drawerState == .dpDrawerControllerStateOpen {
       self.drawer?.close()
-      sender.selected = false
+      sender.isSelected = false
     } else {
       self.drawer?.open()
-      sender.selected = true
+      sender.isSelected = true
     }
   }
   
