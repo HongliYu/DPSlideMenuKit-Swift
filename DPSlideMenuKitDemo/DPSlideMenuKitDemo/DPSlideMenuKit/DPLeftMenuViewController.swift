@@ -78,11 +78,14 @@ open class DPLeftMenuViewController: UITableViewController {
   weak var drawer: DPDrawerViewController?
   fileprivate(set) open var slideMenuModels: [DPSlideMenuModel]?
   fileprivate(set) open var lastRow: Int = 0
-  
+  fileprivate(set) open var configuredInStoryboard: Bool = false
+  fileprivate(set) open var relatedStoryboard: UIStoryboard?
+
   // MARK: Life Cycle
-  public init(slideMenuModels: [DPSlideMenuModel]?) {
+  public init(slideMenuModels: [DPSlideMenuModel]?, storyboard: UIStoryboard?) {
     super.init(style:.grouped)
     self.slideMenuModels = slideMenuModels
+    self.relatedStoryboard = storyboard
   }
   
   required public init?(coder aDecoder: NSCoder) {
@@ -182,9 +185,20 @@ open class DPLeftMenuViewController: UITableViewController {
       
       // Replace the current center view controller with a new one
       if let controllerClassName = slideMenuModel?.controllerClassName {
-        let aClass = NSClassFromString(controllerClassName) as! DPContentViewController.Type
-        let viewController = aClass.init()
-        self.drawer?.replaceCenterViewControllerWithViewController(viewController)
+        var viewController: DPContentViewController?
+        if self.relatedStoryboard != nil {
+          let array: [String]? = controllerClassName.components(separatedBy: ".")
+          let SBIdentifier: String? = array?.last
+          if SBIdentifier != nil {
+            viewController = self.relatedStoryboard?.instantiateViewController(withIdentifier: SBIdentifier!) as? DPContentViewController
+          }
+        } else {
+          let aClass = NSClassFromString(controllerClassName) as! DPContentViewController.Type
+          viewController = aClass.init()
+        }
+        if viewController != nil {
+          self.drawer?.replaceCenterViewControllerWithViewController(viewController!)
+        }
       } else {
         slideMenuModel?.actionBlock?()
       }

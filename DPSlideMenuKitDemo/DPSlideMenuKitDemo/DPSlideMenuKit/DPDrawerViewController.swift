@@ -69,7 +69,8 @@ open class DPDrawerViewController: UIViewController, UIGestureRecognizerDelegate
   fileprivate var tapGestureRecognizer: UITapGestureRecognizer?
   fileprivate var panGestureRecognizer: UIPanGestureRecognizer?
   fileprivate var panGestureStartLocation: CGPoint?
-  
+  fileprivate var createdFormStoryboard: Bool = false
+
   // MARK: Life Cycle
   public init(leftViewController aLeftViewController: DPLeftMenuViewController?,
     centerViewController aCenterViewController: DPContentViewController?) {
@@ -82,29 +83,29 @@ open class DPDrawerViewController: UIViewController, UIGestureRecognizerDelegate
     
   required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    self.basicParamsConfig()
+    self.createdFormStoryboard = true
   }
   
   override init(nibName nibNameOrNil: String?,
                         bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil,
                bundle: nibBundleOrNil)
-    self.basicParamsConfig()
   }
 
-  fileprivate func basicParamsConfig() { // ensure not crash by direct init...
-    self.leftMenuViewController = DPLeftMenuViewController.init(slideMenuModels: nil)
+  open func reset(leftViewController aLeftViewController: DPLeftMenuViewController?,
+                   centerViewController aCenterViewController: DPContentViewController?) {
+    self.leftMenuViewController = aLeftViewController
     self.leftMenuViewController?.drawer = self
-    self.centerViewController = DPContentViewController.init()
+    self.centerViewController = aCenterViewController
     self.centerViewController?.drawer = self
+    self.createdFormStoryboard = false
+    self.basicUIConfig()
   }
   
-  override open var preferredStatusBarStyle : UIStatusBarStyle {
-    return .lightContent
-  }
-  
-  override open func viewDidLoad() {
-    super.viewDidLoad()
+  open func basicUIConfig() {
+    if self.createdFormStoryboard {
+      return
+    }
     self.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     self.leftView = UIView.init(frame: self.view.bounds)
     self.centerView = DPDropShadowView.init(frame: self.view.bounds)
@@ -117,6 +118,15 @@ open class DPDrawerViewController: UIViewController, UIGestureRecognizerDelegate
     // Add the center view controller to the container
     self.addCenterViewController()
     self.setupGestureRecognizers()
+  }
+  
+  override open var preferredStatusBarStyle : UIStatusBarStyle {
+    return .lightContent
+  }
+  
+  override open func viewDidLoad() {
+    super.viewDidLoad()
+    self.basicUIConfig()
   }
   
   func addCenterViewController() {
@@ -172,7 +182,7 @@ open class DPDrawerViewController: UIViewController, UIGestureRecognizerDelegate
     }
   }
   
-  open func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+  public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
     let velocity: CGPoint? = (gestureRecognizer as? UIPanGestureRecognizer)?.velocity(in: self.view)
     if self.drawerState == .dpDrawerControllerStateClosed && velocity?.x > 0.0 {
       return true

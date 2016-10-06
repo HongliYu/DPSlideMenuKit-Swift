@@ -9,6 +9,19 @@ simple slide menu kit with different colors
 # Usage
 
 ```  swift
+    // embed in storyboard
+    var drawer: DPDrawerViewController?
+    self.childViewControllers.forEach { (viewController) in
+      if viewController is DPDrawerViewController {
+        drawer = viewController as? DPDrawerViewController
+      }
+    }
+    // not embed in storyboard? add it manually
+//    let drawer: DPDrawerViewController? = self.storyboard?.instantiateViewController(withIdentifier: "DPDrawerViewController") as? DPDrawerViewController
+//    self.addChildViewController(drawer!)
+//    self.view.addSubview(drawer!.view)
+
+    let homeViewController: DPHomeViewController? = self.storyboard?.instantiateViewController(withIdentifier: "DPHomeViewController") as? DPHomeViewController
     let slideMenuModelProjects: DPSlideMenuModel = DPSlideMenuModel.init(
       color: UIColor.init(colorLiteralRed: 237.0 / 255.0,
         green: 140.0 / 255.0,
@@ -37,7 +50,7 @@ simple slide menu kit with different colors
       cellHeight: 88.0,
       actionBlock: {
         let urlString: String = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=910117892" // replace 910117892 with your appid
-        UIApplication.sharedApplication().openURL(NSURL(string: urlString)!)
+        UIApplication.shared.openURL(URL(string: urlString)!)
     })
     let slideMenuModelDonate: DPSlideMenuModel = DPSlideMenuModel.init(
       color: UIColor.init(colorLiteralRed: 237.0 / 255.0,
@@ -49,11 +62,12 @@ simple slide menu kit with different colors
       cellHeight: 88.0,
       actionBlock: {
         let targetURL: String = "https://qr.alipay.com/apeez0tpttrt2yove2"
-        UIApplication.sharedApplication().openURL(NSURL(string: targetURL)!) // Donate with alipay
+        UIApplication.shared.openURL(URL(string: targetURL)!) // Donate with alipay
     })
-    let slideMenuModels: [DPSlideMenuModel] = [slideMenuModelProjects, slideMenuModelSupport, slideMenuModelRate, slideMenuModelDonate]
-    let leftMenuViewController: DPLeftMenuViewController = DPLeftMenuViewController.init(slideMenuModels: slideMenuModels)
-    var drawer: DPDrawerViewController = DPDrawerViewController.init(leftViewController: leftMenuViewController, centerViewController: homeViewController)
-    self.presentViewController(drawer, animated: false, completion: nil)
+    let slideMenuModels: [DPSlideMenuModel] = [slideMenuModelProjects, slideMenuModelSupport,
+                                               slideMenuModelRate, slideMenuModelDonate]
+    let leftMenuViewController: DPLeftMenuViewController = DPLeftMenuViewController.init(slideMenuModels: slideMenuModels, storyboard: self.storyboard)
+    drawer?.reset(leftViewController: leftMenuViewController,
+                  centerViewController: homeViewController)
 
 ```

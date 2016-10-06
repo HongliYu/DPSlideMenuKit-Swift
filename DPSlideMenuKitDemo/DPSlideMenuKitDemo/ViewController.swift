@@ -10,12 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
-  var drawer: DPDrawerViewController?
+  @IBOutlet weak var drawerView: UIView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let homeViewController: DPHomeViewController = DPHomeViewController.init()
+    // embed in storyboard
+    var drawer: DPDrawerViewController?
+    self.childViewControllers.forEach { (viewController) in
+      if viewController is DPDrawerViewController {
+        drawer = viewController as? DPDrawerViewController
+      }
+    }
+    // not embed in storyboard? add it manually
+//    let drawer: DPDrawerViewController? = self.storyboard?.instantiateViewController(withIdentifier: "DPDrawerViewController") as? DPDrawerViewController
+//    self.addChildViewController(drawer!)
+//    self.view.addSubview(drawer!.view)
+
+    let homeViewController: DPHomeViewController? = self.storyboard?.instantiateViewController(withIdentifier: "DPHomeViewController") as? DPHomeViewController
     let slideMenuModelProjects: DPSlideMenuModel = DPSlideMenuModel.init(
       color: UIColor.init(colorLiteralRed: 237.0 / 255.0,
         green: 140.0 / 255.0,
@@ -60,14 +72,9 @@ class ViewController: UIViewController {
     })
     let slideMenuModels: [DPSlideMenuModel] = [slideMenuModelProjects, slideMenuModelSupport,
                                                slideMenuModelRate, slideMenuModelDonate]
-    let leftMenuViewController: DPLeftMenuViewController = DPLeftMenuViewController.init(slideMenuModels: slideMenuModels)
-    self.drawer = DPDrawerViewController.init(leftViewController: leftMenuViewController,
-                                              centerViewController: homeViewController)
-  }
-  
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    self.present(self.drawer!, animated: false, completion: nil)
+    let leftMenuViewController: DPLeftMenuViewController = DPLeftMenuViewController.init(slideMenuModels: slideMenuModels, storyboard: self.storyboard)
+    drawer?.reset(leftViewController: leftMenuViewController,
+                  centerViewController: homeViewController)
   }
   
   override func didReceiveMemoryWarning() {

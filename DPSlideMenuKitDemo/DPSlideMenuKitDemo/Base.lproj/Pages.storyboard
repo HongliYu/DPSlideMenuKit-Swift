@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="6Di-RL-Bxt">
+            <objects>
+                <viewController storyboardIdentifier="DPHomeViewController" id="4zj-pO-gH3" customClass="DPHomeViewController" customModule="DPSlideMenuKitDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sqN-le-Hbf"/>
+                        <viewControllerLayoutGuide type="bottom" id="C8N-k9-idu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Si-IA-YyB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.92941176469999998" green="0.54901960780000003" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XTZ-nk-aWW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1802" y="-253"/>
+        </scene>
+        <!--Support View Controller-->
+        <scene sceneID="6pc-PJ-Zug">
+            <objects>
+                <viewController storyboardIdentifier="DPSupportViewController" id="MX2-BM-68F" customClass="DPSupportViewController" customModule="DPSlideMenuKitDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dsz-fj-B6P"/>
+                        <viewControllerLayoutGuide type="bottom" id="rLz-Jg-JdW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="66g-mn-6AS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.44754554019999998" green="0.61241578259999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yUc-cU-jkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2655" y="-253"/>
+        </scene>
+    </scenes>
+</document>

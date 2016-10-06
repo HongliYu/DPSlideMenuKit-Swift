@@ -7,23 +7,43 @@
 //
 
 import UIKit
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 // MARK: Enum
 public enum DPDrawerControllerState: Int {
-  case DPDrawerControllerStateClosed = 0
-  case DPDrawerControllerStateOpening
-  case DPDrawerControllerStateOpen
-  case DPDrawerControllerStateClosing
+  case dpDrawerControllerStateClosed = 0
+  case dpDrawerControllerStateOpening
+  case dpDrawerControllerStateOpen
+  case dpDrawerControllerStateClosing
 
   var description: String {
     switch self {
-    case .DPDrawerControllerStateClosed:
+    case .dpDrawerControllerStateClosed:
       return "DPDrawerControllerStateClosed"
-    case .DPDrawerControllerStateOpening:
+    case .dpDrawerControllerStateOpening:
       return "DPDrawerControllerStateOpening"
-    case .DPDrawerControllerStateOpen:
+    case .dpDrawerControllerStateOpen:
       return "DPDrawerControllerStateOpen"
-    case .DPDrawerControllerStateClosing:
+    case .dpDrawerControllerStateClosing:
       return "DPDrawerControllerStateClosing"
     }
   }
@@ -32,24 +52,25 @@ public enum DPDrawerControllerState: Int {
 // MARK: Constant
 let kDPDrawerControllerDrawerDepth: CGFloat = 260.0
 let kDPDrawerControllerLeftViewInitialOffset: CGFloat = -60.0
-let kDPDrawerControllerAnimationDuration: NSTimeInterval = 0.5
+let kDPDrawerControllerAnimationDuration: TimeInterval = 0.5
 let kDPDrawerControllerOpeningAnimationSpringDamping: CGFloat = 0.7
 let kDPDrawerControllerOpeningAnimationSpringInitialVelocity: CGFloat = 0.1
 let kDPDrawerControllerClosingAnimationSpringDamping: CGFloat = 1.0
 let kDPDrawerControllerClosingAnimationSpringInitialVelocity: CGFloat = 0.5
 
-public class DPDrawerViewController: UIViewController, UIGestureRecognizerDelegate {
+open class DPDrawerViewController: UIViewController, UIGestureRecognizerDelegate {
   
-  private(set) public var leftMenuViewController: DPLeftMenuViewController?
-  private(set) public var centerViewController: DPContentViewController?
-  private(set) public var drawerState: DPDrawerControllerState = .DPDrawerControllerStateClosed
+  fileprivate(set) open var leftMenuViewController: DPLeftMenuViewController?
+  fileprivate(set) open var centerViewController: DPContentViewController?
+  fileprivate(set) open var drawerState: DPDrawerControllerState = .dpDrawerControllerStateClosed
 
-  private var leftView: UIView?
-  private var centerView: DPDropShadowView?
-  private var tapGestureRecognizer: UITapGestureRecognizer?
-  private var panGestureRecognizer: UIPanGestureRecognizer?
-  private var panGestureStartLocation: CGPoint?
-  
+  fileprivate var leftView: UIView?
+  fileprivate var centerView: DPDropShadowView?
+  fileprivate var tapGestureRecognizer: UITapGestureRecognizer?
+  fileprivate var panGestureRecognizer: UIPanGestureRecognizer?
+  fileprivate var panGestureStartLocation: CGPoint?
+  fileprivate var createdFormStoryboard: Bool = false
+
   // MARK: Life Cycle
   public init(leftViewController aLeftViewController: DPLeftMenuViewController?,
     centerViewController aCenterViewController: DPContentViewController?) {
@@ -62,30 +83,30 @@ public class DPDrawerViewController: UIViewController, UIGestureRecognizerDelega
     
   required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    self.basicParamsConfig()
+    self.createdFormStoryboard = true
   }
   
   override init(nibName nibNameOrNil: String?,
-                        bundle nibBundleOrNil: NSBundle?) {
+                        bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil,
                bundle: nibBundleOrNil)
-    self.basicParamsConfig()
   }
 
-  private func basicParamsConfig() { // ensure not crash by direct init...
-    self.leftMenuViewController = DPLeftMenuViewController.init(slideMenuModels: nil)
+  open func reset(leftViewController aLeftViewController: DPLeftMenuViewController?,
+                   centerViewController aCenterViewController: DPContentViewController?) {
+    self.leftMenuViewController = aLeftViewController
     self.leftMenuViewController?.drawer = self
-    self.centerViewController = DPContentViewController.init()
+    self.centerViewController = aCenterViewController
     self.centerViewController?.drawer = self
+    self.createdFormStoryboard = false
+    self.basicUIConfig()
   }
   
-  override public func preferredStatusBarStyle() -> UIStatusBarStyle {
-    return .LightContent
-  }
-  
-  override public func viewDidLoad() {
-    super.viewDidLoad()
-    self.view.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+  open func basicUIConfig() {
+    if self.createdFormStoryboard {
+      return
+    }
+    self.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     self.leftView = UIView.init(frame: self.view.bounds)
     self.centerView = DPDropShadowView.init(frame: self.view.bounds)
     self.leftView?.autoresizingMask = self.view.autoresizingMask
@@ -99,25 +120,34 @@ public class DPDrawerViewController: UIViewController, UIGestureRecognizerDelega
     self.setupGestureRecognizers()
   }
   
+  override open var preferredStatusBarStyle : UIStatusBarStyle {
+    return .lightContent
+  }
+  
+  override open func viewDidLoad() {
+    super.viewDidLoad()
+    self.basicUIConfig()
+  }
+  
   func addCenterViewController() {
     if let centerViewController = self.centerViewController {
       self.addChildViewController(centerViewController)
       centerViewController.view.frame = self.view.bounds
       self.centerView?.addSubview(centerViewController.view)
-      centerViewController.didMoveToParentViewController(self)
+      centerViewController.didMove(toParentViewController: self)
     }
   }
 
   // MARK: Layout
-  public override func childViewControllerForStatusBarHidden() ->UIViewController {
-    if (self.drawerState == .DPDrawerControllerStateOpening) {
+  open override var childViewControllerForStatusBarHidden :UIViewController {
+    if (self.drawerState == .dpDrawerControllerStateOpening) {
       return self.leftMenuViewController!
     }
     return self.centerViewController!
   }
   
-  public override func childViewControllerForStatusBarStyle() ->UIViewController {
-    if (self.drawerState == .DPDrawerControllerStateOpening) {
+  open override var childViewControllerForStatusBarStyle :UIViewController {
+    if (self.drawerState == .dpDrawerControllerStateOpening) {
       return self.leftMenuViewController!
     }
     return self.centerViewController!
@@ -146,41 +176,41 @@ public class DPDrawerViewController: UIViewController, UIGestureRecognizerDelega
     }
   }
   
-  func tapGestureRecognized(tapGestureRecognizer: UITapGestureRecognizer) {
-    if (tapGestureRecognizer.state == .Ended) {
+  func tapGestureRecognized(_ tapGestureRecognizer: UITapGestureRecognizer) {
+    if (tapGestureRecognizer.state == .ended) {
       self.close()
     }
   }
   
-  public func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
-    let velocity: CGPoint? = (gestureRecognizer as? UIPanGestureRecognizer)?.velocityInView(self.view)
-    if self.drawerState == .DPDrawerControllerStateClosed && velocity?.x > 0.0 {
+  public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+    let velocity: CGPoint? = (gestureRecognizer as? UIPanGestureRecognizer)?.velocity(in: self.view)
+    if self.drawerState == .dpDrawerControllerStateClosed && velocity?.x > 0.0 {
       return true
-    } else if self.drawerState == .DPDrawerControllerStateOpen && velocity?.x < 0.0 {
+    } else if self.drawerState == .dpDrawerControllerStateOpen && velocity?.x < 0.0 {
       return true
     }
     return false
   }
   
-  func panGestureRecognized(panGestureRecognizer: UIPanGestureRecognizer) {
+  func panGestureRecognized(_ panGestureRecognizer: UIPanGestureRecognizer) {
     let state: UIGestureRecognizerState = panGestureRecognizer.state
-    let location: CGPoint = panGestureRecognizer.locationInView(self.view)
-    let velocity: CGPoint = panGestureRecognizer.velocityInView(self.view)
+    let location: CGPoint = panGestureRecognizer.location(in: self.view)
+    let velocity: CGPoint = panGestureRecognizer.velocity(in: self.view)
     
     switch state {
-    case .Began:
+    case .began:
       self.panGestureStartLocation = location
-      if self.drawerState == .DPDrawerControllerStateClosed {
+      if self.drawerState == .dpDrawerControllerStateClosed {
         self.willOpen()
       } else {
         self.willClose()
       }
       break
-    case .Changed:
+    case .changed:
       var delta: CGFloat = 0.0
-      if self.drawerState == .DPDrawerControllerStateOpening {
+      if self.drawerState == .dpDrawerControllerStateOpening {
         delta = location.x - self.panGestureStartLocation!.x
-      } else if (self.drawerState == .DPDrawerControllerStateClosing) {
+      } else if (self.drawerState == .dpDrawerControllerStateClosing) {
         delta = kDPDrawerControllerDrawerDepth - (self.panGestureStartLocation!.x - location.x)
       }
       var leftFrame: CGRect? = self.leftView!.frame
@@ -201,8 +231,8 @@ public class DPDrawerViewController: UIViewController, UIGestureRecognizerDelega
       self.leftView!.frame = leftFrame!
       self.centerView!.frame = centerFrame!
       break
-    case .Ended:
-      if (self.drawerState == .DPDrawerControllerStateOpening) {
+    case .ended:
+      if (self.drawerState == .dpDrawerControllerStateOpening) {
         let centerViewLocation: CGFloat = self.centerView!.frame.origin.x;
         if (centerViewLocation == kDPDrawerControllerDrawerDepth) {
           self.setNeedsStatusBarAppearanceUpdate()
@@ -215,7 +245,7 @@ public class DPDrawerViewController: UIViewController, UIGestureRecognizerDelega
           self.willClose()
           self.animateClosing()
         }
-      } else if (self.drawerState == .DPDrawerControllerStateClosing) {
+      } else if (self.drawerState == .dpDrawerControllerStateClosing) {
         let centerViewLocation: CGFloat = self.centerView!.frame.origin.x;
         if (centerViewLocation == 0.0) {
           // Close the drawer without animation, as it has already being dragged in its final position
@@ -239,16 +269,16 @@ public class DPDrawerViewController: UIViewController, UIGestureRecognizerDelega
   }
 
   // MARK: Animations
-  public func animateOpening() {
+  open func animateOpening() {
     // Calculate the final frames for the container views
     let leftViewFinalFrame: CGRect = self.view.bounds
     var centerViewFinalFrame: CGRect = self.view.bounds
     centerViewFinalFrame.origin.x = kDPDrawerControllerDrawerDepth
-    UIView.animateWithDuration(kDPDrawerControllerAnimationDuration,
+    UIView.animate(withDuration: kDPDrawerControllerAnimationDuration,
                                delay: 0,
                                usingSpringWithDamping: kDPDrawerControllerOpeningAnimationSpringDamping,
                                initialSpringVelocity: kDPDrawerControllerOpeningAnimationSpringInitialVelocity,
-                               options: .CurveLinear,
+                               options: .curveLinear,
                                animations: {
                                 self.centerView!.frame = centerViewFinalFrame
                                 self.leftView!.frame = leftViewFinalFrame
@@ -258,16 +288,16 @@ public class DPDrawerViewController: UIViewController, UIGestureRecognizerDelega
       }
     }
   
-  public func animateClosing() {
+  open func animateClosing() {
     // Calculate final frames for the container views
     var leftViewFinalFrame: CGRect = self.leftView!.frame
     leftViewFinalFrame.origin.x = kDPDrawerControllerLeftViewInitialOffset
     let centerViewFinalFrame: CGRect = self.view.bounds
-    UIView.animateWithDuration(kDPDrawerControllerAnimationDuration,
+    UIView.animate(withDuration: kDPDrawerControllerAnimationDuration,
                                delay: 0,
                                usingSpringWithDamping: kDPDrawerControllerClosingAnimationSpringDamping,
                                initialSpringVelocity: kDPDrawerControllerClosingAnimationSpringInitialVelocity,
-                               options: .CurveLinear,
+                               options: .curveLinear,
                                animations: {
                                 self.centerView!.frame = centerViewFinalFrame
                                 self.leftView!.frame = leftViewFinalFrame
@@ -278,14 +308,14 @@ public class DPDrawerViewController: UIViewController, UIGestureRecognizerDelega
       }
   
   // MARK: Opening the drawer
-  public func open() {
+  open func open() {
     self.willOpen()
     self.animateOpening()
   }
   
-  public func willOpen() {
+  open func willOpen() {
     // Keep track that the drawer is opening
-    self.drawerState = .DPDrawerControllerStateOpening
+    self.drawerState = .dpDrawerControllerStateOpening
     
     // Position the left view
     var frame: CGRect = self.view.bounds
@@ -306,13 +336,13 @@ public class DPDrawerViewController: UIViewController, UIGestureRecognizerDelega
     self.centerViewController?.drawerControllerWillOpen?()
   }
   
-  public func didOpen() {
+  open func didOpen() {
     // Complete adding the left controller to the container
-    self.leftMenuViewController?.didMoveToParentViewController(self)
+    self.leftMenuViewController?.didMove(toParentViewController: self)
     self.addClosingGestureRecognizers()
     
     // Keep track that the drawer is open
-    self.drawerState = .DPDrawerControllerStateOpen
+    self.drawerState = .dpDrawerControllerStateOpen
     
     // Notify the child view controllers that the drawer is open
     self.leftMenuViewController?.drawerControllerDidOpen?()
@@ -320,24 +350,24 @@ public class DPDrawerViewController: UIViewController, UIGestureRecognizerDelega
 
   }
   
-  public func close() {
+  open func close() {
     self.willClose()
     self.animateClosing()
   }
   
-  public func willClose() {
+  open func willClose() {
     // Start removing the left controller from the container
-    self.leftMenuViewController?.willMoveToParentViewController(nil)
+    self.leftMenuViewController?.willMove(toParentViewController: nil)
     
     // Keep track that the drawer is closing
-    self.drawerState = .DPDrawerControllerStateClosing
+    self.drawerState = .dpDrawerControllerStateClosing
     
     // Notify the child view controllers that the drawer is about to close
     self.leftMenuViewController?.drawerControllerWillClose?()
     self.centerViewController?.drawerControllerWillClose?()
   }
   
-  public func didClose() {
+  open func didClose() {
     // Complete removing the left view controller from the container
     self.leftMenuViewController?.view.removeFromSuperview()
     self.leftMenuViewController?.removeFromParentViewController()
@@ -347,7 +377,7 @@ public class DPDrawerViewController: UIViewController, UIGestureRecognizerDelega
     self.removeClosingGestureRecognizers()
     
     // Keep track that the drawer is closed
-    self.drawerState = .DPDrawerControllerStateClosed
+    self.drawerState = .dpDrawerControllerStateClosed
 
     // Notify the child view controllers that the drawer is closed
     self.leftMenuViewController?.drawerControllerDidClose?()
@@ -355,29 +385,29 @@ public class DPDrawerViewController: UIViewController, UIGestureRecognizerDelega
   }
   
   // MARK: Reloading / Replacing the center view controller
-  public func reloadCenterViewControllerUsingBlock(reloadBlock: (()->Void)?) {
+  open func reloadCenterViewControllerUsingBlock(_ reloadBlock: (()->Void)?) {
     self.willClose()
     var frame: CGRect = self.centerView!.frame
     frame.origin.x = self.view.bounds.size.width
-    UIView .animateWithDuration(kDPDrawerControllerAnimationDuration / 2.0,
+    UIView .animate(withDuration: kDPDrawerControllerAnimationDuration / 2.0,
                                 animations: {
                                   self.centerView!.frame = frame
-      }) { (finished) in
+      }, completion: { (finished) in
         // The center view controller is now out of sight
         reloadBlock?()
         self.animateClosing()
-    }
+    }) 
   }
   
-  public func replaceCenterViewControllerWithViewController(viewController: DPContentViewController) {
+  open func replaceCenterViewControllerWithViewController(_ viewController: DPContentViewController) {
     self.willClose()
     var frame: CGRect = self.centerView!.frame
     frame.origin.x = self.view.bounds.size.width
-    self.centerViewController?.willMoveToParentViewController(nil)
-    UIView .animateWithDuration(kDPDrawerControllerAnimationDuration / 2.0,
+    self.centerViewController?.willMove(toParentViewController: nil)
+    UIView .animate(withDuration: kDPDrawerControllerAnimationDuration / 2.0,
                                 animations: {
                                   self.centerView!.frame = frame
-      }) { (finished) in
+      }, completion: { (finished) in
         // The center view controller is now out of sight
         
         // Remove the current center view controller from the container
@@ -394,7 +424,7 @@ public class DPDrawerViewController: UIViewController, UIGestureRecognizerDelega
         
         // Finally, close the drawer
         self.animateClosing()
-    }
+    }) 
   }
   
 }

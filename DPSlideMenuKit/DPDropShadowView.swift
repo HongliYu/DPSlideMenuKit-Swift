@@ -9,12 +9,12 @@
 import UIKit
 import Foundation
 
-public class DPDropShadowView: UIView {
+open class DPDropShadowView: UIView {
 
-  override public func drawRect(rect: CGRect) {
-    self.layer.shadowOffset = CGSizeZero
+  override open func draw(_ rect: CGRect) {
+    self.layer.shadowOffset = CGSize.zero
     self.layer.shadowOpacity = 0.7
-    self.layer.shadowPath = UIBezierPath(rect:self.bounds).CGPath
+    self.layer.shadowPath = UIBezierPath(rect:self.bounds).cgPath
   }
   
 }
