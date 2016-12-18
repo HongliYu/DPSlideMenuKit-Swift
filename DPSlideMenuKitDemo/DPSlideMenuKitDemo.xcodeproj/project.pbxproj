@@ -52,6 +52,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F75C44881E06468400E60E60 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		F72156151DA6A0A90038A5AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pages.storyboard; sourceTree = "<group>"; };
 		F7D0B3AB1D63A0C7008EA646 /* DPSlideMenuKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DPSlideMenuKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +193,7 @@
 				F7D0B3A71D63A0C7008EA646 /* Sources */,
 				F7D0B3A81D63A0C7008EA646 /* Frameworks */,
 				F7D0B3A91D63A0C7008EA646 /* Resources */,
+				F75C44881E06468400E60E60 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -480,6 +494,7 @@
 		F7D0B3D41D63A0C8008EA646 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FC9QT6TC28;
 				INFOPLIST_FILE = DPSlideMenuKitDemo/Info.plist;
@@ -494,6 +509,7 @@
 		F7D0B3D51D63A0C8008EA646 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FC9QT6TC28;
 				INFOPLIST_FILE = DPSlideMenuKitDemo/Info.plist;
