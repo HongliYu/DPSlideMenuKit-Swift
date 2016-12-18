@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F75C44B61E064D1F00E60E60"
+               BlueprintIdentifier = "F75C44E71E06731500E60E60"
                BuildableName = "DPSlideMenuKit.framework"
-               BlueprintName = "DPSlideMenuKit"
-               ReferencedContainer = "container:DPSlideMenuKit.xcodeproj">
+               BlueprintName = "DPSlideMenuKitFramework"
+               ReferencedContainer = "container:DPSlideMenuKitFramework.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F75C44B61E064D1F00E60E60"
+            BlueprintIdentifier = "F75C44E71E06731500E60E60"
             BuildableName = "DPSlideMenuKit.framework"
-            BlueprintName = "DPSlideMenuKit"
-            ReferencedContainer = "container:DPSlideMenuKit.xcodeproj">
+            BlueprintName = "DPSlideMenuKitFramework"
+            ReferencedContainer = "container:DPSlideMenuKitFramework.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -63,10 +63,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F75C44B61E064D1F00E60E60"
+            BlueprintIdentifier = "F75C44E71E06731500E60E60"
             BuildableName = "DPSlideMenuKit.framework"
-            BlueprintName = "DPSlideMenuKit"
-            ReferencedContainer = "container:DPSlideMenuKit.xcodeproj">
+            BlueprintName = "DPSlideMenuKitFramework"
+            ReferencedContainer = "container:DPSlideMenuKitFramework.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
