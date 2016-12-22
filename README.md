@@ -3,6 +3,8 @@ simple slide menu kit with different colors
 
 [![Cocoapods](https://img.shields.io/cocoapods/v/DPSlideMenuKit.svg)](http://cocoapods.org/?q=DPSlideMenuKit)
 [![Pod License](http://img.shields.io/cocoapods/l/DPSlideMenuKit.svg)](https://github.com/HongliYu/DPSlideMenuKit-Swift/blob/master/LICENSE)
+[![Swift-3.0](https://img.shields.io/badge/Swift-3.0-blue.svg)]()
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ![screenshot](https://github.com/HongliYu/DPSlideMenuKit-Swift/blob/master/DPSlideMenuKit.gif?raw=true)
 
@@ -79,6 +81,6 @@ simple slide menu kit with different colors
 ```
 
 # Storyboard
-![screenshot](https://github.com/HongliYu/DPSlideMenuKit-Swift/blob/master/skitch.png?raw=true)
-![screenshot](https://github.com/HongliYu/DPSlideMenuKit-Swift/blob/master/skitch1.png?raw=true)
-![screenshot](https://github.com/HongliYu/DPSlideMenuKit-Swift/blob/master/skitch2.png?raw=true)
+<img src="https://github.com/HongliYu/DPSlideMenuKit-Swift/blob/master/skitch.png?raw=true" alt="alt text"  height="400">
+<img src="https://github.com/HongliYu/DPSlideMenuKit-Swift/blob/master/skitch1.png?raw=true" alt="alt text"  height="400">
+<img src="https://github.com/HongliYu/DPSlideMenuKit-Swift/blob/master/skitch2.png?raw=true" alt="alt text"  height="400">
