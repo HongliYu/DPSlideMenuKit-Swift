@@ -23,6 +23,7 @@
 		F766B5EC1F14C0D4008F8F40 /* DPSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766B5EB1F14C0D4008F8F40 /* DPSettingsViewModel.swift */; };
 		F766B5EE1F14CC98008F8F40 /* DPSettingsSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F766B5ED1F14CC98008F8F40 /* DPSettingsSectionView.xib */; };
 		F766B5F01F14CCA5008F8F40 /* DPSettingsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766B5EF1F14CCA5008F8F40 /* DPSettingsSectionView.swift */; };
+		F766B6121F162292008F8F40 /* DPTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766B6111F162292008F8F40 /* DPTestViewController.swift */; };
 		F7C0D1561F0C8A43006DC742 /* DPLeftPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0D1551F0C8A43006DC742 /* DPLeftPageViewController.swift */; };
 		F7C0D1581F0C90B6006DC742 /* DPLeftContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0D1571F0C90B6006DC742 /* DPLeftContentViewController.swift */; };
 		F7C0D15A1F0CF04D006DC742 /* DPConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0D1591F0CF04D006DC742 /* DPConst.swift */; };
@@ -89,6 +90,7 @@
 		F766B5EB1F14C0D4008F8F40 /* DPSettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPSettingsViewModel.swift; sourceTree = "<group>"; };
 		F766B5ED1F14CC98008F8F40 /* DPSettingsSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPSettingsSectionView.xib; sourceTree = "<group>"; };
 		F766B5EF1F14CCA5008F8F40 /* DPSettingsSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPSettingsSectionView.swift; sourceTree = "<group>"; };
+		F766B6111F162292008F8F40 /* DPTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPTestViewController.swift; sourceTree = "<group>"; };
 		F7C0D1551F0C8A43006DC742 /* DPLeftPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPLeftPageViewController.swift; sourceTree = "<group>"; };
 		F7C0D1571F0C90B6006DC742 /* DPLeftContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPLeftContentViewController.swift; sourceTree = "<group>"; };
 		F7C0D1591F0CF04D006DC742 /* DPConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPConst.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				F766B5E91F14BF3B008F8F40 /* DPSettingsViewController.swift */,
 				F766B5EF1F14CCA5008F8F40 /* DPSettingsSectionView.swift */,
 				F766B5ED1F14CC98008F8F40 /* DPSettingsSectionView.xib */,
+				F766B6111F162292008F8F40 /* DPTestViewController.swift */,
 			);
 			path = SideContent;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				F7D0B3B11D63A0C7008EA646 /* ViewController.swift in Sources */,
 				F7D0B3F51D63B114008EA646 /* DPLeftMenuViewController.swift in Sources */,
 				F766B5D71F138408008F8F40 /* DPRightMenuViewController.swift in Sources */,
+				F766B6121F162292008F8F40 /* DPTestViewController.swift in Sources */,
 				F7D0B3F11D63A1C1008EA646 /* DPCenterContentViewController.swift in Sources */,
 				F7D0B3F71D63B126008EA646 /* DPDropShadowView.swift in Sources */,
 				F766B5E71F14BE9C008F8F40 /* DPMessageViewModel.swift in Sources */,
