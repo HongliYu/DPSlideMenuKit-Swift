@@ -1,15 +1,14 @@
 //
-//  DPLeftMenuViewController.swift
+//  DPRightMenuViewController.swift
 //  DPSlideMenuKitDemo
 //
-//  Created by Hongli Yu on 8/17/16.
-//  Copyright © 2016 Hongli Yu. All rights reserved.
+//  Created by Hongli Yu on 10/07/2017.
+//  Copyright © 2017 Hongli Yu. All rights reserved.
 //
 
 import UIKit
-import Foundation
 
-class DPLeftMenuViewController: UIViewController {
+class DPRightMenuViewController: UIViewController {
   
   var drawerControllerWillOpen:(()->Void)?
   var drawerControllerDidOpen:(()->Void)?
@@ -17,10 +16,10 @@ class DPLeftMenuViewController: UIViewController {
   var drawerControllerDidClose:(()->Void)?
   
   fileprivate (set) var pageControl: UIPageControl = UIPageControl()
-  fileprivate (set) var pageViewController: DPLeftPageViewController = DPLeftPageViewController(transitionStyle: .scroll,
-                                                                                                navigationOrientation: .horizontal,
-                                                                                                options: [UIPageViewControllerOptionInterPageSpacingKey: 0])
-  
+  fileprivate (set) var pageViewController: DPRightPageViewController = DPRightPageViewController(transitionStyle: .scroll,
+                                                                                                  navigationOrientation: .horizontal,
+                                                                                                  options: [UIPageViewControllerOptionInterPageSpacingKey: 0])
+
   // MARK: Life Cycle
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
@@ -29,7 +28,7 @@ class DPLeftMenuViewController: UIViewController {
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
   }
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     self.basicUI()
@@ -40,13 +39,13 @@ class DPLeftMenuViewController: UIViewController {
     self.view.backgroundColor = Palette.green
     self.addChildViewController(self.pageViewController)
     self.view.addSubview(self.pageViewController.view)
-    if DPSlideMenuManager.shared.leftContentViewControllers.count > 1 {
+    if DPSlideMenuManager.shared.rightContentViewControllers.count > 1 {
       self.pageControl.frame = CGRect(x: 0, y: UIScreen.main.bounds.height - kDPPageControlHeight,
-                                      width: (UIScreen.main.bounds.width - kDPDrawerControllerDrawerWidthGapOffset),
+                                      width: UIScreen.main.bounds.width - kDPDrawerControllerDrawerWidthGapOffset,
                                       height: kDPPageControlHeight)
       self.pageControl.backgroundColor = UIColor.clear
       self.pageControl.currentPage = 0
-      self.pageControl.numberOfPages = DPSlideMenuManager.shared.leftContentViewControllers.count
+      self.pageControl.numberOfPages = DPSlideMenuManager.shared.rightContentViewControllers.count
       self.pageControl.addTarget(self, action: #selector(self.pageAction(_:)), for: .valueChanged)
       self.view.addSubview(self.pageControl)
     }
@@ -57,7 +56,7 @@ class DPLeftMenuViewController: UIViewController {
     frame.origin.y = UIScreen.main.bounds.height - kDPPageControlHeight
     self.pageControl.frame = frame
   }
-
+  
   func basicData() {
     self.pageViewController.transitionCompleted = {
       [weak self] index in
@@ -101,9 +100,9 @@ class DPLeftMenuViewController: UIViewController {
       self.resetUI()
     }
   }
-  
+
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
-  
+
 }
