@@ -34,15 +34,15 @@ class DPMenuButton: UIButton {
 
   var menuPath : CGPath {
     let path = CGMutablePath()
-    path.move(to: CGPoint.init(x: thickness / 2.0, y: thickness / 2.0))
-    path.addLine(to: CGPoint.init(x: lineWidth - thickness / 2.0, y: thickness / 2.0))
+    path.move(to: CGPoint(x: thickness / 2.0, y: thickness / 2.0))
+    path.addLine(to: CGPoint(x: lineWidth - thickness / 2.0, y: thickness / 2.0))
     return path
   }
   
   var sidePath: CGPath {
     let path = CGMutablePath()
-    path.move(to: CGPoint.init(x: 0, y: self.bounds.height / 2.0))
-    path.addLine(to: CGPoint.init(x: self.bounds.width, y: self.bounds.height / 2.0))
+    path.move(to: CGPoint(x: 0, y: self.bounds.height / 2.0))
+    path.addLine(to: CGPoint(x: self.bounds.width, y: self.bounds.height / 2.0))
     return path
   }
   
@@ -179,7 +179,8 @@ class DPMenuButton: UIButton {
   
   func updateSubLayers() {
     let path = self.menuPath
-    let strokingPath = CGPath(__byStroking: path, transform: nil, lineWidth: thickness, lineCap: CGLineCap.round, lineJoin: CGLineJoin.miter, miterLimit: 10)
+    let strokingPath = CGPath(__byStroking: path, transform: nil, lineWidth: thickness,
+                              lineCap: CGLineCap.round, lineJoin: CGLineJoin.miter, miterLimit: 10)
     let bounds = strokingPath?.boundingBoxOfPath
     sideLayer.strokeColor = self.sideLayerStrokeColor.cgColor
     for layer in [topLayer, midLayer, bottomLayer] {

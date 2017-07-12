@@ -401,7 +401,6 @@ class DPDrawerViewController: UIViewController, UIGestureRecognizerDelegate {
   }
 
   func leftWillOpen() {
-//    self.leftMenuWillOpen?()
     UIApplication.shared.isStatusBarHidden = true
     self.drawerState = .leftOpening
     
@@ -425,7 +424,6 @@ class DPDrawerViewController: UIViewController, UIGestureRecognizerDelegate {
   }
   
   func rightWillOpen() {
-//    self.rightMenuWillOpen?()
     UIApplication.shared.isStatusBarHidden = true
 
     self.drawerState = .rightOpening
