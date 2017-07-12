@@ -1,5 +1,5 @@
 //
-//  DPSupportViewController.swift
+//  DPHomeViewController.swift
 //  DPSlideMenuKitDemo
 //
 //  Created by Hongli Yu on 8/18/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DPSupportViewController: DPContentViewController {
+class DPHomeViewController: DPCenterContentViewController {
   
   override init(nibName nibNameOrNil: String?,
                         bundle nibBundleOrNil: Bundle?) {
