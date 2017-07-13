@@ -21,8 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BqX-Yl-IvN">
-                                <rect key="frame" x="87.5" y="323.5" width="200" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is home page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BqX-Yl-IvN">
+                                <rect key="frame" x="87.5" y="324" width="200" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="0PS-cc-k4e"/>
                                     <constraint firstAttribute="height" constant="20" id="80M-op-xmb"/>
@@ -31,8 +31,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are in Home Page" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIi-Be-NJQ">
-                                <rect key="frame" x="87.5" y="287.5" width="200" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIi-Be-NJQ">
+                                <rect key="frame" x="87.5" y="288" width="200" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="1rf-GP-sso"/>
                                     <constraint firstAttribute="height" constant="20" id="n5H-4n-0nj"/>
@@ -111,7 +111,7 @@
                                     <constraint firstItem="wqb-AS-53t" firstAttribute="centerY" secondItem="Zom-FH-rmg" secondAttribute="centerY" id="zoY-dr-bPh"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is chat view" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8S-Bb-yac">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is chat page" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8S-Bb-yac">
                                 <rect key="frame" x="87.5" y="303.5" width="200" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="22K-at-zMa"/>
@@ -328,7 +328,9 @@
                     </view>
                     <connections>
                         <outlet property="accountButton" destination="Ocm-Ex-e9A" id="PCp-7c-a4A"/>
+                        <outlet property="addButton" destination="Lw1-ef-oxl" id="iYu-HG-3B5"/>
                         <outlet property="avatarImageView" destination="6Dj-ko-h9i" id="ooB-Eo-Td6"/>
+                        <outlet property="helpButton" destination="Xg5-Cn-eF2" id="pw5-Aa-iRv"/>
                         <outlet property="settingsButton" destination="Rci-ad-ZzB" id="fFb-iT-ZjK"/>
                     </connections>
                 </viewController>
