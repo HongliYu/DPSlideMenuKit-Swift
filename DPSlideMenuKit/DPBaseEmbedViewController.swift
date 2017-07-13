@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DPBaseEmbedViewController: UIViewController {
+public class DPBaseEmbedViewController: UIViewController {
   
   fileprivate (set) var positionState: DPEmbedViewControllerPositionState = .left
   
@@ -16,11 +16,11 @@ class DPBaseEmbedViewController: UIViewController {
     self.positionState = positionState
   }
   
-  override func viewDidLoad() {
+  override public func viewDidLoad() {
       super.viewDidLoad()
   }
 
-  override func didReceiveMemoryWarning() {
+  override public func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()
   }
   

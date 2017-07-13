@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DPSlideMenuManager {
+public class DPSlideMenuManager {
   
   static let shared = DPSlideMenuManager()
   fileprivate (set) var drawer: DPDrawerViewController?

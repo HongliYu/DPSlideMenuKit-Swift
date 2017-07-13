@@ -86,6 +86,7 @@
 		F7FC405D1F174F0D00031F20 /* DPSlideMenuKit */ = {
 			isa = PBXGroup;
 			children = (
+				F7FC406C1F174F0D00031F20 /* DPSlideMenuManager.swift */,
 				F7FC405E1F174F0D00031F20 /* DPBaseEmbedViewController.swift */,
 				F7FC405F1F174F0D00031F20 /* DPCenterContentViewController.swift */,
 				F7FC40601F174F0D00031F20 /* DPConst.swift */,
@@ -100,7 +101,6 @@
 				F7FC40691F174F0D00031F20 /* DPRightContentViewController.swift */,
 				F7FC406A1F174F0D00031F20 /* DPRightMenuViewController.swift */,
 				F7FC406B1F174F0D00031F20 /* DPRightPageViewController.swift */,
-				F7FC406C1F174F0D00031F20 /* DPSlideMenuManager.swift */,
 			);
 			path = DPSlideMenuKit;
 			sourceTree = SOURCE_ROOT;
