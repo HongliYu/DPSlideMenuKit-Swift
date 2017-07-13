@@ -40,10 +40,10 @@ public class DPDrawerViewController: UIViewController, UIGestureRecognizerDelega
     self.createdFormStoryboard = true
   }
   
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+  override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
   }
-
+  
   func reset(leftViewController: DPLeftMenuViewController?,
              rightMenuViewController: DPRightMenuViewController?,
              centerContentViewController: DPCenterContentViewController?) {

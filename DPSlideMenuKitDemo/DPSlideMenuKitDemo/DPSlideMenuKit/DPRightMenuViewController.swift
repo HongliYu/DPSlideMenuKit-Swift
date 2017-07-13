@@ -21,12 +21,12 @@ public class DPRightMenuViewController: UIViewController {
                                                                                                   options: [UIPageViewControllerOptionInterPageSpacingKey: 0])
 
   // MARK: Life Cycle
-  required public init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
+  override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
   }
   
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+  required public init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)!
   }
   
   override public func viewDidLoad() {

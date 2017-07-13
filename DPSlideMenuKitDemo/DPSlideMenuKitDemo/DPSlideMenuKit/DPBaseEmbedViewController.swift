@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class DPBaseEmbedViewController: UIViewController {
+open class DPBaseEmbedViewController: UIViewController {
   
   fileprivate (set) var positionState: DPEmbedViewControllerPositionState = .left
   
@@ -16,11 +16,20 @@ public class DPBaseEmbedViewController: UIViewController {
     self.positionState = positionState
   }
   
-  override public func viewDidLoad() {
+  // MARK: Life Cycle
+  override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+  }
+  
+  required public init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)!
+  }
+
+  override open func viewDidLoad() {
       super.viewDidLoad()
   }
 
-  override public func didReceiveMemoryWarning() {
+  override open func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()
   }
   

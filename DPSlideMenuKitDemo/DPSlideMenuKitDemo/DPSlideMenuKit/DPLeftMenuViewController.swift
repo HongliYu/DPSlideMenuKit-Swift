@@ -22,14 +22,14 @@ public class DPLeftMenuViewController: UIViewController {
                                                                                                 options: [UIPageViewControllerOptionInterPageSpacingKey: 0])
   
   // MARK: Life Cycle
-  required public init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-  }
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+  override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
   }
-
+  
+  required public init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)!
+  }
+  
   override public func viewDidLoad() {
     super.viewDidLoad()
     self.basicUI()

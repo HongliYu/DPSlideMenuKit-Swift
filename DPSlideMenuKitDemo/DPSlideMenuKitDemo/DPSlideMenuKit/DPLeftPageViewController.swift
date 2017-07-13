@@ -20,8 +20,8 @@ public class DPLeftPageViewController: UIPageViewController {
                options: options)
   }
   
-  required public init?(coder: NSCoder) {
-    super.init(coder: coder)
+  required public init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)!
   }
   
   override public func viewDidLoad() {

@@ -111,6 +111,26 @@ public extension UIViewController {
     return retViewControllerArray
   } // TODO: What about xib
   
+  static func generateViewControllerFrom(viewControllerName: String,
+                                         storyboardName: String?, bundle: Bundle?) -> UIViewController? {
+    var retViewController: UIViewController?
+    var relatedStoryboard: UIStoryboard?
+    if storyboardName == nil {
+      relatedStoryboard = nil
+    } else {
+      relatedStoryboard = UIStoryboard(name: storyboardName!, bundle: bundle)
+    }
+    if relatedStoryboard != nil {
+      let SBIdentifier = viewControllerName
+      retViewController = relatedStoryboard?.instantiateViewController(withIdentifier: SBIdentifier)
+    } else {
+      let className = Bundle.main.infoDictionary!["CFBundleName"] as! String + "." + viewControllerName
+      let aClass = NSClassFromString(className) as! UIViewController.Type
+      retViewController = aClass.init()
+    }
+    return retViewController
+  }
+  
   func alert(_ title: String, message: String? = nil) {
     let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
     let dismiss = "Dismiss"

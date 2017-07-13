@@ -19,9 +19,9 @@ public class DPRightPageViewController: UIPageViewController {
                navigationOrientation: navigationOrientation,
                options: options)
   }
-  
-  required public init?(coder: NSCoder) {
-    super.init(coder: coder)
+    
+  required public init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)!
   }
   
   override public func viewDidLoad() {

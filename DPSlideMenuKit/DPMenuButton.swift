@@ -104,7 +104,7 @@ public class DPMenuButton: UIButton {
     self.setup()
   }
   
-  func setup() {
+  open func setup() {
     sideLayer.opacity = 0.2
     if slideLeftToRight {
       sideLayer.strokeStart = 0.0

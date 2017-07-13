@@ -8,9 +8,11 @@
 
 import UIKit
 
-public class DPSlideMenuManager {
+open class DPSlideMenuManager {
   
-  static let shared = DPSlideMenuManager()
+  public init() {}
+  
+  public static let shared = DPSlideMenuManager()
   fileprivate (set) var drawer: DPDrawerViewController?
   fileprivate (set) var leftContentEmbedViewControllers: [DPBaseEmbedViewController] = []
   fileprivate (set) var leftContentViewControllers: [DPLeftContentViewController] = []
@@ -43,11 +45,11 @@ public class DPSlideMenuManager {
     }
   }
   
-  func setDrawer(drawer: DPDrawerViewController?) {
+  public func setDrawer(drawer: DPDrawerViewController?) {
     self.drawer = drawer
   }
   
-  func replaceCenterViewControllerWith(viewController: DPCenterContentViewController,
+  public func replaceCenterViewControllerWith(viewController: DPCenterContentViewController,
                                        position: DPEmbedViewControllerPositionState) {
     if position == .left {
       self.drawer?.leftMenuReplaceCenterViewControllerWithViewController(viewController)
@@ -57,9 +59,9 @@ public class DPSlideMenuManager {
     }
   }
   
-  func setup(leftContentEmbedViewControllers: [DPBaseEmbedViewController],
-             rightContentEmbedViewControllers: [DPBaseEmbedViewController],
-             centerContentViewController: DPCenterContentViewController?) {
+  public func setup(leftContentEmbedViewControllers: [DPBaseEmbedViewController],
+                    rightContentEmbedViewControllers: [DPBaseEmbedViewController],
+                    centerContentViewController: DPCenterContentViewController?) {
     self.config(leftContentEmbedViewControllers: leftContentEmbedViewControllers,
                 rightContentEmbedViewControllers: rightContentEmbedViewControllers)
     self.leftMenuViewController = DPLeftMenuViewController()

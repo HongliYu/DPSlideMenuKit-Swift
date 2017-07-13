@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class DPCenterContentViewController: UIViewController {
+open class DPCenterContentViewController: UIViewController {
   
   var drawerControllerWillOpen:((_ drawerButtonAnimated: Bool)->Void)?
   var drawerControllerDidOpen:((_ drawerButtonAnimated: Bool)->Void)?
@@ -18,15 +18,15 @@ public class DPCenterContentViewController: UIViewController {
   fileprivate var openDrawerButton: DPMenuButton = DPMenuButton(type:.custom)
   
   // MARK: Life Cycle
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+  override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
   }
   
   required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)!
   }
-
-  override public func viewDidLoad() {
+  
+  override open func viewDidLoad() {
     super.viewDidLoad()
     self.openDrawerButton.frame = kDPDrawerButtonRect
     self.openDrawerButton.addTarget(self, action: #selector(self.openDrawer(_:)), for: .touchUpInside)

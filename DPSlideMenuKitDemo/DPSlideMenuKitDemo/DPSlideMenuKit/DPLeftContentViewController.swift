@@ -12,12 +12,13 @@ public class DPLeftContentViewController: UIViewController {
 
   var embedViewController: UIViewController?
   
-  required public init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
+  // MARK: Life Cycle
+  override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
   }
   
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+  required public init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)!
   }
   
   override public func viewDidLoad() {
