@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension CGFloat {
+public extension CGFloat {
   
   static func random() -> CGFloat {
     return CGFloat(arc4random()) / CGFloat(UInt32.max)
@@ -17,7 +17,7 @@ extension CGFloat {
   
 }
 
-extension UIColor {
+public extension UIColor {
   
   static func random() -> UIColor {
     return UIColor(red:   .random(),
@@ -28,7 +28,7 @@ extension UIColor {
   
 }
 
-extension String {
+public extension String {
   
   var localized: String {
     return NSLocalizedString(self,
@@ -40,7 +40,7 @@ extension String {
   
 }
 
-extension Int {
+public extension Int {
   
   func times(f: () -> ()) {
     if self > 0 {
@@ -60,7 +60,7 @@ extension Int {
   
 }
 
-extension UIFont {
+public extension UIFont {
   
   class func fontAwesome(ofSize: CGFloat) -> UIFont? {
     return UIFont(name: "FontAwesome", size: ofSize)
@@ -68,7 +68,7 @@ extension UIFont {
   
 }
 
-extension UIViewController {
+public extension UIViewController {
   
   /**
    1. If storyboardName is nil, then the view controller is generated from code
