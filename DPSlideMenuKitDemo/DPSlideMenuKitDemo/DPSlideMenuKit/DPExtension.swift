@@ -60,6 +60,14 @@ extension Int {
   
 }
 
+extension UIFont {
+  
+  class func fontAwesome(ofSize: CGFloat) -> UIFont? {
+    return UIFont(name: "FontAwesome", size: ofSize)
+  }
+  
+}
+
 extension UIViewController {
   
   /**

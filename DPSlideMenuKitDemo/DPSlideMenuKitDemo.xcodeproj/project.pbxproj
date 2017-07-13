@@ -42,6 +42,7 @@
 		F7D0B3F51D63B114008EA646 /* DPLeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B3F41D63B114008EA646 /* DPLeftMenuViewController.swift */; };
 		F7D0B3F71D63B126008EA646 /* DPDropShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B3F61D63B126008EA646 /* DPDropShadowView.swift */; };
 		F7EAB6731D6BE3D700C0C70C /* DPMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EAB6721D6BE3D700C0C70C /* DPMenuButton.swift */; };
+		F7FC405C1F17159C00031F20 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7FC405B1F17159C00031F20 /* fontawesome-webfont.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		F7D0B3F41D63B114008EA646 /* DPLeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPLeftMenuViewController.swift; sourceTree = "<group>"; };
 		F7D0B3F61D63B126008EA646 /* DPDropShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPDropShadowView.swift; sourceTree = "<group>"; };
 		F7EAB6721D6BE3D700C0C70C /* DPMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPMenuButton.swift; sourceTree = "<group>"; };
+		F7FC405B1F17159C00031F20 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,8 +201,9 @@
 				F7D0B3B01D63A0C7008EA646 /* ViewController.swift */,
 				F7D0B3B21D63A0C7008EA646 /* Main.storyboard */,
 				F72156141DA6A0A90038A5AE /* Pages.storyboard */,
-				F7D0B3B51D63A0C7008EA646 /* Assets.xcassets */,
 				F7D0B3B71D63A0C7008EA646 /* LaunchScreen.storyboard */,
+				F7D0B3B51D63A0C7008EA646 /* Assets.xcassets */,
+				F7FC405B1F17159C00031F20 /* fontawesome-webfont.ttf */,
 				F7D0B3BA1D63A0C7008EA646 /* Info.plist */,
 			);
 			path = DPSlideMenuKitDemo;
@@ -359,6 +362,7 @@
 				F7D0B3B91D63A0C7008EA646 /* LaunchScreen.storyboard in Resources */,
 				F7D0B3B61D63A0C7008EA646 /* Assets.xcassets in Resources */,
 				F7D0B3B41D63A0C7008EA646 /* Main.storyboard in Resources */,
+				F7FC405C1F17159C00031F20 /* fontawesome-webfont.ttf in Resources */,
 				F766B5EE1F14CC98008F8F40 /* DPSettingsSectionView.xib in Resources */,
 				F72156161DA6A0A90038A5AE /* Pages.storyboard in Resources */,
 			);

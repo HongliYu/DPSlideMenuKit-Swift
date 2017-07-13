@@ -13,7 +13,14 @@ let kDPMessageListCellReuseID: String = "kDPMessageListCellReuseID"
 class DPMessageListViewController: DPBaseEmbedViewController {
 
   @IBOutlet weak var mainTableView: UITableView!
-  @IBOutlet weak var editButton: UIButton!
+  
+  @IBOutlet weak var editButton: UIButton! {
+    didSet {
+      editButton.titleLabel!.font = UIFont(name: "fontawesome", size: 24)!
+      editButton.setTitle("\u{f044}", for: .normal)
+      editButton.setTitleColor(UIColor.white, for: .normal)
+    }
+  }
   
   fileprivate(set) var messageViewModels: [DPMessageViewModel] = []
 

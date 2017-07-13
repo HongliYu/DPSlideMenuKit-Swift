@@ -27,7 +27,7 @@ class ViewController: UIViewController {
 //    self.addChildViewController(drawer!)
 //    self.view.addSubview(drawer!.view)
 //    DPSlideMenuManager.shared.setDrawer(drawer: drawer)
-
+    
     let leftMenuViewControllerNameArray: [String] = ["DPTeamViewController",
                                                      "DPChannelListViewController",
                                                      "DPMessageListViewController"]

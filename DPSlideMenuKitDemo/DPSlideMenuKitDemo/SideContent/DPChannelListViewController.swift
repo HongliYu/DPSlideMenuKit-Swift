@@ -214,7 +214,8 @@ extension DPChannelListViewController: UITableViewDelegate {
       let addChannelButton: UIButton = UIButton(frame: CGRect(x: UIScreen.main.bounds.width + kDPDrawerControllerLeftViewInitialOffset - kDefaultSectionHeight,
                                                               y: 0, width: kDefaultSectionHeight, height: kDefaultSectionHeight))
       addChannelButton.backgroundColor = UIColor.clear
-      addChannelButton.setTitle("Add", for: .normal)
+      addChannelButton.titleLabel!.font = UIFont(name: "fontawesome", size: 24)!
+      addChannelButton.setTitle("\u{f055}", for: .normal)
       addChannelButton.setTitleColor(UIColor.white, for: .normal)
       addChannelButton.addTarget(self, action: #selector(self.addChannelAction(_:)), for: .touchUpInside)
       view.addSubview(addChannelButton)

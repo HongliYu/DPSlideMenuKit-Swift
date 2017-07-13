@@ -35,6 +35,20 @@ class DPTeamViewController: DPBaseEmbedViewController {
     }
   }
   
+  @IBOutlet weak var helpButton: UIButton! {
+    didSet {
+      helpButton.titleLabel!.font = UIFont(name: "fontawesome", size: 24)!
+      helpButton.setTitle("\u{f29c}", for: .normal)
+    }
+  }
+  
+  @IBOutlet weak var addButton: UIButton! {
+    didSet {
+      addButton.titleLabel!.font = UIFont(name: "fontawesome", size: 24)!
+      addButton.setTitle("\u{f067}", for: .normal)
+    }
+  }
+  
   override init(nibName nibNameOrNil: String?,
                 bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil,
