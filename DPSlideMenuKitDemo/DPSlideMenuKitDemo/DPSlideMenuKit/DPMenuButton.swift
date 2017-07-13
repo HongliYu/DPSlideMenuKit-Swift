@@ -9,23 +9,10 @@
 import UIKit
 import QuartzCore
 
-// MARK: Constant
 let animateDuration : Double = 0.3
 let animateDelay: Double = 0.05
 
-// MARK: Extension
-extension CALayer {
-  func applyAnimation(_ animation: CABasicAnimation) {
-    let copy = animation.copy() as! CABasicAnimation
-    if copy.fromValue == nil {
-      copy.fromValue = self.presentation()!.value(forKeyPath: copy.keyPath!)
-    }
-    self.add(copy, forKey: copy.keyPath)
-    self.setValue(copy.toValue, forKeyPath:copy.keyPath!)
-  }
-}
-
-class DPMenuButton: UIButton {
+public class DPMenuButton: UIButton {
   
   let topLayer = CAShapeLayer()
   let midLayer = CAShapeLayer()
@@ -46,7 +33,7 @@ class DPMenuButton: UIButton {
     return path
   }
   
-  override var isSelected: Bool {
+  override public var isSelected: Bool {
     didSet {
       self.showMenu(self.isSelected)
     }
@@ -112,7 +99,7 @@ class DPMenuButton: UIButton {
     self.setup()
   }
   
-  required init?(coder aDecoder: NSCoder) {
+  required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     self.setup()
   }
@@ -193,7 +180,7 @@ class DPMenuButton: UIButton {
     self.setNeedsLayout()
   }
   
-  override func layoutSubviews() {
+  override public func layoutSubviews() {
     let center = CGPoint(x: self.bounds.size.width/2, y: self.bounds.size.height/2)
     self.midLayer.position = center
     self.topLayer.position = CGPoint(x: center.x, y: center.y - lineMargin)

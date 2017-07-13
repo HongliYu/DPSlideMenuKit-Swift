@@ -68,6 +68,17 @@ public extension UIFont {
   
 }
 
+public extension CALayer {
+  func applyAnimation(_ animation: CABasicAnimation) {
+    let copy = animation.copy() as! CABasicAnimation
+    if copy.fromValue == nil {
+      copy.fromValue = self.presentation()!.value(forKeyPath: copy.keyPath!)
+    }
+    self.add(copy, forKey: copy.keyPath)
+    self.setValue(copy.toValue, forKeyPath:copy.keyPath!)
+  }
+}
+
 public extension UIViewController {
   
   /**

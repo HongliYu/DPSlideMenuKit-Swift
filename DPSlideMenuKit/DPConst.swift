@@ -21,7 +21,7 @@ let kDPDrawerControllerClosingAnimationSpringDamping: CGFloat = 1.0
 let kDPDrawerControllerClosingAnimationSpringInitialVelocity: CGFloat = 0.5
 let kDPPageControlHeight: CGFloat = 30.0
 
-struct Palette {
+public struct Palette {
   static let main = UIColor(red: 237.0 / 255.0, green: 140.0 / 255.0, blue: 52.0 / 255.0, alpha: 1.0)
   static let blue = UIColor(red: 140.0 / 255.0, green: 155.0 / 255.0, blue: 237.0 / 255.0, alpha: 1.0)
   static let pink = UIColor(red: 237.0 / 255.0, green: 140 / 255.0, blue: 200.0 / 255.0, alpha: 1.0)

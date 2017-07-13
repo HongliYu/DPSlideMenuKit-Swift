@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DPRightMenuViewController: UIViewController {
+public class DPRightMenuViewController: UIViewController {
   
   var drawerControllerWillOpen:(()->Void)?
   var drawerControllerDidOpen:(()->Void)?
@@ -21,7 +21,7 @@ class DPRightMenuViewController: UIViewController {
                                                                                                   options: [UIPageViewControllerOptionInterPageSpacingKey: 0])
 
   // MARK: Life Cycle
-  required init?(coder aDecoder: NSCoder) {
+  required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
   }
   
@@ -29,7 +29,7 @@ class DPRightMenuViewController: UIViewController {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
   }
   
-  override func viewDidLoad() {
+  override public func viewDidLoad() {
     super.viewDidLoad()
     self.basicUI()
     self.basicData()
@@ -90,18 +90,18 @@ class DPRightMenuViewController: UIViewController {
     self.pageViewController.scrollToViewController(index: pageIndex)
   }
   
-  override var preferredStatusBarStyle : UIStatusBarStyle {
+  override public var preferredStatusBarStyle : UIStatusBarStyle {
     return .lightContent
   }
   
-  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+  override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
     super.viewWillTransition(to: size, with: coordinator)
     coordinator.animate(alongsideTransition: nil) { (UIViewControllerTransitionCoordinatorContext) in
       self.resetUI()
     }
   }
 
-  override func didReceiveMemoryWarning() {
+  override public func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
 

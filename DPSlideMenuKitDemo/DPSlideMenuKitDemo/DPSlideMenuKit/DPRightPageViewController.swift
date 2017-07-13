@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DPRightPageViewController: UIPageViewController {
+public class DPRightPageViewController: UIPageViewController {
 
   var transitionCompleted:((_ index: Int)->Void)?
   
@@ -20,11 +20,11 @@ class DPRightPageViewController: UIPageViewController {
                options: options)
   }
   
-  required init?(coder: NSCoder) {
+  required public init?(coder: NSCoder) {
     super.init(coder: coder)
   }
   
-  override func viewDidLoad() {
+  override public func viewDidLoad() {
     super.viewDidLoad()
     self.basicUI()
     self.basicData()
@@ -93,7 +93,7 @@ class DPRightPageViewController: UIPageViewController {
     // TODO: lazy init, the strategy for now is to generate all right vcs at the very beginning
   }
   
-  override func didReceiveMemoryWarning() {
+  override public func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
 
@@ -101,7 +101,7 @@ class DPRightPageViewController: UIPageViewController {
 
 extension DPRightPageViewController: UIPageViewControllerDataSource {
   
-  func pageViewController(_ pageViewController: UIPageViewController,
+  public func pageViewController(_ pageViewController: UIPageViewController,
                           viewControllerAfter viewController: UIViewController) -> UIViewController? {
     if DPSlideMenuManager.shared.rightContentViewControllers.count <= 1 {
       return nil
@@ -127,7 +127,7 @@ extension DPRightPageViewController: UIPageViewControllerDataSource {
     return DPSlideMenuManager.shared.rightContentViewControllers[nextIndex]
   }
   
-  func pageViewController(_ pageViewController: UIPageViewController,
+  public func pageViewController(_ pageViewController: UIPageViewController,
                           viewControllerBefore viewController: UIViewController) -> UIViewController? {
     if DPSlideMenuManager.shared.rightContentViewControllers.count <= 1 {
       return nil
@@ -155,11 +155,11 @@ extension DPRightPageViewController: UIPageViewControllerDataSource {
 
 extension DPRightPageViewController: UIPageViewControllerDelegate {
   
-  func pageViewController(_ pageViewController: UIPageViewController,
+  public func pageViewController(_ pageViewController: UIPageViewController,
                           willTransitionTo pendingViewControllers: [UIViewController]) {
   }
   
-  func pageViewController(_ pageViewController: UIPageViewController,
+  public func pageViewController(_ pageViewController: UIPageViewController,
                           didFinishAnimating finished: Bool,
                           previousViewControllers: [UIViewController],
                           transitionCompleted completed: Bool) {

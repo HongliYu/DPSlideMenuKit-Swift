@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DPDrawerViewController: UIViewController, UIGestureRecognizerDelegate {
+public class DPDrawerViewController: UIViewController, UIGestureRecognizerDelegate {
   
   fileprivate(set) var leftMenuViewController: DPLeftMenuViewController?
   fileprivate(set) var rightMenuViewController: DPRightMenuViewController?
@@ -35,7 +35,7 @@ class DPDrawerViewController: UIViewController, UIGestureRecognizerDelegate {
     self.basicUI()
   }
     
-  required init?(coder aDecoder: NSCoder) {
+  required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     self.createdFormStoryboard = true
   }
@@ -75,11 +75,11 @@ class DPDrawerViewController: UIViewController, UIGestureRecognizerDelegate {
     self.setupGestureRecognizers()
   }
   
-  override var preferredStatusBarStyle : UIStatusBarStyle {
+  override public var preferredStatusBarStyle : UIStatusBarStyle {
     return .lightContent
   }
   
-  override func viewDidLoad() {
+  override public func viewDidLoad() {
     super.viewDidLoad()
     self.basicUI()
   }
@@ -94,7 +94,7 @@ class DPDrawerViewController: UIViewController, UIGestureRecognizerDelegate {
   }
 
   // MARK: Layout
-  override var childViewControllerForStatusBarHidden :UIViewController {
+  override public var childViewControllerForStatusBarHidden :UIViewController {
     if (self.drawerState == .leftOpening) {
       return self.leftMenuViewController!
     }
@@ -104,7 +104,7 @@ class DPDrawerViewController: UIViewController, UIGestureRecognizerDelegate {
     return self.centerContentViewController!
   }
   
-  override var childViewControllerForStatusBarStyle :UIViewController {
+  override public var childViewControllerForStatusBarStyle :UIViewController {
     if (self.drawerState == .leftOpening) {
       return self.leftMenuViewController!
     }
@@ -148,7 +148,7 @@ class DPDrawerViewController: UIViewController, UIGestureRecognizerDelegate {
     }
   }
   
-  func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+  public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
     let velocity: CGPoint? = (gestureRecognizer as? UIPanGestureRecognizer)?.velocity(in: self.view)
     if self.drawerState == .closed {
       return true
@@ -636,7 +636,7 @@ class DPDrawerViewController: UIViewController, UIGestureRecognizerDelegate {
     self.rightClosing(animated: true)
   }
 
-  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+  override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
     super.viewWillTransition(to: size, with: coordinator)
     
     coordinator.animate(alongsideTransition: nil) { (UIViewControllerTransitionCoordinatorContext) in

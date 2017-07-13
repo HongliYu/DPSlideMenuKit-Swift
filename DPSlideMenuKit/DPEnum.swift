@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum DPDrawerControllerState: Int {
+public enum DPDrawerControllerState: Int {
   
   case closed = 0
   case leftOpen
@@ -39,7 +39,7 @@ enum DPDrawerControllerState: Int {
   
 }
 
-enum DPEmbedViewControllerPositionState: Int {
+public enum DPEmbedViewControllerPositionState: Int {
   
   case left = 0
   case right

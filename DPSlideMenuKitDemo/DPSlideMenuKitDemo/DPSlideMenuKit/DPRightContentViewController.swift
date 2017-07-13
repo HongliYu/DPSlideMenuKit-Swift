@@ -8,11 +8,11 @@
 
 import UIKit
 
-class DPRightContentViewController: UIViewController {
+public class DPRightContentViewController: UIViewController {
 
   var embedViewController: UIViewController?
   
-  required init?(coder aDecoder: NSCoder) {
+  required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
   }
   
@@ -20,11 +20,11 @@ class DPRightContentViewController: UIViewController {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
   }
   
-  override func viewDidLoad() {
+  override public func viewDidLoad() {
     super.viewDidLoad()
   }
   
-  override func didReceiveMemoryWarning() {
+  override public func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
   

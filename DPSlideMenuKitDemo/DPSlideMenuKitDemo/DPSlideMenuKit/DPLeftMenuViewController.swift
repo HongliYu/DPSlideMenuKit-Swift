@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class DPLeftMenuViewController: UIViewController {
+public class DPLeftMenuViewController: UIViewController {
   
   var drawerControllerWillOpen:(()->Void)?
   var drawerControllerDidOpen:(()->Void)?
@@ -22,7 +22,7 @@ class DPLeftMenuViewController: UIViewController {
                                                                                                 options: [UIPageViewControllerOptionInterPageSpacingKey: 0])
   
   // MARK: Life Cycle
-  required init?(coder aDecoder: NSCoder) {
+  required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
   }
   
@@ -30,7 +30,7 @@ class DPLeftMenuViewController: UIViewController {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
   }
 
-  override func viewDidLoad() {
+  override public func viewDidLoad() {
     super.viewDidLoad()
     self.basicUI()
     self.basicData()
@@ -91,18 +91,18 @@ class DPLeftMenuViewController: UIViewController {
     self.pageViewController.scrollToViewController(index: pageIndex)
   }
   
-  override var preferredStatusBarStyle : UIStatusBarStyle {
+  override public var preferredStatusBarStyle : UIStatusBarStyle {
     return .lightContent
   }
   
-  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+  override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
     super.viewWillTransition(to: size, with: coordinator)
     coordinator.animate(alongsideTransition: nil) { (UIViewControllerTransitionCoordinatorContext) in
       self.resetUI()
     }
   }
   
-  override func didReceiveMemoryWarning() {
+  override public func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
   
