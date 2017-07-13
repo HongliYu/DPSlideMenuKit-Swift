@@ -8,24 +8,42 @@
 
 /* Begin PBXBuildFile section */
 		F75C44ED1E06731500E60E60 /* DPSlideMenuKitFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = F75C44EB1E06731500E60E60 /* DPSlideMenuKitFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F75C44FA1E06735000E60E60 /* DPContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C44F41E06735000E60E60 /* DPContentViewController.swift */; };
-		F75C44FB1E06735000E60E60 /* DPDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C44F51E06735000E60E60 /* DPDrawerViewController.swift */; };
-		F75C44FC1E06735000E60E60 /* DPDropShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C44F61E06735000E60E60 /* DPDropShadowView.swift */; };
-		F75C44FD1E06735000E60E60 /* DPLeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C44F71E06735000E60E60 /* DPLeftMenuViewController.swift */; };
-		F75C44FE1E06735000E60E60 /* DPMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C44F81E06735000E60E60 /* DPMenuButton.swift */; };
-		F75C44FF1E06735000E60E60 /* DPSlideMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C44F91E06735000E60E60 /* DPSlideMenuModel.swift */; };
+		F7FC406D1F174F0D00031F20 /* DPBaseEmbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC405E1F174F0D00031F20 /* DPBaseEmbedViewController.swift */; };
+		F7FC406E1F174F0D00031F20 /* DPCenterContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC405F1F174F0D00031F20 /* DPCenterContentViewController.swift */; };
+		F7FC406F1F174F0D00031F20 /* DPConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC40601F174F0D00031F20 /* DPConst.swift */; };
+		F7FC40701F174F0D00031F20 /* DPDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC40611F174F0D00031F20 /* DPDrawerViewController.swift */; };
+		F7FC40711F174F0D00031F20 /* DPDropShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC40621F174F0D00031F20 /* DPDropShadowView.swift */; };
+		F7FC40721F174F0D00031F20 /* DPEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC40631F174F0D00031F20 /* DPEnum.swift */; };
+		F7FC40731F174F0D00031F20 /* DPExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC40641F174F0D00031F20 /* DPExtension.swift */; };
+		F7FC40741F174F0D00031F20 /* DPLeftContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC40651F174F0D00031F20 /* DPLeftContentViewController.swift */; };
+		F7FC40751F174F0D00031F20 /* DPLeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC40661F174F0D00031F20 /* DPLeftMenuViewController.swift */; };
+		F7FC40761F174F0D00031F20 /* DPLeftPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC40671F174F0D00031F20 /* DPLeftPageViewController.swift */; };
+		F7FC40771F174F0D00031F20 /* DPMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC40681F174F0D00031F20 /* DPMenuButton.swift */; };
+		F7FC40781F174F0D00031F20 /* DPRightContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC40691F174F0D00031F20 /* DPRightContentViewController.swift */; };
+		F7FC40791F174F0D00031F20 /* DPRightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC406A1F174F0D00031F20 /* DPRightMenuViewController.swift */; };
+		F7FC407A1F174F0D00031F20 /* DPRightPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC406B1F174F0D00031F20 /* DPRightPageViewController.swift */; };
+		F7FC407B1F174F0D00031F20 /* DPSlideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC406C1F174F0D00031F20 /* DPSlideMenuManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F75C44E81E06731500E60E60 /* DPSlideMenuKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DPSlideMenuKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F75C44EB1E06731500E60E60 /* DPSlideMenuKitFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPSlideMenuKitFramework.h; sourceTree = "<group>"; };
 		F75C44EC1E06731500E60E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F75C44F41E06735000E60E60 /* DPContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPContentViewController.swift; sourceTree = "<group>"; };
-		F75C44F51E06735000E60E60 /* DPDrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPDrawerViewController.swift; sourceTree = "<group>"; };
-		F75C44F61E06735000E60E60 /* DPDropShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPDropShadowView.swift; sourceTree = "<group>"; };
-		F75C44F71E06735000E60E60 /* DPLeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPLeftMenuViewController.swift; sourceTree = "<group>"; };
-		F75C44F81E06735000E60E60 /* DPMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPMenuButton.swift; sourceTree = "<group>"; };
-		F75C44F91E06735000E60E60 /* DPSlideMenuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPSlideMenuModel.swift; sourceTree = "<group>"; };
+		F7FC405E1F174F0D00031F20 /* DPBaseEmbedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPBaseEmbedViewController.swift; sourceTree = "<group>"; };
+		F7FC405F1F174F0D00031F20 /* DPCenterContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPCenterContentViewController.swift; sourceTree = "<group>"; };
+		F7FC40601F174F0D00031F20 /* DPConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPConst.swift; sourceTree = "<group>"; };
+		F7FC40611F174F0D00031F20 /* DPDrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPDrawerViewController.swift; sourceTree = "<group>"; };
+		F7FC40621F174F0D00031F20 /* DPDropShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPDropShadowView.swift; sourceTree = "<group>"; };
+		F7FC40631F174F0D00031F20 /* DPEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPEnum.swift; sourceTree = "<group>"; };
+		F7FC40641F174F0D00031F20 /* DPExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPExtension.swift; sourceTree = "<group>"; };
+		F7FC40651F174F0D00031F20 /* DPLeftContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPLeftContentViewController.swift; sourceTree = "<group>"; };
+		F7FC40661F174F0D00031F20 /* DPLeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPLeftMenuViewController.swift; sourceTree = "<group>"; };
+		F7FC40671F174F0D00031F20 /* DPLeftPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPLeftPageViewController.swift; sourceTree = "<group>"; };
+		F7FC40681F174F0D00031F20 /* DPMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPMenuButton.swift; sourceTree = "<group>"; };
+		F7FC40691F174F0D00031F20 /* DPRightContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPRightContentViewController.swift; sourceTree = "<group>"; };
+		F7FC406A1F174F0D00031F20 /* DPRightMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPRightMenuViewController.swift; sourceTree = "<group>"; };
+		F7FC406B1F174F0D00031F20 /* DPRightPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPRightPageViewController.swift; sourceTree = "<group>"; };
+		F7FC406C1F174F0D00031F20 /* DPSlideMenuManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPSlideMenuManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,22 +76,31 @@
 		F75C44EA1E06731500E60E60 /* DPSlideMenuKitFramework */ = {
 			isa = PBXGroup;
 			children = (
-				F75C44F31E06735000E60E60 /* DPSlideMenuKit */,
+				F7FC405D1F174F0D00031F20 /* DPSlideMenuKit */,
 				F75C44EB1E06731500E60E60 /* DPSlideMenuKitFramework.h */,
 				F75C44EC1E06731500E60E60 /* Info.plist */,
 			);
 			path = DPSlideMenuKitFramework;
 			sourceTree = "<group>";
 		};
-		F75C44F31E06735000E60E60 /* DPSlideMenuKit */ = {
+		F7FC405D1F174F0D00031F20 /* DPSlideMenuKit */ = {
 			isa = PBXGroup;
 			children = (
-				F75C44F41E06735000E60E60 /* DPContentViewController.swift */,
-				F75C44F51E06735000E60E60 /* DPDrawerViewController.swift */,
-				F75C44F61E06735000E60E60 /* DPDropShadowView.swift */,
-				F75C44F71E06735000E60E60 /* DPLeftMenuViewController.swift */,
-				F75C44F81E06735000E60E60 /* DPMenuButton.swift */,
-				F75C44F91E06735000E60E60 /* DPSlideMenuModel.swift */,
+				F7FC405E1F174F0D00031F20 /* DPBaseEmbedViewController.swift */,
+				F7FC405F1F174F0D00031F20 /* DPCenterContentViewController.swift */,
+				F7FC40601F174F0D00031F20 /* DPConst.swift */,
+				F7FC40611F174F0D00031F20 /* DPDrawerViewController.swift */,
+				F7FC40621F174F0D00031F20 /* DPDropShadowView.swift */,
+				F7FC40631F174F0D00031F20 /* DPEnum.swift */,
+				F7FC40641F174F0D00031F20 /* DPExtension.swift */,
+				F7FC40651F174F0D00031F20 /* DPLeftContentViewController.swift */,
+				F7FC40661F174F0D00031F20 /* DPLeftMenuViewController.swift */,
+				F7FC40671F174F0D00031F20 /* DPLeftPageViewController.swift */,
+				F7FC40681F174F0D00031F20 /* DPMenuButton.swift */,
+				F7FC40691F174F0D00031F20 /* DPRightContentViewController.swift */,
+				F7FC406A1F174F0D00031F20 /* DPRightMenuViewController.swift */,
+				F7FC406B1F174F0D00031F20 /* DPRightPageViewController.swift */,
+				F7FC406C1F174F0D00031F20 /* DPSlideMenuManager.swift */,
 			);
 			path = DPSlideMenuKit;
 			sourceTree = SOURCE_ROOT;
@@ -158,12 +185,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F75C44FD1E06735000E60E60 /* DPLeftMenuViewController.swift in Sources */,
-				F75C44FC1E06735000E60E60 /* DPDropShadowView.swift in Sources */,
-				F75C44FE1E06735000E60E60 /* DPMenuButton.swift in Sources */,
-				F75C44FA1E06735000E60E60 /* DPContentViewController.swift in Sources */,
-				F75C44FF1E06735000E60E60 /* DPSlideMenuModel.swift in Sources */,
-				F75C44FB1E06735000E60E60 /* DPDrawerViewController.swift in Sources */,
+				F7FC40761F174F0D00031F20 /* DPLeftPageViewController.swift in Sources */,
+				F7FC40711F174F0D00031F20 /* DPDropShadowView.swift in Sources */,
+				F7FC406D1F174F0D00031F20 /* DPBaseEmbedViewController.swift in Sources */,
+				F7FC40731F174F0D00031F20 /* DPExtension.swift in Sources */,
+				F7FC406F1F174F0D00031F20 /* DPConst.swift in Sources */,
+				F7FC40771F174F0D00031F20 /* DPMenuButton.swift in Sources */,
+				F7FC40791F174F0D00031F20 /* DPRightMenuViewController.swift in Sources */,
+				F7FC40751F174F0D00031F20 /* DPLeftMenuViewController.swift in Sources */,
+				F7FC406E1F174F0D00031F20 /* DPCenterContentViewController.swift in Sources */,
+				F7FC40721F174F0D00031F20 /* DPEnum.swift in Sources */,
+				F7FC40781F174F0D00031F20 /* DPRightContentViewController.swift in Sources */,
+				F7FC40701F174F0D00031F20 /* DPDrawerViewController.swift in Sources */,
+				F7FC407A1F174F0D00031F20 /* DPRightPageViewController.swift in Sources */,
+				F7FC407B1F174F0D00031F20 /* DPSlideMenuManager.swift in Sources */,
+				F7FC40741F174F0D00031F20 /* DPLeftContentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
