@@ -3,7 +3,7 @@ Slide menu kit with left and right pages. Just like Slack!
 
 [![Cocoapods](https://img.shields.io/cocoapods/v/DPSlideMenuKit.svg)](http://cocoapods.org/?q=DPSlideMenuKit)
 [![Pod License](http://img.shields.io/cocoapods/l/DPSlideMenuKit.svg)](https://github.com/HongliYu/DPSlideMenuKit-Swift/blob/master/LICENSE)
-[![Swift-3.1](https://img.shields.io/badge/Swift-3.1-blue.svg)]()
+[![Swift-4.0](https://img.shields.io/badge/Swift-4.0-blue.svg)]()
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 <img src="https://github.com/HongliYu/DPSlideMenuKit-Swift/blob/master/Demo.gif?raw=true" alt="alt text"  height="400">
