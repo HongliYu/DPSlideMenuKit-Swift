@@ -50,7 +50,7 @@ open class DPSlideMenuManager {
   }
   
   public func replaceCenterViewControllerWith(viewController: DPCenterContentViewController,
-                                       position: DPEmbedViewControllerPositionState) {
+                                              position: DPEmbedViewControllerPositionState) {
     if position == .left {
       self.drawer?.leftMenuReplaceCenterViewControllerWithViewController(viewController)
     }

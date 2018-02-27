@@ -28,6 +28,7 @@ class DPChannelListViewController: DPBaseEmbedViewController {
       teamIconImageView.layer.masksToBounds = true
     }
   }
+  @IBOutlet weak var titleContentViewTopConstraints: NSLayoutConstraint!
   
   // MARK: Life Cycle
   required public init?(coder aDecoder: NSCoder) {
@@ -50,6 +51,9 @@ class DPChannelListViewController: DPBaseEmbedViewController {
     self.mainTableView.backgroundColor = UIColor.clear
     self.mainTableView.delegate = self
     self.mainTableView.dataSource = self
+    if UIScreen.current == .iPhone5_8 {
+      titleContentViewTopConstraints.constant = 20
+    }
   }
   
   func basicData() {
@@ -226,7 +230,7 @@ extension DPChannelListViewController: UITableViewDelegate {
     return nil
   }
 
-  func addChannelAction(_ sender: UIButton) {
+  @objc func addChannelAction(_ sender: UIButton) {
     self.addChannelAction?()
   }
 

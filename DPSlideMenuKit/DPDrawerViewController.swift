@@ -137,7 +137,7 @@ public class DPDrawerViewController: UIViewController, UIGestureRecognizerDelega
     }
   }
   
-  func tapGestureRecognized(_ tapGestureRecognizer: UITapGestureRecognizer) {
+  @objc func tapGestureRecognized(_ tapGestureRecognizer: UITapGestureRecognizer) {
     if (tapGestureRecognizer.state == .ended) {
       if self.drawerState == .leftOpen {
         self.leftClose()
@@ -160,7 +160,7 @@ public class DPDrawerViewController: UIViewController, UIGestureRecognizerDelega
     return false
   }
   
-  func panGestureRecognized(_ panGestureRecognizer: UIPanGestureRecognizer) {
+  @objc func panGestureRecognized(_ panGestureRecognizer: UIPanGestureRecognizer) {
     let state: UIGestureRecognizerState = panGestureRecognizer.state
     let location: CGPoint = panGestureRecognizer.location(in: self.view)
     let velocity: CGPoint = panGestureRecognizer.velocity(in: self.view)

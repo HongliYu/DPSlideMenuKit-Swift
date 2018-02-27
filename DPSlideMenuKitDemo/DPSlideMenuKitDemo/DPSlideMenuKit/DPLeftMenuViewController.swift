@@ -86,7 +86,7 @@ public class DPLeftMenuViewController: UIViewController {
     }
   }
   
-  func pageAction(_ sender: UIPageControl) {
+  @objc func pageAction(_ sender: UIPageControl) {
     let pageIndex = sender.currentPage
     self.pageViewController.scrollToViewController(index: pageIndex)
   }

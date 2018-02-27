@@ -28,20 +28,20 @@ class ViewController: UIViewController {
 //    self.view.addSubview(drawer!.view)
 //    DPSlideMenuManager.shared.setDrawer(drawer: drawer)
     
-    let leftMenuViewControllerNameArray: [String] = ["DPTeamViewController",
-                                                     "DPChannelListViewController",
-                                                     "DPMessageListViewController"]
-    let leftMenuViewControllers: [DPBaseEmbedViewController] = UIViewController.generateViewControllersFrom(viewControllerNameArray: leftMenuViewControllerNameArray, storyboardName: "Main", bundle: nil) as! [DPBaseEmbedViewController]
+    let leftMenuViewControllerNameArray = ["DPTeamViewController",
+                                           "DPChannelListViewController",
+                                           "DPMessageListViewController"]
+    let leftMenuViewControllers = UIViewController.generateViewControllersFrom(viewControllerNameArray: leftMenuViewControllerNameArray, storyboardName: "Main", bundle: nil) as! [DPBaseEmbedViewController]
     
     // 2. not from story board, add it manually
 //    let leftMenuViewControllerNameArrayFromCode: [String] = ["DPTestViewController"]
 //    let leftMenuViewControllersFromCode: [DPBaseEmbedViewController] = UIViewController.generateViewControllersFrom(viewControllerNameArray: leftMenuViewControllerNameArrayFromCode, storyboardName: nil, bundle: nil) as! [DPBaseEmbedViewController]
 //    leftMenuViewControllers.append(contentsOf: leftMenuViewControllersFromCode)
     
-    let rightMenuViewControllerNameArray: [String] = ["DPSettingsViewController"]
-    let rightMenuViewControllers: [DPBaseEmbedViewController] = UIViewController.generateViewControllersFrom(viewControllerNameArray: rightMenuViewControllerNameArray, storyboardName: "Main", bundle: nil) as! [DPBaseEmbedViewController]
+    let rightMenuViewControllerNameArray = ["DPSettingsViewController"]
+    let rightMenuViewControllers = UIViewController.generateViewControllersFrom(viewControllerNameArray: rightMenuViewControllerNameArray, storyboardName: "Main", bundle: nil) as! [DPBaseEmbedViewController]
     
-    let homeViewController: DPHomeViewController? = self.storyboard?.instantiateViewController(withIdentifier: "DPHomeViewController") as? DPHomeViewController
+    let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "DPHomeViewController") as! DPHomeViewController
     DPSlideMenuManager.shared.setup(leftContentEmbedViewControllers: leftMenuViewControllers,
                                     rightContentEmbedViewControllers: rightMenuViewControllers,
                                     centerContentViewController: homeViewController)

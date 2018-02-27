@@ -23,7 +23,8 @@ class DPMessageListViewController: DPBaseEmbedViewController {
   }
   
   fileprivate(set) var messageViewModels: [DPMessageViewModel] = []
-
+  @IBOutlet weak var titleContentViewTopConstraints: NSLayoutConstraint!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     self.basicUI()
@@ -53,6 +54,9 @@ class DPMessageListViewController: DPBaseEmbedViewController {
     self.mainTableView.backgroundColor = UIColor.clear
     self.mainTableView.delegate = self
     self.mainTableView.dataSource = self
+    if UIScreen.current == .iPhone5_8 {
+      titleContentViewTopConstraints.constant = 20
+    }
   }
   
   func basicData() {

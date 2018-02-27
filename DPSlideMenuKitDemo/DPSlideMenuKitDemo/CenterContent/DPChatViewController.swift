@@ -14,6 +14,7 @@ class DPChatViewController: DPCenterContentViewController {
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var searchButton: UIButton!
   @IBOutlet weak var moreButton: UIButton!
+    @IBOutlet weak var titleContentViewTopConstraints: NSLayoutConstraint!
   
   override init(nibName nibNameOrNil: String?,
                 bundle nibBundleOrNil: Bundle?) {
@@ -27,6 +28,9 @@ class DPChatViewController: DPCenterContentViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    if UIScreen.current == .iPhone5_8 {
+      titleContentViewTopConstraints.constant = 44
+    }
   }
   
   override func didReceiveMemoryWarning() {

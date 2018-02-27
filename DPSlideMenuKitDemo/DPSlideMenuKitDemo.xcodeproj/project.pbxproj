@@ -24,6 +24,7 @@
 		F766B5EE1F14CC98008F8F40 /* DPSettingsSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F766B5ED1F14CC98008F8F40 /* DPSettingsSectionView.xib */; };
 		F766B5F01F14CCA5008F8F40 /* DPSettingsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766B5EF1F14CCA5008F8F40 /* DPSettingsSectionView.swift */; };
 		F766B6121F162292008F8F40 /* DPTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766B6111F162292008F8F40 /* DPTestViewController.swift */; };
+		F79C1AA620459F3B007A29EC /* ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79C1AA520459F3B007A29EC /* ScreenType.swift */; };
 		F7C0D1561F0C8A43006DC742 /* DPLeftPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0D1551F0C8A43006DC742 /* DPLeftPageViewController.swift */; };
 		F7C0D1581F0C90B6006DC742 /* DPLeftContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0D1571F0C90B6006DC742 /* DPLeftContentViewController.swift */; };
 		F7C0D15A1F0CF04D006DC742 /* DPConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0D1591F0CF04D006DC742 /* DPConst.swift */; };
@@ -76,7 +77,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F72156151DA6A0A90038A5AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pages.storyboard; sourceTree = "<group>"; };
 		F766B5D31F1369D6008F8F40 /* DPChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPChatViewController.swift; sourceTree = "<group>"; };
 		F766B5D61F138408008F8F40 /* DPRightMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPRightMenuViewController.swift; sourceTree = "<group>"; };
 		F766B5D81F13875E008F8F40 /* DPRightContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPRightContentViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +92,8 @@
 		F766B5ED1F14CC98008F8F40 /* DPSettingsSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPSettingsSectionView.xib; sourceTree = "<group>"; };
 		F766B5EF1F14CCA5008F8F40 /* DPSettingsSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPSettingsSectionView.swift; sourceTree = "<group>"; };
 		F766B6111F162292008F8F40 /* DPTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPTestViewController.swift; sourceTree = "<group>"; };
+		F7992DB81F94F7B300965D77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pages.storyboard; sourceTree = "<group>"; };
+		F79C1AA520459F3B007A29EC /* ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenType.swift; sourceTree = "<group>"; };
 		F7C0D1551F0C8A43006DC742 /* DPLeftPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPLeftPageViewController.swift; sourceTree = "<group>"; };
 		F7C0D1571F0C90B6006DC742 /* DPLeftContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPLeftContentViewController.swift; sourceTree = "<group>"; };
 		F7C0D1591F0CF04D006DC742 /* DPConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPConst.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				F766B5DC1F14AC39008F8F40 /* DPBaseEmbedViewController.swift */,
 				F7D0B3F61D63B126008EA646 /* DPDropShadowView.swift */,
 				F7EAB6721D6BE3D700C0C70C /* DPMenuButton.swift */,
+				F79C1AA520459F3B007A29EC /* ScreenType.swift */,
 			);
 			path = DPSlideMenuKit;
 			sourceTree = "<group>";
@@ -313,23 +316,23 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Hongli Yu";
 				TargetAttributes = {
 					F7D0B3AA1D63A0C7008EA646 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = FC9QT6TC28;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 					};
 					F7D0B3BE1D63A0C8008EA646 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 						TestTargetID = F7D0B3AA1D63A0C7008EA646;
 					};
 					F7D0B3C91D63A0C8008EA646 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = FC9QT6TC28;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 						TestTargetID = F7D0B3AA1D63A0C7008EA646;
 					};
 				};
@@ -394,6 +397,7 @@
 				F7C0D15A1F0CF04D006DC742 /* DPConst.swift in Sources */,
 				F7C0D16D1F0CF45A006DC742 /* DPHomeViewController.swift in Sources */,
 				F766B5E51F14BE9C008F8F40 /* DPChannelViewModel.swift in Sources */,
+				F79C1AA620459F3B007A29EC /* ScreenType.swift in Sources */,
 				F7C0D1581F0C90B6006DC742 /* DPLeftContentViewController.swift in Sources */,
 				F766B5DD1F14AC39008F8F40 /* DPBaseEmbedViewController.swift in Sources */,
 				F766B5EA1F14BF3B008F8F40 /* DPSettingsViewController.swift in Sources */,
@@ -455,7 +459,7 @@
 		F72156141DA6A0A90038A5AE /* Pages.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F72156151DA6A0A90038A5AE /* Base */,
+				F7992DB81F94F7B300965D77 /* Base */,
 			);
 			name = Pages.storyboard;
 			sourceTree = "<group>";
@@ -488,14 +492,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -535,14 +545,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -578,7 +594,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.hlyu.DPSlideMenuKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -594,7 +611,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.hlyu.DPSlideMenuKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -607,7 +625,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.hlyu.DPSlideMenuKitDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DPSlideMenuKitDemo.app/DPSlideMenuKitDemo";
 			};
 			name = Debug;
@@ -620,7 +639,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.hlyu.DPSlideMenuKitDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DPSlideMenuKitDemo.app/DPSlideMenuKitDemo";
 			};
 			name = Release;
@@ -633,7 +653,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.hlyu.DPSlideMenuKitDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = DPSlideMenuKitDemo;
 			};
 			name = Debug;
@@ -646,7 +667,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.hlyu.DPSlideMenuKitDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = DPSlideMenuKitDemo;
 			};
 			name = Release;

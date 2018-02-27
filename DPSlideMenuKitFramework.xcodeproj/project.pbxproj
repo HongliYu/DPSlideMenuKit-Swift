@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F75C44ED1E06731500E60E60 /* DPSlideMenuKitFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = F75C44EB1E06731500E60E60 /* DPSlideMenuKitFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F79C1AA82045B021007A29EC /* ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79C1AA72045B021007A29EC /* ScreenType.swift */; };
 		F7FC406D1F174F0D00031F20 /* DPBaseEmbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC405E1F174F0D00031F20 /* DPBaseEmbedViewController.swift */; };
 		F7FC406E1F174F0D00031F20 /* DPCenterContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC405F1F174F0D00031F20 /* DPCenterContentViewController.swift */; };
 		F7FC406F1F174F0D00031F20 /* DPConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FC40601F174F0D00031F20 /* DPConst.swift */; };
@@ -29,6 +30,7 @@
 		F75C44E81E06731500E60E60 /* DPSlideMenuKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DPSlideMenuKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F75C44EB1E06731500E60E60 /* DPSlideMenuKitFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPSlideMenuKitFramework.h; sourceTree = "<group>"; };
 		F75C44EC1E06731500E60E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F79C1AA72045B021007A29EC /* ScreenType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenType.swift; sourceTree = "<group>"; };
 		F7FC405E1F174F0D00031F20 /* DPBaseEmbedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPBaseEmbedViewController.swift; sourceTree = "<group>"; };
 		F7FC405F1F174F0D00031F20 /* DPCenterContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPCenterContentViewController.swift; sourceTree = "<group>"; };
 		F7FC40601F174F0D00031F20 /* DPConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPConst.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				F7FC40681F174F0D00031F20 /* DPMenuButton.swift */,
 				F7FC40691F174F0D00031F20 /* DPRightContentViewController.swift */,
 				F7FC406A1F174F0D00031F20 /* DPRightMenuViewController.swift */,
+				F79C1AA72045B021007A29EC /* ScreenType.swift */,
 				F7FC406B1F174F0D00031F20 /* DPRightPageViewController.swift */,
 			);
 			path = DPSlideMenuKit;
@@ -143,12 +146,13 @@
 		F75C44DF1E06731500E60E60 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Hongli Yu";
 				TargetAttributes = {
 					F75C44E71E06731500E60E60 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = FC9QT6TC28;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -198,6 +202,7 @@
 				F7FC40781F174F0D00031F20 /* DPRightContentViewController.swift in Sources */,
 				F7FC40701F174F0D00031F20 /* DPDrawerViewController.swift in Sources */,
 				F7FC407A1F174F0D00031F20 /* DPRightPageViewController.swift in Sources */,
+				F79C1AA82045B021007A29EC /* ScreenType.swift in Sources */,
 				F7FC407B1F174F0D00031F20 /* DPSlideMenuManager.swift in Sources */,
 				F7FC40741F174F0D00031F20 /* DPLeftContentViewController.swift in Sources */,
 			);
@@ -215,7 +220,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -223,7 +230,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -268,7 +279,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -276,7 +289,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -322,7 +339,8 @@
 				PRODUCT_MODULE_NAME = DPSlideMenuKit;
 				PRODUCT_NAME = DPSlideMenuKit;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -343,7 +361,8 @@
 				PRODUCT_MODULE_NAME = DPSlideMenuKit;
 				PRODUCT_NAME = DPSlideMenuKit;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

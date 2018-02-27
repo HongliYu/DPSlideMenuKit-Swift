@@ -29,7 +29,10 @@ open class DPCenterContentViewController: UIViewController {
   override open func viewDidLoad() {
     super.viewDidLoad()
     self.openDrawerButton.frame = kDPDrawerButtonRect
-    self.openDrawerButton.addTarget(self, action: #selector(self.openDrawer(_:)), for: .touchUpInside)
+    if UIScreen.current == .iPhone5_8 {
+      self.openDrawerButton.frame = kDPDrawerButtonRect_iPhoneX
+    }
+    self.openDrawerButton.addTarget(self, action: #selector(openDrawer(_:)), for: .touchUpInside)
     self.openDrawerButton.lineWidth = 34.0
     self.openDrawerButton.lineMargin = 12
     self.openDrawerButton.lineCapRound = true
@@ -67,7 +70,7 @@ open class DPCenterContentViewController: UIViewController {
   }
   
   // MARK: Actions
-  func openDrawer(_ sender: DPMenuButton) {
+  @objc func openDrawer(_ sender: DPMenuButton) {
     if DPSlideMenuManager.shared.drawer?.drawerState == .leftOpen {
       DPSlideMenuManager.shared.drawer?.leftClose()
       sender.isSelected = false
