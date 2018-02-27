@@ -28,6 +28,8 @@ open class DPCenterContentViewController: UIViewController {
   
   override open func viewDidLoad() {
     super.viewDidLoad()
+    if DPSlideMenuManager.shared.leftMenuViewController == nil { return }
+    
     self.openDrawerButton.frame = kDPDrawerButtonRect
     if UIScreen.current == .iPhone5_8 {
       self.openDrawerButton.frame = kDPDrawerButtonRect_iPhoneX
