@@ -7,46 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F71FAF1721CB4FF300A57E76 /* DPRightContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF0321CB4FF300A57E76 /* DPRightContentViewController.swift */; };
-		F71FAF1821CB4FF300A57E76 /* DPRightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF0421CB4FF300A57E76 /* DPRightMenuViewController.swift */; };
-		F71FAF1921CB4FF300A57E76 /* DPRightPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF0521CB4FF300A57E76 /* DPRightPageViewController.swift */; };
-		F71FAF1A21CB4FF300A57E76 /* DPMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF0621CB4FF300A57E76 /* DPMenuButton.swift */; };
-		F71FAF1B21CB4FF300A57E76 /* DPDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF0721CB4FF300A57E76 /* DPDrawerViewController.swift */; };
-		F71FAF1C21CB4FF300A57E76 /* DPDropShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF0821CB4FF300A57E76 /* DPDropShadowView.swift */; };
-		F71FAF1D21CB4FF300A57E76 /* DPLeftPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF0A21CB4FF300A57E76 /* DPLeftPageViewController.swift */; };
-		F71FAF1E21CB4FF300A57E76 /* DPLeftContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF0B21CB4FF300A57E76 /* DPLeftContentViewController.swift */; };
-		F71FAF1F21CB4FF300A57E76 /* DPLeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF0C21CB4FF300A57E76 /* DPLeftMenuViewController.swift */; };
-		F71FAF2021CB4FF300A57E76 /* DPCenterContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF0D21CB4FF300A57E76 /* DPCenterContentViewController.swift */; };
-		F71FAF2121CB4FF300A57E76 /* DPConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF0E21CB4FF300A57E76 /* DPConst.swift */; };
-		F71FAF2221CB4FF300A57E76 /* DPExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF0F21CB4FF300A57E76 /* DPExtension.swift */; };
-		F71FAF2321CB4FF300A57E76 /* DPSlideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF1021CB4FF300A57E76 /* DPSlideMenuManager.swift */; };
-		F71FAF2421CB4FF300A57E76 /* ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF1121CB4FF300A57E76 /* ScreenType.swift */; };
-		F71FAF2521CB4FF300A57E76 /* DPEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF1221CB4FF300A57E76 /* DPEnum.swift */; };
-		F71FAF2621CB4FF300A57E76 /* DPBaseEmbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF1421CB4FF300A57E76 /* DPBaseEmbedViewController.swift */; };
-		F71FAF2721CB4FF300A57E76 /* DPBaseContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF1521CB4FF300A57E76 /* DPBaseContentViewController.swift */; };
-		F71FAF2821CB4FF300A57E76 /* DPBaseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF1621CB4FF300A57E76 /* DPBaseMenuViewController.swift */; };
+		F71FAF6721CB967500A57E76 /* DPRightContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF5321CB967400A57E76 /* DPRightContentViewController.swift */; };
+		F71FAF6821CB967500A57E76 /* DPRightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF5421CB967400A57E76 /* DPRightMenuViewController.swift */; };
+		F71FAF6921CB967500A57E76 /* DPRightPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF5521CB967400A57E76 /* DPRightPageViewController.swift */; };
+		F71FAF6A21CB967500A57E76 /* DPMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF5621CB967400A57E76 /* DPMenuButton.swift */; };
+		F71FAF6B21CB967500A57E76 /* DPDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF5721CB967400A57E76 /* DPDrawerViewController.swift */; };
+		F71FAF6C21CB967500A57E76 /* DPDropShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF5821CB967400A57E76 /* DPDropShadowView.swift */; };
+		F71FAF6D21CB967500A57E76 /* DPLeftPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF5A21CB967400A57E76 /* DPLeftPageViewController.swift */; };
+		F71FAF6E21CB967500A57E76 /* DPLeftContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF5B21CB967400A57E76 /* DPLeftContentViewController.swift */; };
+		F71FAF6F21CB967500A57E76 /* DPLeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF5C21CB967400A57E76 /* DPLeftMenuViewController.swift */; };
+		F71FAF7021CB967500A57E76 /* DPCenterContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF5D21CB967400A57E76 /* DPCenterContentViewController.swift */; };
+		F71FAF7121CB967500A57E76 /* DPConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF5E21CB967400A57E76 /* DPConst.swift */; };
+		F71FAF7221CB967500A57E76 /* DPExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF5F21CB967400A57E76 /* DPExtension.swift */; };
+		F71FAF7321CB967500A57E76 /* DPSlideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF6021CB967400A57E76 /* DPSlideMenuManager.swift */; };
+		F71FAF7421CB967500A57E76 /* ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF6121CB967400A57E76 /* ScreenType.swift */; };
+		F71FAF7521CB967500A57E76 /* DPEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF6221CB967400A57E76 /* DPEnum.swift */; };
+		F71FAF7621CB967500A57E76 /* DPBaseEmbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF6421CB967400A57E76 /* DPBaseEmbedViewController.swift */; };
+		F71FAF7721CB967500A57E76 /* DPBaseContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF6521CB967400A57E76 /* DPBaseContentViewController.swift */; };
+		F71FAF7821CB967500A57E76 /* DPBaseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAF6621CB967400A57E76 /* DPBaseMenuViewController.swift */; };
 		F75C44ED1E06731500E60E60 /* DPSlideMenuKitFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = F75C44EB1E06731500E60E60 /* DPSlideMenuKitFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F71FAF0321CB4FF300A57E76 /* DPRightContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPRightContentViewController.swift; sourceTree = "<group>"; };
-		F71FAF0421CB4FF300A57E76 /* DPRightMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPRightMenuViewController.swift; sourceTree = "<group>"; };
-		F71FAF0521CB4FF300A57E76 /* DPRightPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPRightPageViewController.swift; sourceTree = "<group>"; };
-		F71FAF0621CB4FF300A57E76 /* DPMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPMenuButton.swift; sourceTree = "<group>"; };
-		F71FAF0721CB4FF300A57E76 /* DPDrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPDrawerViewController.swift; sourceTree = "<group>"; };
-		F71FAF0821CB4FF300A57E76 /* DPDropShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPDropShadowView.swift; sourceTree = "<group>"; };
-		F71FAF0A21CB4FF300A57E76 /* DPLeftPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPLeftPageViewController.swift; sourceTree = "<group>"; };
-		F71FAF0B21CB4FF300A57E76 /* DPLeftContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPLeftContentViewController.swift; sourceTree = "<group>"; };
-		F71FAF0C21CB4FF300A57E76 /* DPLeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPLeftMenuViewController.swift; sourceTree = "<group>"; };
-		F71FAF0D21CB4FF300A57E76 /* DPCenterContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPCenterContentViewController.swift; sourceTree = "<group>"; };
-		F71FAF0E21CB4FF300A57E76 /* DPConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPConst.swift; sourceTree = "<group>"; };
-		F71FAF0F21CB4FF300A57E76 /* DPExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPExtension.swift; sourceTree = "<group>"; };
-		F71FAF1021CB4FF300A57E76 /* DPSlideMenuManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPSlideMenuManager.swift; sourceTree = "<group>"; };
-		F71FAF1121CB4FF300A57E76 /* ScreenType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenType.swift; sourceTree = "<group>"; };
-		F71FAF1221CB4FF300A57E76 /* DPEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPEnum.swift; sourceTree = "<group>"; };
-		F71FAF1421CB4FF300A57E76 /* DPBaseEmbedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPBaseEmbedViewController.swift; sourceTree = "<group>"; };
-		F71FAF1521CB4FF300A57E76 /* DPBaseContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPBaseContentViewController.swift; sourceTree = "<group>"; };
-		F71FAF1621CB4FF300A57E76 /* DPBaseMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPBaseMenuViewController.swift; sourceTree = "<group>"; };
+		F71FAF5321CB967400A57E76 /* DPRightContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPRightContentViewController.swift; sourceTree = "<group>"; };
+		F71FAF5421CB967400A57E76 /* DPRightMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPRightMenuViewController.swift; sourceTree = "<group>"; };
+		F71FAF5521CB967400A57E76 /* DPRightPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPRightPageViewController.swift; sourceTree = "<group>"; };
+		F71FAF5621CB967400A57E76 /* DPMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPMenuButton.swift; sourceTree = "<group>"; };
+		F71FAF5721CB967400A57E76 /* DPDrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPDrawerViewController.swift; sourceTree = "<group>"; };
+		F71FAF5821CB967400A57E76 /* DPDropShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPDropShadowView.swift; sourceTree = "<group>"; };
+		F71FAF5A21CB967400A57E76 /* DPLeftPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPLeftPageViewController.swift; sourceTree = "<group>"; };
+		F71FAF5B21CB967400A57E76 /* DPLeftContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPLeftContentViewController.swift; sourceTree = "<group>"; };
+		F71FAF5C21CB967400A57E76 /* DPLeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPLeftMenuViewController.swift; sourceTree = "<group>"; };
+		F71FAF5D21CB967400A57E76 /* DPCenterContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPCenterContentViewController.swift; sourceTree = "<group>"; };
+		F71FAF5E21CB967400A57E76 /* DPConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPConst.swift; sourceTree = "<group>"; };
+		F71FAF5F21CB967400A57E76 /* DPExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPExtension.swift; sourceTree = "<group>"; };
+		F71FAF6021CB967400A57E76 /* DPSlideMenuManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPSlideMenuManager.swift; sourceTree = "<group>"; };
+		F71FAF6121CB967400A57E76 /* ScreenType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenType.swift; sourceTree = "<group>"; };
+		F71FAF6221CB967400A57E76 /* DPEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPEnum.swift; sourceTree = "<group>"; };
+		F71FAF6421CB967400A57E76 /* DPBaseEmbedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPBaseEmbedViewController.swift; sourceTree = "<group>"; };
+		F71FAF6521CB967400A57E76 /* DPBaseContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPBaseContentViewController.swift; sourceTree = "<group>"; };
+		F71FAF6621CB967400A57E76 /* DPBaseMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPBaseMenuViewController.swift; sourceTree = "<group>"; };
 		F75C44E81E06731500E60E60 /* DPSlideMenuKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DPSlideMenuKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F75C44EB1E06731500E60E60 /* DPSlideMenuKitFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPSlideMenuKitFramework.h; sourceTree = "<group>"; };
 		F75C44EC1E06731500E60E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,52 +63,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F71FAF0121CB4FF300A57E76 /* DPSlideMenuKit */ = {
+		F71FAF5121CB967400A57E76 /* DPSlideMenuKit */ = {
 			isa = PBXGroup;
 			children = (
-				F71FAF1321CB4FF300A57E76 /* Base */,
-				F71FAF0921CB4FF300A57E76 /* Left */,
-				F71FAF0221CB4FF300A57E76 /* Right */,
-				F71FAF1021CB4FF300A57E76 /* DPSlideMenuManager.swift */,
-				F71FAF0D21CB4FF300A57E76 /* DPCenterContentViewController.swift */,
-				F71FAF0721CB4FF300A57E76 /* DPDrawerViewController.swift */,
-				F71FAF0821CB4FF300A57E76 /* DPDropShadowView.swift */,
-				F71FAF0621CB4FF300A57E76 /* DPMenuButton.swift */,
-				F71FAF0E21CB4FF300A57E76 /* DPConst.swift */,
-				F71FAF1221CB4FF300A57E76 /* DPEnum.swift */,
-				F71FAF0F21CB4FF300A57E76 /* DPExtension.swift */,
-				F71FAF1121CB4FF300A57E76 /* ScreenType.swift */,
+				F71FAF5221CB967400A57E76 /* Right */,
+				F71FAF5621CB967400A57E76 /* DPMenuButton.swift */,
+				F71FAF5721CB967400A57E76 /* DPDrawerViewController.swift */,
+				F71FAF5821CB967400A57E76 /* DPDropShadowView.swift */,
+				F71FAF5921CB967400A57E76 /* Left */,
+				F71FAF5D21CB967400A57E76 /* DPCenterContentViewController.swift */,
+				F71FAF5E21CB967400A57E76 /* DPConst.swift */,
+				F71FAF5F21CB967400A57E76 /* DPExtension.swift */,
+				F71FAF6021CB967400A57E76 /* DPSlideMenuManager.swift */,
+				F71FAF6121CB967400A57E76 /* ScreenType.swift */,
+				F71FAF6221CB967400A57E76 /* DPEnum.swift */,
+				F71FAF6321CB967400A57E76 /* Base */,
 			);
-			name = DPSlideMenuKit;
-			path = DPSlideMenuKitDemo/DPSlideMenuKitDemo/DPSlideMenuKit;
+			path = DPSlideMenuKit;
 			sourceTree = SOURCE_ROOT;
 		};
-		F71FAF0221CB4FF300A57E76 /* Right */ = {
+		F71FAF5221CB967400A57E76 /* Right */ = {
 			isa = PBXGroup;
 			children = (
-				F71FAF0321CB4FF300A57E76 /* DPRightContentViewController.swift */,
-				F71FAF0421CB4FF300A57E76 /* DPRightMenuViewController.swift */,
-				F71FAF0521CB4FF300A57E76 /* DPRightPageViewController.swift */,
+				F71FAF5321CB967400A57E76 /* DPRightContentViewController.swift */,
+				F71FAF5421CB967400A57E76 /* DPRightMenuViewController.swift */,
+				F71FAF5521CB967400A57E76 /* DPRightPageViewController.swift */,
 			);
 			path = Right;
 			sourceTree = "<group>";
 		};
-		F71FAF0921CB4FF300A57E76 /* Left */ = {
+		F71FAF5921CB967400A57E76 /* Left */ = {
 			isa = PBXGroup;
 			children = (
-				F71FAF0A21CB4FF300A57E76 /* DPLeftPageViewController.swift */,
-				F71FAF0B21CB4FF300A57E76 /* DPLeftContentViewController.swift */,
-				F71FAF0C21CB4FF300A57E76 /* DPLeftMenuViewController.swift */,
+				F71FAF5A21CB967400A57E76 /* DPLeftPageViewController.swift */,
+				F71FAF5B21CB967400A57E76 /* DPLeftContentViewController.swift */,
+				F71FAF5C21CB967400A57E76 /* DPLeftMenuViewController.swift */,
 			);
 			path = Left;
 			sourceTree = "<group>";
 		};
-		F71FAF1321CB4FF300A57E76 /* Base */ = {
+		F71FAF6321CB967400A57E76 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				F71FAF1421CB4FF300A57E76 /* DPBaseEmbedViewController.swift */,
-				F71FAF1521CB4FF300A57E76 /* DPBaseContentViewController.swift */,
-				F71FAF1621CB4FF300A57E76 /* DPBaseMenuViewController.swift */,
+				F71FAF6421CB967400A57E76 /* DPBaseEmbedViewController.swift */,
+				F71FAF6521CB967400A57E76 /* DPBaseContentViewController.swift */,
+				F71FAF6621CB967400A57E76 /* DPBaseMenuViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -132,7 +131,7 @@
 		F75C44EA1E06731500E60E60 /* DPSlideMenuKitFramework */ = {
 			isa = PBXGroup;
 			children = (
-				F71FAF0121CB4FF300A57E76 /* DPSlideMenuKit */,
+				F71FAF5121CB967400A57E76 /* DPSlideMenuKit */,
 				F75C44EB1E06731500E60E60 /* DPSlideMenuKitFramework.h */,
 				F75C44EC1E06731500E60E60 /* Info.plist */,
 			);
@@ -220,24 +219,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F71FAF1821CB4FF300A57E76 /* DPRightMenuViewController.swift in Sources */,
-				F71FAF1921CB4FF300A57E76 /* DPRightPageViewController.swift in Sources */,
-				F71FAF1B21CB4FF300A57E76 /* DPDrawerViewController.swift in Sources */,
-				F71FAF1C21CB4FF300A57E76 /* DPDropShadowView.swift in Sources */,
-				F71FAF1F21CB4FF300A57E76 /* DPLeftMenuViewController.swift in Sources */,
-				F71FAF2621CB4FF300A57E76 /* DPBaseEmbedViewController.swift in Sources */,
-				F71FAF1D21CB4FF300A57E76 /* DPLeftPageViewController.swift in Sources */,
-				F71FAF2321CB4FF300A57E76 /* DPSlideMenuManager.swift in Sources */,
-				F71FAF2821CB4FF300A57E76 /* DPBaseMenuViewController.swift in Sources */,
-				F71FAF1A21CB4FF300A57E76 /* DPMenuButton.swift in Sources */,
-				F71FAF2721CB4FF300A57E76 /* DPBaseContentViewController.swift in Sources */,
-				F71FAF2021CB4FF300A57E76 /* DPCenterContentViewController.swift in Sources */,
-				F71FAF1721CB4FF300A57E76 /* DPRightContentViewController.swift in Sources */,
-				F71FAF2521CB4FF300A57E76 /* DPEnum.swift in Sources */,
-				F71FAF2221CB4FF300A57E76 /* DPExtension.swift in Sources */,
-				F71FAF1E21CB4FF300A57E76 /* DPLeftContentViewController.swift in Sources */,
-				F71FAF2121CB4FF300A57E76 /* DPConst.swift in Sources */,
-				F71FAF2421CB4FF300A57E76 /* ScreenType.swift in Sources */,
+				F71FAF6821CB967500A57E76 /* DPRightMenuViewController.swift in Sources */,
+				F71FAF6921CB967500A57E76 /* DPRightPageViewController.swift in Sources */,
+				F71FAF6B21CB967500A57E76 /* DPDrawerViewController.swift in Sources */,
+				F71FAF6C21CB967500A57E76 /* DPDropShadowView.swift in Sources */,
+				F71FAF6F21CB967500A57E76 /* DPLeftMenuViewController.swift in Sources */,
+				F71FAF7621CB967500A57E76 /* DPBaseEmbedViewController.swift in Sources */,
+				F71FAF6D21CB967500A57E76 /* DPLeftPageViewController.swift in Sources */,
+				F71FAF7321CB967500A57E76 /* DPSlideMenuManager.swift in Sources */,
+				F71FAF7821CB967500A57E76 /* DPBaseMenuViewController.swift in Sources */,
+				F71FAF6A21CB967500A57E76 /* DPMenuButton.swift in Sources */,
+				F71FAF7721CB967500A57E76 /* DPBaseContentViewController.swift in Sources */,
+				F71FAF7021CB967500A57E76 /* DPCenterContentViewController.swift in Sources */,
+				F71FAF6721CB967500A57E76 /* DPRightContentViewController.swift in Sources */,
+				F71FAF7521CB967500A57E76 /* DPEnum.swift in Sources */,
+				F71FAF7221CB967500A57E76 /* DPExtension.swift in Sources */,
+				F71FAF6E21CB967500A57E76 /* DPLeftContentViewController.swift in Sources */,
+				F71FAF7121CB967500A57E76 /* DPConst.swift in Sources */,
+				F71FAF7421CB967500A57E76 /* ScreenType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
