@@ -14,32 +14,22 @@ class DPChatViewController: DPCenterContentViewController {
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var searchButton: UIButton!
   @IBOutlet weak var moreButton: UIButton!
-    @IBOutlet weak var titleContentViewTopConstraints: NSLayoutConstraint!
-  
-  override init(nibName nibNameOrNil: String?,
-                bundle nibBundleOrNil: Bundle?) {
-    super.init(nibName: nibNameOrNil,
-               bundle: nibBundleOrNil)
-  }
-  
-  required internal init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-  }
+  @IBOutlet weak var titleContentViewTopConstraints: NSLayoutConstraint!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    if UIScreen.current == .iPhone5_8 {
+    if UIScreen().iPhoneBangsScreen {
       titleContentViewTopConstraints.constant = 44
     }
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-  }
-
   func bindData(title: String, message: String) {
-    self.titleLabel.text = title
-    self.messageLabel.text = message
+    titleLabel.text = title
+    messageLabel.text = message
   }
   
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
+  }
+
 }

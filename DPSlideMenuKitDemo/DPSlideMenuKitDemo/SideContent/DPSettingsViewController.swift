@@ -14,100 +14,101 @@ let kDPSettingsDefaultSectionHeight: CGFloat = 20
 class DPSettingsViewController: DPBaseEmbedViewController {
 
   @IBOutlet weak var mainTableView: UITableView!
-  fileprivate(set) var settingsViewModels: [DPSettingsViewModel] = []
-
-  // MARK: Life Cycle
-  required public init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-  }
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-  }
+  private(set) var settingsViewModels: [DPSettingsViewModel] = []
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.basicUI()
-    self.basicData()
+    basicUI()
+    basicData()
   }
-  
-  override var preferredStatusBarStyle : UIStatusBarStyle {
-    return .lightContent
-  }
-
-  override func didReceiveMemoryWarning() {
-      super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
-  }
-  
+    
   func basicUI() {
-    self.mainTableView.register(UITableViewCell.self, forCellReuseIdentifier: kDPSettingsListCellReuseID)
-    self.mainTableView.separatorStyle = .none
-    self.mainTableView.backgroundColor = UIColor.clear
-    self.mainTableView.delegate = self
-    self.mainTableView.dataSource = self
+    mainTableView.register(UITableViewCell.self, forCellReuseIdentifier: kDPSettingsListCellReuseID)
+    mainTableView.separatorStyle = .none
+    mainTableView.backgroundColor = UIColor.clear
+    mainTableView.delegate = self
+    mainTableView.dataSource = self
   }
   
   func basicData() {
-    
-    // TODO: section number enumeration, better
-    // section 0
     let settingsCellViewModel0 = DPSettingsCellViewModel(color: UIColor.random(),
-                                                       title: "Set a Status",
-                                                       cellHeight: kDefaultCellHeight) {
-                                                        self.alert("Set a Status")
+                                                         title: "Set a Status",
+                                                         cellHeight: kDefaultCellHeight) {
+      [weak self] in
+      guard let strongSelf = self else { return }
+      strongSelf.alert("Set a Status")
     }
     let settingsCellViewModel1 = DPSettingsCellViewModel(color: UIColor.random(),
-                                                       title: "Snooze Notification",
-                                                       cellHeight: kDefaultCellHeight) {
-                                                        self.alert("Snooze Notification")
+                                                         title: "Snooze Notification",
+                                                         cellHeight: kDefaultCellHeight) {
+      [weak self] in
+      guard let strongSelf = self else { return }
+      strongSelf.alert("Snooze Notification")
     }
     
-    let settingsSectionViewModel = DPSettingsSectionViewModel(title: nil, height: kDefaultSectionHeight, actionBlock: nil)
-    let settingsViewModel0: DPSettingsViewModel = DPSettingsViewModel(settingsCellViewModels: [settingsCellViewModel0, settingsCellViewModel1],
-                                                                      settingsSectionViewModel: settingsSectionViewModel)
-    self.settingsViewModels.append(settingsViewModel0)
-    
+    let settingsSectionViewModel = DPSettingsSectionViewModel(title: nil,
+                                                              height: kDefaultSectionHeight,
+                                                              actionBlock: nil)
+    let settingsViewModel0: DPSettingsViewModel =
+      DPSettingsViewModel(settingsCellViewModels: [settingsCellViewModel0, settingsCellViewModel1],
+                          settingsSectionViewModel: settingsSectionViewModel)
+    settingsViewModels.append(settingsViewModel0)
     
     let settingsCellViewModel2 = DPSettingsCellViewModel(color: UIColor.random(),
                                                          title: "Activity",
                                                          cellHeight: kDefaultCellHeight) {
-                                                          self.alert("Activity")
+      [weak self] in
+      guard let strongSelf = self else { return }
+      strongSelf.alert("Activity")
     }
     let settingsCellViewModel3 = DPSettingsCellViewModel(color: UIColor.random(),
                                                          title: "Started Items",
                                                          cellHeight: kDefaultCellHeight) {
-                                                          self.alert("Started Items")
+      [weak self] in
+      guard let strongSelf = self else { return }
+      strongSelf.alert("Started Items")
     }
     let settingsCellViewModel4 = DPSettingsCellViewModel(color: UIColor.random(),
                                                          title: "Your Files",
                                                          cellHeight: kDefaultCellHeight) {
-                                                          self.alert("Your Files")
+      [weak self] in
+      guard let strongSelf = self else { return }
+      strongSelf.alert("Your Files")
     }
     let settingsCellViewModel5 = DPSettingsCellViewModel(color: UIColor.random(),
                                                          title: "Directory",
                                                          cellHeight: kDefaultCellHeight) {
-                                                          self.alert("Directory")
+      [weak self] in
+      guard let strongSelf = self else { return }
+      strongSelf.alert("Directory")
     }
 
-    let settingsViewModel1: DPSettingsViewModel = DPSettingsViewModel(settingsCellViewModels:
-      [settingsCellViewModel2, settingsCellViewModel3, settingsCellViewModel4, settingsCellViewModel5],
-                                                                      settingsSectionViewModel: settingsSectionViewModel)
-    self.settingsViewModels.append(settingsViewModel1)
+    let settingsViewModel1: DPSettingsViewModel =
+      DPSettingsViewModel(settingsCellViewModels: [settingsCellViewModel2,
+                                                   settingsCellViewModel3,
+                                                   settingsCellViewModel4,
+                                                   settingsCellViewModel5],
+                          settingsSectionViewModel: settingsSectionViewModel)
+    settingsViewModels.append(settingsViewModel1)
     
     let settingsCellViewModel6 = DPSettingsCellViewModel(color: UIColor.random(),
                                                          title: "Edit Profile",
                                                          cellHeight: kDefaultCellHeight) {
-                                                          self.alert("Edit Profile")
+      [weak self] in
+      guard let strongSelf = self else { return }
+      strongSelf.alert("Edit Profile")
     }
     let settingsCellViewModel7 = DPSettingsCellViewModel(color: UIColor.random(),
                                                          title: "Settings",
                                                          cellHeight: kDefaultCellHeight) {
-                                                          self.alert("Settings")
+      [weak self] in
+      guard let strongSelf = self else { return }
+      strongSelf.alert("Settings")
     }
-    let settingsViewModel2: DPSettingsViewModel = DPSettingsViewModel(settingsCellViewModels: [settingsCellViewModel6, settingsCellViewModel7],
-                                                                      settingsSectionViewModel: settingsSectionViewModel)
-    self.settingsViewModels.append(settingsViewModel2)
+    let settingsViewModel2: DPSettingsViewModel =
+      DPSettingsViewModel(settingsCellViewModels: [settingsCellViewModel6, settingsCellViewModel7],
+                          settingsSectionViewModel: settingsSectionViewModel)
+    settingsViewModels.append(settingsViewModel2)
   }
   
 }
@@ -115,36 +116,28 @@ class DPSettingsViewController: DPBaseEmbedViewController {
 extension DPSettingsViewController: UITableViewDataSource {
   
   func numberOfSections(in tableView: UITableView) -> Int {
-    return self.settingsViewModels.count
+    return settingsViewModels.count
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    for (index, settingsViewModel) in self.settingsViewModels.enumerated() {
+    for (index, settingsViewModel) in settingsViewModels.enumerated() {
       if section == index {
-        if let count = settingsViewModel.settingsCellViewModels?.count {
-          return count
-        } else {
-          return 0
-        }
+        return settingsViewModel.settingsCellViewModels?.count ?? 0
       }
     }
     return 0
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell: UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: kDPSettingsListCellReuseID, for: indexPath)
-    let settingsViewModel: DPSettingsViewModel? = self.settingsViewModels[indexPath.section]
+    let cell = tableView.dequeueReusableCell(withIdentifier: kDPSettingsListCellReuseID,
+                                             for: indexPath)
+    let settingsViewModel: DPSettingsViewModel? = settingsViewModels[indexPath.section]
     let settingsCellViewModel: DPSettingsCellViewModel? = settingsViewModel?.settingsCellViewModels?[indexPath.row]
-    
-    cell?.textLabel?.text = settingsCellViewModel?.title?.localized
-    cell?.textLabel?.textColor = UIColor.white
-    cell?.textLabel?.font = UIFont.boldSystemFont(ofSize: 20.0)
-    cell?.backgroundColor = settingsCellViewModel?.color
-    
-    if cell == nil {
-      return UITableViewCell()
-    }
-    return cell!
+    cell.textLabel?.text = settingsCellViewModel?.title?.localized
+    cell.textLabel?.textColor = UIColor.white
+    cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20.0)
+    cell.backgroundColor = settingsCellViewModel?.color
+    return cell
   }
 
 }
@@ -152,10 +145,7 @@ extension DPSettingsViewController: UITableViewDataSource {
 extension DPSettingsViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    if section == 0 {
-      return 100
-    }
-    return kDPSettingsDefaultSectionHeight
+    return section == 0 ? 100 : kDPSettingsDefaultSectionHeight
   }
   
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -176,18 +166,14 @@ extension DPSettingsViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView,
                  heightForRowAt indexPath: IndexPath) -> CGFloat {
-    let settingsViewModel: DPSettingsViewModel? = self.settingsViewModels[indexPath.section]
+    let settingsViewModel: DPSettingsViewModel? = settingsViewModels[indexPath.section]
     let settingsCellViewModel: DPSettingsCellViewModel? = settingsViewModel?.settingsCellViewModels?[indexPath.row]
-    
-    if settingsCellViewModel?.cellHeight != nil {
-      return settingsCellViewModel!.cellHeight!
-    }
-    return kDefaultCellHeight
+    return settingsCellViewModel?.cellHeight ?? kDefaultCellHeight
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-    let settingsViewModel: DPSettingsViewModel? = self.settingsViewModels[indexPath.section]
+    let settingsViewModel: DPSettingsViewModel? = settingsViewModels[indexPath.section]
     let settingsCellViewModel: DPSettingsCellViewModel? = settingsViewModel?.settingsCellViewModels?[indexPath.row]
     settingsCellViewModel?.actionBlock?()
   }

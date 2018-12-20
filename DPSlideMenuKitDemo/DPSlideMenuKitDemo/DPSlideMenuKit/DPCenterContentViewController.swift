@@ -15,36 +15,28 @@ open class DPCenterContentViewController: UIViewController {
   var drawerControllerWillClose:((_ drawerButtonAnimated: Bool)->Void)?
   var drawerControllerDidClose:((_ drawerButtonAnimated: Bool)->Void)?
   
-  fileprivate var openDrawerButton: DPMenuButton = DPMenuButton(type:.custom)
-  
-  // MARK: Life Cycle
-  override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-  }
-  
-  required public init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)!
-  }
+  private var openDrawerButton: DPMenuButton = DPMenuButton(type:.custom)
   
   override open func viewDidLoad() {
     super.viewDidLoad()
-    if DPSlideMenuManager.shared.leftMenuViewController == nil { return }
     
-    self.openDrawerButton.frame = kDPDrawerButtonRect
-    if UIScreen.current == .iPhone5_8 {
-      self.openDrawerButton.frame = kDPDrawerButtonRect_iPhoneX
+    guard DPSlideMenuManager.shared.leftMenuViewController != nil else { return }
+
+    openDrawerButton.frame = kDPDrawerButtonRect
+    if UIScreen().iPhoneBangsScreen {
+      openDrawerButton.frame = kDPDrawerButtonRect_Bangs
     }
-    self.openDrawerButton.addTarget(self, action: #selector(openDrawer(_:)), for: .touchUpInside)
-    self.openDrawerButton.lineWidth = 34.0
-    self.openDrawerButton.lineMargin = 12
-    self.openDrawerButton.lineCapRound = true
-    self.openDrawerButton.thickness = 6
-    self.openDrawerButton.slideLeftToRight = false
-    self.openDrawerButton.backgroundColor = UIColor.clear
-    self.openDrawerButton.cornerRadius = 0
-    self.view.addSubview(self.openDrawerButton)
+    openDrawerButton.addTarget(self, action: #selector(openDrawer(_:)), for: .touchUpInside)
+    openDrawerButton.lineWidth = 34.0
+    openDrawerButton.lineMargin = 12
+    openDrawerButton.lineCapRound = true
+    openDrawerButton.thickness = 6
+    openDrawerButton.slideLeftToRight = false
+    openDrawerButton.backgroundColor = UIColor.clear
+    openDrawerButton.cornerRadius = 0
+    view.addSubview(openDrawerButton)
     
-    self.drawerControllerWillOpen = {
+    drawerControllerWillOpen = {
       [weak self] drawerButtonAnimated in
       guard let strongSelf = self else { return }
       strongSelf.view.isUserInteractionEnabled = false
@@ -53,9 +45,9 @@ open class DPCenterContentViewController: UIViewController {
       }
     }
     
-    self.drawerControllerDidOpen = nil
+    drawerControllerDidOpen = nil
     
-    self.drawerControllerWillClose = {
+    drawerControllerWillClose = {
       [weak self] drawerButtonAnimated in
       guard let strongSelf = self else { return }
       if drawerButtonAnimated {
@@ -63,7 +55,7 @@ open class DPCenterContentViewController: UIViewController {
       }
     }
     
-    self.drawerControllerDidClose = {
+    drawerControllerDidClose = {
       [weak self] drawerButtonAnimated in
       guard let strongSelf = self else { return }
       strongSelf.view.isUserInteractionEnabled = true
@@ -71,7 +63,6 @@ open class DPCenterContentViewController: UIViewController {
 
   }
   
-  // MARK: Actions
   @objc func openDrawer(_ sender: DPMenuButton) {
     if DPSlideMenuManager.shared.drawer?.drawerState == .leftOpen {
       DPSlideMenuManager.shared.drawer?.leftClose()

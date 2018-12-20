@@ -132,15 +132,15 @@ public class DPMenuButton: UIButton {
       sideAnim.duration = animateDuration - 0.1
       sideAnim.beginTime = CACurrentMediaTime() + 0.1
       sideAnim.toValue = slideLeftToRight ? 0.6 : 0.4
-      sideAnim.fillMode = kCAFillModeBackwards
+      sideAnim.fillMode = .backwards
       sideLayer.applyAnimation(sideAnim)
       
       for (idx, layer) in [topLayer, midLayer, bottomLayer].enumerated() {
         let anim = CABasicAnimation(keyPath: slideLeftToRight ? "strokeEnd" : "strokeStart")
         anim.toValue = slideLeftToRight ? 0.3 : 0.7
         anim.duration = animateDuration
-        anim.fillMode = kCAFillModeBackwards
-        anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        anim.fillMode = .backwards
+        anim.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         anim.beginTime = CACurrentMediaTime() + Double(idx) * animateDelay
         layer.applyAnimation(anim)
       }
@@ -149,15 +149,15 @@ public class DPMenuButton: UIButton {
       sideAnim.duration = animateDuration - 0.1
       sideAnim.beginTime = CACurrentMediaTime() + 0.1
       sideAnim.toValue = slideLeftToRight ? 0.0 : 1.0
-      sideAnim.fillMode = kCAFillModeBackwards
+      sideAnim.fillMode = .backwards
       sideLayer.applyAnimation(sideAnim)
       
       for (idx, layer) in [topLayer, midLayer, bottomLayer].enumerated() {
         let anim = CABasicAnimation(keyPath: slideLeftToRight ? "strokeEnd" : "strokeStart")
         anim.toValue = slideLeftToRight ? 1.0 : 0.0
         anim.duration = animateDuration
-        anim.fillMode = kCAFillModeBackwards
-        anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        anim.fillMode = .backwards
+        anim.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         anim.beginTime = CACurrentMediaTime() + Double(idx) * animateDelay
         layer.applyAnimation(anim)
       }
@@ -175,7 +175,7 @@ public class DPMenuButton: UIButton {
       layer.bounds = bounds!
       layer.strokeColor = self.strokeColor.cgColor
       layer.lineWidth = thickness
-      layer.lineCap = lineCapRound ? kCALineCapRound : kCALineCapSquare
+      layer.lineCap = lineCapRound ? .round : .square
     }
     self.setNeedsLayout()
   }

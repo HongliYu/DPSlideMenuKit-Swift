@@ -6,7 +6,6 @@
 //  Copyright © 2017 Hongli Yu. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 public extension CGFloat {
@@ -20,9 +19,9 @@ public extension CGFloat {
 public extension UIColor {
   
   static func random() -> UIColor {
-    return UIColor(red:   .random(),
+    return UIColor(red: .random(),
                    green: .random(),
-                   blue:  .random(),
+                   blue: .random(),
                    alpha: 1.0)
   }
   
@@ -81,64 +80,79 @@ public extension CALayer {
 
 public extension UIViewController {
   
-  /**
-   1. If storyboardName is nil, then the view controller is generated from code
-   2. If storyboardName is not nil, then try to generate the view controller from story board
-   */
-  static func generateViewControllersFrom(viewControllerNameArray: [String],
-                                          storyboardName: String?, bundle: Bundle?) -> [UIViewController] {
-    var retViewControllerArray: [UIViewController] = []
-    var relatedStoryboard: UIStoryboard?
-    if storyboardName == nil {
-      relatedStoryboard = nil
-    } else {
-      relatedStoryboard = UIStoryboard(name: storyboardName!, bundle: bundle)
-    }
-    for controllerClassName in viewControllerNameArray {
-      var leftMenuViewController: UIViewController?
-      if relatedStoryboard != nil {
-        let SBIdentifier = controllerClassName
-        leftMenuViewController = relatedStoryboard?.instantiateViewController(withIdentifier: SBIdentifier)
-      } else {
-        let className = Bundle.main.infoDictionary!["CFBundleName"] as! String + "." + controllerClassName
+  static func baseEmbedControllers(_ types: [UIViewController.Type]?,
+                                   storyboard: String? = "Main",
+                                   bundle: Bundle? = nil) -> [DPBaseEmbedViewController]? {
+    guard let types = types else { return nil }
+    let typeStrings = types.map{ String(describing: $0) }
+    var retControllers: [DPBaseEmbedViewController] = []
+    let relatedStoryboard: UIStoryboard? = (storyboard == nil)
+      ? nil
+      : UIStoryboard(name: storyboard!, bundle: bundle)
+    for typeString in typeStrings {
+      let menuViewController = (relatedStoryboard == nil)
+        ? {
+        let className = Bundle.main.infoDictionary!["CFBundleName"] as! String + "." + typeString
         let aClass = NSClassFromString(className) as! UIViewController.Type
-        leftMenuViewController = aClass.init()
-      }
-      if leftMenuViewController != nil { // vital issue
-        retViewControllerArray.append(leftMenuViewController!)
+        return aClass.init()
+        }()
+        : {
+          return relatedStoryboard!.instantiateViewController(withIdentifier: typeString)
+        }()
+      if let controller = menuViewController as? DPBaseEmbedViewController {
+        retControllers.append(controller)
       }
     }
-    return retViewControllerArray
-  } // TODO: What about xib
+    return retControllers
+  }
   
-  static func generateViewControllerFrom(viewControllerName: String,
-                                         storyboardName: String?, bundle: Bundle?) -> UIViewController? {
-    var retViewController: UIViewController?
-    var relatedStoryboard: UIStoryboard?
-    if storyboardName == nil {
-      relatedStoryboard = nil
-    } else {
-      relatedStoryboard = UIStoryboard(name: storyboardName!, bundle: bundle)
-    }
-    if relatedStoryboard != nil {
-      let SBIdentifier = viewControllerName
-      retViewController = relatedStoryboard?.instantiateViewController(withIdentifier: SBIdentifier)
-    } else {
-      let className = Bundle.main.infoDictionary!["CFBundleName"] as! String + "." + viewControllerName
+  static func viewController(_ type: UIViewController.Type?,
+                             storyboard: String? = "Main",
+                             bundle: Bundle? = nil) -> UIViewController? {
+    guard let type = type else { return nil }
+    let typeString = String(describing: type)
+    let relatedStoryboard: UIStoryboard? = (storyboard == nil)
+      ? nil
+      : UIStoryboard(name: storyboard!, bundle: bundle)
+    if relatedStoryboard == nil {
+      let className = Bundle.main.infoDictionary!["CFBundleName"] as! String + "." + typeString
       let aClass = NSClassFromString(className) as! UIViewController.Type
-      retViewController = aClass.init()
+      return aClass.init()
     }
-    return retViewController
+    return relatedStoryboard!.instantiateViewController(withIdentifier: typeString)
   }
   
   func alert(_ title: String, message: String? = nil) {
     let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
     let dismiss = "Dismiss"
-    alertController.addAction(UIAlertAction(title: dismiss, style: UIAlertActionStyle.default, handler: nil))
+    alertController.addAction(UIAlertAction(title: dismiss, style: .default, handler: nil))
     alertController.view.tintColor = UIColor.red
     present(alertController, animated: true, completion: {
       alertController.view.tintColor = UIColor.red
     })
+  }
+  
+  func instantiateVC<T: UIViewController>(_ type: T.Type) -> T? {
+    let id = String(describing: T.self)
+    return storyboard?.instantiateViewController(withIdentifier: id) as? T
+  }
+
+}
+
+extension UITableView {
+  
+  func registerCell(cellTypes:[AnyClass]) {
+    for cellType in cellTypes {
+      let typeString = String(describing: cellType)
+      let xibPath = Bundle(for: cellType).path(forResource: typeString, ofType: "nib")
+      if xibPath == nil {
+        register(cellType, forCellReuseIdentifier: typeString)
+      }
+      else {
+        register(UINib(nibName: typeString, bundle: nil),
+                 forCellReuseIdentifier: typeString)
+      }
+    }
   }
   
 }

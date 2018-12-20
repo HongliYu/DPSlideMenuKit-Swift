@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		F7176C101D9BFFB300C60E08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B3AE1D63A0C7008EA646 /* AppDelegate.swift */; };
+		F71FAEEE21CAF50800A57E76 /* DPBaseEmbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAEEB21CAF50800A57E76 /* DPBaseEmbedViewController.swift */; };
+		F71FAEEF21CAF50800A57E76 /* DPBaseContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAEEC21CAF50800A57E76 /* DPBaseContentViewController.swift */; };
+		F71FAEF021CAF50800A57E76 /* DPBaseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAEED21CAF50800A57E76 /* DPBaseMenuViewController.swift */; };
+		F71FAEFB21CB25C900A57E76 /* DPLeftPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAEF421CB25C900A57E76 /* DPLeftPageViewController.swift */; };
+		F71FAEFC21CB25C900A57E76 /* DPLeftContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAEF521CB25C900A57E76 /* DPLeftContentViewController.swift */; };
+		F71FAEFD21CB25C900A57E76 /* DPLeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAEF621CB25C900A57E76 /* DPLeftMenuViewController.swift */; };
+		F71FAEFE21CB25C900A57E76 /* DPRightContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAEF821CB25C900A57E76 /* DPRightContentViewController.swift */; };
+		F71FAEFF21CB25C900A57E76 /* DPRightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAEF921CB25C900A57E76 /* DPRightMenuViewController.swift */; };
+		F71FAF0021CB25C900A57E76 /* DPRightPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71FAEFA21CB25C900A57E76 /* DPRightPageViewController.swift */; };
 		F72156161DA6A0A90038A5AE /* Pages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F72156141DA6A0A90038A5AE /* Pages.storyboard */; };
 		F766B5D41F1369D6008F8F40 /* DPChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766B5D31F1369D6008F8F40 /* DPChatViewController.swift */; };
-		F766B5D71F138408008F8F40 /* DPRightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766B5D61F138408008F8F40 /* DPRightMenuViewController.swift */; };
-		F766B5D91F13875E008F8F40 /* DPRightContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766B5D81F13875E008F8F40 /* DPRightContentViewController.swift */; };
-		F766B5DB1F138928008F8F40 /* DPRightPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766B5DA1F138928008F8F40 /* DPRightPageViewController.swift */; };
-		F766B5DD1F14AC39008F8F40 /* DPBaseEmbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766B5DC1F14AC39008F8F40 /* DPBaseEmbedViewController.swift */; };
 		F766B5E41F14BE9C008F8F40 /* DPChannelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766B5DF1F14BE9C008F8F40 /* DPChannelListViewController.swift */; };
 		F766B5E51F14BE9C008F8F40 /* DPChannelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766B5E01F14BE9C008F8F40 /* DPChannelViewModel.swift */; };
 		F766B5E61F14BE9C008F8F40 /* DPMessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766B5E11F14BE9C008F8F40 /* DPMessageListViewController.swift */; };
@@ -25,8 +30,6 @@
 		F766B5F01F14CCA5008F8F40 /* DPSettingsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766B5EF1F14CCA5008F8F40 /* DPSettingsSectionView.swift */; };
 		F766B6121F162292008F8F40 /* DPTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766B6111F162292008F8F40 /* DPTestViewController.swift */; };
 		F79C1AA620459F3B007A29EC /* ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79C1AA520459F3B007A29EC /* ScreenType.swift */; };
-		F7C0D1561F0C8A43006DC742 /* DPLeftPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0D1551F0C8A43006DC742 /* DPLeftPageViewController.swift */; };
-		F7C0D1581F0C90B6006DC742 /* DPLeftContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0D1571F0C90B6006DC742 /* DPLeftContentViewController.swift */; };
 		F7C0D15A1F0CF04D006DC742 /* DPConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0D1591F0CF04D006DC742 /* DPConst.swift */; };
 		F7C0D15C1F0CF1A9006DC742 /* DPEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0D15B1F0CF1A9006DC742 /* DPEnum.swift */; };
 		F7C0D16D1F0CF45A006DC742 /* DPHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0D1681F0CF45A006DC742 /* DPHomeViewController.swift */; };
@@ -40,7 +43,6 @@
 		F7D0B3C41D63A0C8008EA646 /* DPSlideMenuKitDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B3C31D63A0C8008EA646 /* DPSlideMenuKitDemoTests.swift */; };
 		F7D0B3F11D63A1C1008EA646 /* DPCenterContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B3F01D63A1C1008EA646 /* DPCenterContentViewController.swift */; };
 		F7D0B3F31D63A30A008EA646 /* DPDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B3F21D63A30A008EA646 /* DPDrawerViewController.swift */; };
-		F7D0B3F51D63B114008EA646 /* DPLeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B3F41D63B114008EA646 /* DPLeftMenuViewController.swift */; };
 		F7D0B3F71D63B126008EA646 /* DPDropShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0B3F61D63B126008EA646 /* DPDropShadowView.swift */; };
 		F7EAB6731D6BE3D700C0C70C /* DPMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EAB6721D6BE3D700C0C70C /* DPMenuButton.swift */; };
 		F7FC405C1F17159C00031F20 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7FC405B1F17159C00031F20 /* fontawesome-webfont.ttf */; };
@@ -77,11 +79,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F71FAEEB21CAF50800A57E76 /* DPBaseEmbedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPBaseEmbedViewController.swift; sourceTree = "<group>"; };
+		F71FAEEC21CAF50800A57E76 /* DPBaseContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPBaseContentViewController.swift; sourceTree = "<group>"; };
+		F71FAEED21CAF50800A57E76 /* DPBaseMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPBaseMenuViewController.swift; sourceTree = "<group>"; };
+		F71FAEF421CB25C900A57E76 /* DPLeftPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPLeftPageViewController.swift; sourceTree = "<group>"; };
+		F71FAEF521CB25C900A57E76 /* DPLeftContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPLeftContentViewController.swift; sourceTree = "<group>"; };
+		F71FAEF621CB25C900A57E76 /* DPLeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPLeftMenuViewController.swift; sourceTree = "<group>"; };
+		F71FAEF821CB25C900A57E76 /* DPRightContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPRightContentViewController.swift; sourceTree = "<group>"; };
+		F71FAEF921CB25C900A57E76 /* DPRightMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPRightMenuViewController.swift; sourceTree = "<group>"; };
+		F71FAEFA21CB25C900A57E76 /* DPRightPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPRightPageViewController.swift; sourceTree = "<group>"; };
 		F766B5D31F1369D6008F8F40 /* DPChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPChatViewController.swift; sourceTree = "<group>"; };
-		F766B5D61F138408008F8F40 /* DPRightMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPRightMenuViewController.swift; sourceTree = "<group>"; };
-		F766B5D81F13875E008F8F40 /* DPRightContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPRightContentViewController.swift; sourceTree = "<group>"; };
-		F766B5DA1F138928008F8F40 /* DPRightPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPRightPageViewController.swift; sourceTree = "<group>"; };
-		F766B5DC1F14AC39008F8F40 /* DPBaseEmbedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPBaseEmbedViewController.swift; sourceTree = "<group>"; };
 		F766B5DF1F14BE9C008F8F40 /* DPChannelListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPChannelListViewController.swift; sourceTree = "<group>"; };
 		F766B5E01F14BE9C008F8F40 /* DPChannelViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPChannelViewModel.swift; sourceTree = "<group>"; };
 		F766B5E11F14BE9C008F8F40 /* DPMessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPMessageListViewController.swift; sourceTree = "<group>"; };
@@ -94,8 +101,6 @@
 		F766B6111F162292008F8F40 /* DPTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPTestViewController.swift; sourceTree = "<group>"; };
 		F7992DB81F94F7B300965D77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pages.storyboard; sourceTree = "<group>"; };
 		F79C1AA520459F3B007A29EC /* ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenType.swift; sourceTree = "<group>"; };
-		F7C0D1551F0C8A43006DC742 /* DPLeftPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPLeftPageViewController.swift; sourceTree = "<group>"; };
-		F7C0D1571F0C90B6006DC742 /* DPLeftContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPLeftContentViewController.swift; sourceTree = "<group>"; };
 		F7C0D1591F0CF04D006DC742 /* DPConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPConst.swift; sourceTree = "<group>"; };
 		F7C0D15B1F0CF1A9006DC742 /* DPEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPEnum.swift; sourceTree = "<group>"; };
 		F7C0D1681F0CF45A006DC742 /* DPHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPHomeViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +121,6 @@
 		F7D0B3D01D63A0C8008EA646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7D0B3F01D63A1C1008EA646 /* DPCenterContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPCenterContentViewController.swift; sourceTree = "<group>"; };
 		F7D0B3F21D63A30A008EA646 /* DPDrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPDrawerViewController.swift; sourceTree = "<group>"; };
-		F7D0B3F41D63B114008EA646 /* DPLeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPLeftMenuViewController.swift; sourceTree = "<group>"; };
 		F7D0B3F61D63B126008EA646 /* DPDropShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPDropShadowView.swift; sourceTree = "<group>"; };
 		F7EAB6721D6BE3D700C0C70C /* DPMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPMenuButton.swift; sourceTree = "<group>"; };
 		F7FC405B1F17159C00031F20 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
@@ -147,6 +151,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F71FAEEA21CAF50800A57E76 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F71FAEED21CAF50800A57E76 /* DPBaseMenuViewController.swift */,
+				F71FAEEC21CAF50800A57E76 /* DPBaseContentViewController.swift */,
+				F71FAEEB21CAF50800A57E76 /* DPBaseEmbedViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		F71FAEF321CB25C900A57E76 /* Left */ = {
+			isa = PBXGroup;
+			children = (
+				F71FAEF621CB25C900A57E76 /* DPLeftMenuViewController.swift */,
+				F71FAEF421CB25C900A57E76 /* DPLeftPageViewController.swift */,
+				F71FAEF521CB25C900A57E76 /* DPLeftContentViewController.swift */,
+			);
+			path = Left;
+			sourceTree = "<group>";
+		};
+		F71FAEF721CB25C900A57E76 /* Right */ = {
+			isa = PBXGroup;
+			children = (
+				F71FAEF921CB25C900A57E76 /* DPRightMenuViewController.swift */,
+				F71FAEFA21CB25C900A57E76 /* DPRightPageViewController.swift */,
+				F71FAEF821CB25C900A57E76 /* DPRightContentViewController.swift */,
+			);
+			path = Right;
+			sourceTree = "<group>";
+		};
 		F766B5DE1F14BE9C008F8F40 /* SideContent */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,21 +266,17 @@
 		F7D0B3DC1D63A107008EA646 /* DPSlideMenuKit */ = {
 			isa = PBXGroup;
 			children = (
+				F71FAEF321CB25C900A57E76 /* Left */,
+				F71FAEF721CB25C900A57E76 /* Right */,
+				F71FAEEA21CAF50800A57E76 /* Base */,
 				F7C0D1711F0DE55E006DC742 /* DPSlideMenuManager.swift */,
+				F7D0B3F21D63A30A008EA646 /* DPDrawerViewController.swift */,
+				F7D0B3F01D63A1C1008EA646 /* DPCenterContentViewController.swift */,
+				F7D0B3F61D63B126008EA646 /* DPDropShadowView.swift */,
+				F7EAB6721D6BE3D700C0C70C /* DPMenuButton.swift */,
 				F7C0D1591F0CF04D006DC742 /* DPConst.swift */,
 				F7C0D15B1F0CF1A9006DC742 /* DPEnum.swift */,
 				F7C0D16F1F0D0020006DC742 /* DPExtension.swift */,
-				F7D0B3F21D63A30A008EA646 /* DPDrawerViewController.swift */,
-				F7D0B3F41D63B114008EA646 /* DPLeftMenuViewController.swift */,
-				F7C0D1551F0C8A43006DC742 /* DPLeftPageViewController.swift */,
-				F7C0D1571F0C90B6006DC742 /* DPLeftContentViewController.swift */,
-				F766B5D61F138408008F8F40 /* DPRightMenuViewController.swift */,
-				F766B5DA1F138928008F8F40 /* DPRightPageViewController.swift */,
-				F766B5D81F13875E008F8F40 /* DPRightContentViewController.swift */,
-				F7D0B3F01D63A1C1008EA646 /* DPCenterContentViewController.swift */,
-				F766B5DC1F14AC39008F8F40 /* DPBaseEmbedViewController.swift */,
-				F7D0B3F61D63B126008EA646 /* DPDropShadowView.swift */,
-				F7EAB6721D6BE3D700C0C70C /* DPMenuButton.swift */,
 				F79C1AA520459F3B007A29EC /* ScreenType.swift */,
 			);
 			path = DPSlideMenuKit;
@@ -316,7 +346,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Hongli Yu";
 				TargetAttributes = {
 					F7D0B3AA1D63A0C7008EA646 = {
@@ -394,26 +424,27 @@
 			files = (
 				F766B5E41F14BE9C008F8F40 /* DPChannelListViewController.swift in Sources */,
 				F7C0D1721F0DE55E006DC742 /* DPSlideMenuManager.swift in Sources */,
+				F71FAEEE21CAF50800A57E76 /* DPBaseEmbedViewController.swift in Sources */,
 				F7C0D15A1F0CF04D006DC742 /* DPConst.swift in Sources */,
+				F71FAEFF21CB25C900A57E76 /* DPRightMenuViewController.swift in Sources */,
+				F71FAEFD21CB25C900A57E76 /* DPLeftMenuViewController.swift in Sources */,
 				F7C0D16D1F0CF45A006DC742 /* DPHomeViewController.swift in Sources */,
+				F71FAEFE21CB25C900A57E76 /* DPRightContentViewController.swift in Sources */,
 				F766B5E51F14BE9C008F8F40 /* DPChannelViewModel.swift in Sources */,
+				F71FAEFB21CB25C900A57E76 /* DPLeftPageViewController.swift in Sources */,
 				F79C1AA620459F3B007A29EC /* ScreenType.swift in Sources */,
-				F7C0D1581F0C90B6006DC742 /* DPLeftContentViewController.swift in Sources */,
-				F766B5DD1F14AC39008F8F40 /* DPBaseEmbedViewController.swift in Sources */,
 				F766B5EA1F14BF3B008F8F40 /* DPSettingsViewController.swift in Sources */,
-				F766B5D91F13875E008F8F40 /* DPRightContentViewController.swift in Sources */,
 				F766B5D41F1369D6008F8F40 /* DPChatViewController.swift in Sources */,
 				F766B5F01F14CCA5008F8F40 /* DPSettingsSectionView.swift in Sources */,
 				F7EAB6731D6BE3D700C0C70C /* DPMenuButton.swift in Sources */,
-				F7C0D1561F0C8A43006DC742 /* DPLeftPageViewController.swift in Sources */,
+				F71FAEEF21CAF50800A57E76 /* DPBaseContentViewController.swift in Sources */,
+				F71FAEF021CAF50800A57E76 /* DPBaseMenuViewController.swift in Sources */,
 				F7D0B3B11D63A0C7008EA646 /* ViewController.swift in Sources */,
-				F7D0B3F51D63B114008EA646 /* DPLeftMenuViewController.swift in Sources */,
-				F766B5D71F138408008F8F40 /* DPRightMenuViewController.swift in Sources */,
 				F766B6121F162292008F8F40 /* DPTestViewController.swift in Sources */,
 				F7D0B3F11D63A1C1008EA646 /* DPCenterContentViewController.swift in Sources */,
 				F7D0B3F71D63B126008EA646 /* DPDropShadowView.swift in Sources */,
+				F71FAEFC21CB25C900A57E76 /* DPLeftContentViewController.swift in Sources */,
 				F766B5E71F14BE9C008F8F40 /* DPMessageViewModel.swift in Sources */,
-				F766B5DB1F138928008F8F40 /* DPRightPageViewController.swift in Sources */,
 				F7D0B3AF1D63A0C7008EA646 /* AppDelegate.swift in Sources */,
 				F766B5E61F14BE9C008F8F40 /* DPMessageListViewController.swift in Sources */,
 				F7C0D15C1F0CF1A9006DC742 /* DPEnum.swift in Sources */,
@@ -421,6 +452,7 @@
 				F766B5EC1F14C0D4008F8F40 /* DPSettingsViewModel.swift in Sources */,
 				F7D0B3F31D63A30A008EA646 /* DPDrawerViewController.swift in Sources */,
 				F766B5E81F14BE9C008F8F40 /* DPTeamViewController.swift in Sources */,
+				F71FAF0021CB25C900A57E76 /* DPRightPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,12 +528,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -528,7 +562,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -549,12 +583,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -575,7 +611,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -590,13 +626,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FC9QT6TC28;
 				INFOPLIST_FILE = DPSlideMenuKitDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.hlyu.DPSlideMenuKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -607,13 +643,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FC9QT6TC28;
 				INFOPLIST_FILE = DPSlideMenuKitDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.hlyu.DPSlideMenuKitDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

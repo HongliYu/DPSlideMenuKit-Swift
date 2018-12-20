@@ -10,9 +10,9 @@ import UIKit
 
 class DPSettingsSectionViewModel {
   
-  fileprivate(set) var title: String?
-  fileprivate(set) var height: CGFloat?
-  fileprivate(set) var actionBlock:(()->Void)?
+  private(set) var title: String?
+  private(set) var height: CGFloat?
+  private(set) var actionBlock:(()->Void)?
   
   init(title: String?,
        height: CGFloat?,
@@ -26,10 +26,10 @@ class DPSettingsSectionViewModel {
 
 class DPSettingsCellViewModel {
   
-  fileprivate(set) var color: UIColor?
-  fileprivate(set) var title: String?
-  fileprivate(set) var cellHeight: CGFloat?
-  fileprivate(set) var actionBlock:(()->Void)?
+  private(set) var color: UIColor?
+  private(set) var title: String?
+  private(set) var cellHeight: CGFloat?
+  private(set) var actionBlock:(()->Void)?
   
   init(color: UIColor?,
        title: String?,
@@ -48,7 +48,6 @@ class DPSettingsViewModel {
   var settingsCellViewModels: [DPSettingsCellViewModel]?
   var settingsSectionViewModel: DPSettingsSectionViewModel?
   
-  // TODO: Need computed properties to mapping properties in sub view model
   init(settingsCellViewModels: [DPSettingsCellViewModel]?,
        settingsSectionViewModel: DPSettingsSectionViewModel?) {
     self.settingsCellViewModels = settingsCellViewModels

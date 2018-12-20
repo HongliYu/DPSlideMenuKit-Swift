@@ -10,46 +10,30 @@ import UIKit
 
 class ViewController: UIViewController {
 
-  // MARK: - Navigation
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    // embed in storyboard
-    if segue.identifier == "Main_Drawer",
-    segue.destination is DPDrawerViewController {
-      DPSlideMenuManager.shared.setDrawer(drawer: segue.destination as? DPDrawerViewController)
+    if let destination = segue.destination as? DPDrawerViewController,
+      segue.identifier == "Main_Drawer" {
+      DPSlideMenuManager.shared.setDrawer(drawer: destination)
     }
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // 1. not embed in storyboard? add it manually
-//   let drawer: DPDrawerViewController? = self.storyboard?.instantiateViewController(withIdentifier: "DPDrawerViewController") as? DPDrawerViewController
-//    self.addChildViewController(drawer!)
-//    self.view.addSubview(drawer!.view)
-//    DPSlideMenuManager.shared.setDrawer(drawer: drawer)
-    
-    let leftMenuViewControllerNameArray = ["DPTeamViewController",
-                                           "DPChannelListViewController",
-                                           "DPMessageListViewController"]
-    let leftMenuViewControllers = UIViewController.generateViewControllersFrom(viewControllerNameArray: leftMenuViewControllerNameArray, storyboardName: "Main", bundle: nil) as! [DPBaseEmbedViewController]
-    
-    // 2. not from story board, add it manually
-//    let leftMenuViewControllerNameArrayFromCode: [String] = ["DPTestViewController"]
-//    let leftMenuViewControllersFromCode: [DPBaseEmbedViewController] = UIViewController.generateViewControllersFrom(viewControllerNameArray: leftMenuViewControllerNameArrayFromCode, storyboardName: nil, bundle: nil) as! [DPBaseEmbedViewController]
-//    leftMenuViewControllers.append(contentsOf: leftMenuViewControllersFromCode)
-    
-    let rightMenuViewControllerNameArray = ["DPSettingsViewController"]
-    let rightMenuViewControllers = UIViewController.generateViewControllersFrom(viewControllerNameArray: rightMenuViewControllerNameArray, storyboardName: "Main", bundle: nil) as! [DPBaseEmbedViewController]
-    
-    let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "DPHomeViewController") as! DPHomeViewController
-    DPSlideMenuManager.shared.setup(leftContentEmbedViewControllers: leftMenuViewControllers,
-                                    rightContentEmbedViewControllers: rightMenuViewControllers,
-                                    centerContentViewController: homeViewController)
+    let leftMenuVCTypes = [DPTeamViewController.self,
+                           DPChannelListViewController.self,
+                           DPMessageListViewController.self]
+    let leftMenuViewControllers = UIViewController.baseEmbedControllers(leftMenuVCTypes,
+                                                                        storyboard: "Pages")
+
+    let rightMenuVCTypes = [DPSettingsViewController.self]
+    let rightMenuViewControllers = UIViewController.baseEmbedControllers(rightMenuVCTypes,
+                                                                         storyboard: "Pages")
+
+    guard let homeViewController = instantiateVC(DPHomeViewController.self) else { return }
+    DPSlideMenuManager.shared.setup(homeViewController,
+                                    leftContentEmbedViewControllers: leftMenuViewControllers,
+                                    rightContentEmbedViewControllers: rightMenuViewControllers)
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-  }
-
 }
-

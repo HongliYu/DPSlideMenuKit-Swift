@@ -24,8 +24,4 @@ class DPSettingsSectionView: UIView {
     //...
   }
   
-  override func draw(_ rect: CGRect) {
-    // Drawing code
-  }
-
 }

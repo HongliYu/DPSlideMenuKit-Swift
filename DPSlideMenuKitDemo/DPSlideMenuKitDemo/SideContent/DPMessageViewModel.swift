@@ -10,9 +10,9 @@ import UIKit
 
 class DPMessageSectionViewModel {
   
-  fileprivate(set) var title: String?
-  fileprivate(set) var height: CGFloat?
-  fileprivate(set) var actionBlock:(()->Void)?
+  private(set) var title: String?
+  private(set) var height: CGFloat?
+  private(set) var actionBlock:(()->Void)?
   
   init(title: String?,
        height: CGFloat?,
@@ -26,10 +26,10 @@ class DPMessageSectionViewModel {
 
 class DPMessageCellViewModel {
   
-  fileprivate(set) var color: UIColor?
-  fileprivate(set) var title: String?
-  fileprivate(set) var cellHeight: CGFloat?
-  fileprivate(set) var actionBlock:(()->Void)?
+  private(set) var color: UIColor?
+  private(set) var title: String?
+  private(set) var cellHeight: CGFloat?
+  private(set) var actionBlock:(()->Void)?
   
   init(color: UIColor?,
        title: String?,
@@ -48,7 +48,6 @@ class DPMessageViewModel {
   var messageCellViewModels: [DPMessageCellViewModel]?
   var messageSectionViewModel: DPMessageSectionViewModel?
   
-  // TODO: Need computed properties to mapping properties in sub view model
   init(messageCellViewModels: [DPMessageCellViewModel]?,
        messageSectionViewModel: DPMessageSectionViewModel?) {
     self.messageCellViewModels = messageCellViewModels

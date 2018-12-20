@@ -51,25 +51,11 @@ class DPTeamViewController: DPBaseEmbedViewController {
   
   @IBOutlet weak var titleContentViewTopConstraints: NSLayoutConstraint!
   
-  override init(nibName nibNameOrNil: String?,
-                bundle nibBundleOrNil: Bundle?) {
-    super.init(nibName: nibNameOrNil,
-               bundle: nibBundleOrNil)
-  }
-  
-  required internal init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-  }
-
   override func viewDidLoad() {
     super.viewDidLoad()
-    if UIScreen.current == .iPhone5_8 {
+    if UIScreen().iPhoneBangsScreen {
       titleContentViewTopConstraints.constant = 20
     }
-  }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
   }
 
 }

@@ -15,9 +15,5 @@ class DPTestViewController: DPBaseEmbedViewController {
     super.viewDidLoad()
     self.view.backgroundColor = UIColor.red
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-  }
   
 }
