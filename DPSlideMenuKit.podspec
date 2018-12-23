@@ -21,8 +21,11 @@ Pod::Spec.new do |s|
   s.author       = { "HongliYu" => "yhlssdone@gmail.com" }
   s.source       = { :git => "https://github.com/HongliYu/DPSlideMenuKit-Swift.git", :tag => "#{s.version}" }
 
-  s.platform     = :ios, "12.0"
-  s.source_files = "DPSlideMenuKitDemo/DPSlideMenuKit/*.swift"
-
+  s.platform     = :ios, "10.0"
+  s.requires_arc = true
+  s.source_files = "DPSlideMenuKitDemo/DPSlideMenuKit/", "DPSlideMenuKitDemo/DPSlideMenuKit/Base/", "DPSlideMenuKitDemo/DPSlideMenuKit/Left","DPSlideMenuKitDemo/DPSlideMenuKit/Right"
+  s.frameworks   = 'UIKit', 'Foundation', 'QuartzCore'
+  s.module_name  = 'DPSlideMenuKit'
+  s.swift_version = "4.2"
 
 end
