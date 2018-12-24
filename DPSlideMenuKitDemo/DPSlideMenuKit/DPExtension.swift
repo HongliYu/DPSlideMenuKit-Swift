@@ -139,7 +139,7 @@ public extension UIViewController {
 
 }
 
-extension UITableView {
+public extension UITableView {
   
   func registerCell(cellTypes:[AnyClass]) {
     for cellType in cellTypes {

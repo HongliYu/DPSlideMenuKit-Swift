@@ -10,58 +10,34 @@ import UIKit
 
 public class DPDrawerViewController: UIViewController, UIGestureRecognizerDelegate {
   
-  open var leftMenuViewController: DPLeftMenuViewController?
-  open var rightMenuViewController: DPRightMenuViewController?
-  open var centerContentViewController: DPCenterContentViewController?
-  open var drawerState: DPDrawerControllerState = .closed
+  private var leftMenuViewController: DPLeftMenuViewController?
+  private var rightMenuViewController: DPRightMenuViewController?
+  private var centerContentViewController: DPCenterContentViewController?
+  private(set) var drawerState: DPDrawerControllerState = .closed
 
-  open var leftView: UIView?
-  open var rightView: DPDropShadowView?
-  open var centerView: DPDropShadowView?
-  open var tapGestureRecognizer: UITapGestureRecognizer?
-  open var panGestureRecognizer: UIPanGestureRecognizer?
-  open var panGestureStartLocation: CGPoint?
-  open var createdFormStoryboard: Bool = false
+  private var leftView: UIView?
+  private var rightView: DPDropShadowView?
+  private var centerView: DPDropShadowView?
+  private var tapGestureRecognizer: UITapGestureRecognizer?
+  private var panGestureRecognizer: UIPanGestureRecognizer?
+  private var panGestureStartLocation: CGPoint?
+  private var createdFormStoryboard: Bool = false
   
   func hideStatusBar(_ hide: Bool) {
     let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
     statusBar.isHidden = hide
   }
   
-  // MARK: Life Cycle
-  init(leftViewController: DPLeftMenuViewController?,
-       rightMenuViewController: DPRightMenuViewController?,
-       centerViewController: DPCenterContentViewController?) {
-    super.init(nibName: nil, bundle: nil)
-    self.leftMenuViewController = leftViewController
-    self.rightMenuViewController = rightMenuViewController
-    self.centerContentViewController = centerViewController
-    self.createdFormStoryboard = false
-    self.basicUI()
-  }
-    
-  required public init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    createdFormStoryboard = true
-  }
-  
-  override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-  }
-  
-  func reset(leftViewController: DPLeftMenuViewController?,
-             rightMenuViewController: DPRightMenuViewController?,
-             centerContentViewController: DPCenterContentViewController?) {
-    self.leftMenuViewController = leftViewController
-    self.rightMenuViewController = rightMenuViewController
+  func config(_ centerContentViewController: DPCenterContentViewController,
+              leftViewController: DPLeftMenuViewController?,
+              rightMenuViewController: DPRightMenuViewController?) {
     self.centerContentViewController = centerContentViewController
-    self.createdFormStoryboard = false
+    self.leftMenuViewController = leftViewController
+    self.rightMenuViewController = rightMenuViewController
     self.basicUI()
   }
   
   func basicUI() {
-    if self.createdFormStoryboard { return }
-    
     view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     leftView = UIView(frame: view.bounds)
     rightView = DPDropShadowView(frame: view.bounds)
@@ -77,11 +53,6 @@ public class DPDrawerViewController: UIViewController, UIGestureRecognizerDelega
     // Add the center view controller to the container
     addCenterViewController()
     setupGestureRecognizers()
-  }
-  
-  override public func viewDidLoad() {
-    super.viewDidLoad()
-    basicUI()
   }
   
   func addCenterViewController() {

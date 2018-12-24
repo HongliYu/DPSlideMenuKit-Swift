@@ -10,9 +10,9 @@ import UIKit
 
 public class DPBaseContentViewController: UIViewController {
   
-  open var embedViewController: UIViewController?
+  private(set) var embedViewController: UIViewController?
   
-  open func config(_ embedViewController: UIViewController) {
+  public func config(_ embedViewController: UIViewController) {
     self.embedViewController = embedViewController
     self.addChild(embedViewController)
     embedViewController.view.frame = self.view.bounds

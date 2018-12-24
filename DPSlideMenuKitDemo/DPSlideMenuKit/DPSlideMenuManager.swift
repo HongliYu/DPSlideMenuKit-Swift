@@ -8,18 +8,18 @@
 
 import UIKit
 
-open class DPSlideMenuManager {
+public class DPSlideMenuManager {
   
   public static let shared = DPSlideMenuManager()
-  open var drawer: DPDrawerViewController?
-  open var leftContentEmbedViewControllers: [DPBaseEmbedViewController] = []
-  open var leftContentViewControllers: [DPLeftContentViewController] = []
+  private(set) var drawer: DPDrawerViewController?
+  private(set) var leftContentEmbedViewControllers: [DPBaseEmbedViewController] = []
+  private(set) var leftContentViewControllers: [DPLeftContentViewController] = []
 
-  open var rightContentEmbedViewControllers: [DPBaseEmbedViewController] = []
-  open var rightContentViewControllers: [DPRightContentViewController] = []
+  private(set) var rightContentEmbedViewControllers: [DPBaseEmbedViewController] = []
+  private(set) var rightContentViewControllers: [DPRightContentViewController] = []
 
-  open var leftMenuViewController: DPLeftMenuViewController?
-  open var rightMenuViewController: DPRightMenuViewController?
+  private(set) var leftMenuViewController: DPLeftMenuViewController?
+  private(set) var rightMenuViewController: DPRightMenuViewController?
 
   public func setDrawer(drawer: DPDrawerViewController?) {
     self.drawer = drawer
@@ -35,16 +35,16 @@ open class DPSlideMenuManager {
     }
   }
   
-  public func setup(_ centerContentViewController: DPCenterContentViewController?,
+  public func setup(_ centerContentViewController: DPCenterContentViewController,
                     leftContentEmbedViewControllers: [DPBaseEmbedViewController]?,
                     rightContentEmbedViewControllers: [DPBaseEmbedViewController]?) {
     leftMenuViewController = leftContentEmbedViewControllers == nil ? nil : DPLeftMenuViewController()
     rightMenuViewController = rightContentEmbedViewControllers == nil ? nil : DPRightMenuViewController()
     config(leftContentEmbedViewControllers: leftContentEmbedViewControllers,
            rightContentEmbedViewControllers: rightContentEmbedViewControllers)
-    drawer?.reset(leftViewController: leftMenuViewController,
-                  rightMenuViewController: rightMenuViewController,
-                  centerContentViewController: centerContentViewController)
+    drawer?.config(centerContentViewController,
+                   leftViewController: leftMenuViewController,
+                   rightMenuViewController: rightMenuViewController)
   }
   
   private func config(leftContentEmbedViewControllers: [DPBaseEmbedViewController]?,

@@ -10,12 +10,12 @@ import UIKit
 
 public class DPBaseMenuViewController: UIViewController {
   
-  open var drawerControllerWillOpen:(()->Void)?
-  open var drawerControllerDidOpen:(()->Void)?
-  open var drawerControllerWillClose:(()->Void)?
-  open var drawerControllerDidClose:(()->Void)?
+  private(set) var drawerControllerWillOpen:(()->Void)?
+  private(set) var drawerControllerDidOpen:(()->Void)?
+  private(set) var drawerControllerWillClose:(()->Void)?
+  private(set) var drawerControllerDidClose:(()->Void)?
 
-  open var pageControl: UIPageControl = UIPageControl()
+  private(set) var pageControl: UIPageControl = UIPageControl()
   
   override public func viewDidLoad() {
     super.viewDidLoad()
@@ -24,17 +24,17 @@ public class DPBaseMenuViewController: UIViewController {
     self.bindActions()
   }
   
-  open func basicUI() {
+  func basicUI() {
     view.backgroundColor = Palette.green
   }
   
-  open func resetUI() {
+  func resetUI() {
     var frame: CGRect = pageControl.frame
     frame.origin.y = UIScreen.main.bounds.height - kDPPageControlHeight
     pageControl.frame = frame
   }
   
-  open func basicData() {
+  func basicData() {
     drawerControllerWillOpen = {
       [weak self] in
       guard let strongSelf = self else { return }
@@ -57,7 +57,7 @@ public class DPBaseMenuViewController: UIViewController {
     }
   }
   
-  open func bindActions() {
+  func bindActions() {
     
   }
   

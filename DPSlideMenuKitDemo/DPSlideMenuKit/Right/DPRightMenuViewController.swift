@@ -10,12 +10,12 @@ import UIKit
 
 public class DPRightMenuViewController: DPBaseMenuViewController {
   
-  open var pageViewController: DPRightPageViewController =
+  private var pageViewController: DPRightPageViewController =
     DPRightPageViewController(transitionStyle: .scroll,
                               navigationOrientation: .horizontal,
                               options: [.interPageSpacing: 0])
   
-  override open func basicUI() {
+  override func basicUI() {
     super.basicUI()
     pageViewController.setContentViewControllers(DPSlideMenuManager.shared.rightContentViewControllers)
     addChild(pageViewController)
@@ -32,7 +32,7 @@ public class DPRightMenuViewController: DPBaseMenuViewController {
     }
   }
   
-  override open func bindActions() {
+  override func bindActions() {
     super.bindActions()
     pageViewController.transitionCompleted = {
       [weak self] index in

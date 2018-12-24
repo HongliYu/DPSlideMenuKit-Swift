@@ -10,7 +10,7 @@ import UIKit
 
 open class DPBaseEmbedViewController: UIViewController {
   
-  open var positionState: DPEmbedViewControllerPositionState = .left
+  private(set) var positionState: DPEmbedViewControllerPositionState = .left
   
   open func setPositionState(positionState: DPEmbedViewControllerPositionState) {
     self.positionState = positionState
@@ -25,7 +25,7 @@ open class DPBaseEmbedViewController: UIViewController {
     hideStatusBar(true)
   }
   
-  open func hideStatusBar(_ hide: Bool) {
+  public func hideStatusBar(_ hide: Bool) {
     let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
     statusBar.isHidden = hide
   }

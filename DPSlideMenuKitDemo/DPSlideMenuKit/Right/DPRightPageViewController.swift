@@ -10,10 +10,10 @@ import UIKit
 
 public class DPRightPageViewController: UIPageViewController {
 
-  open var transitionCompleted:((_ index: Int)->Void)?
-  open var rightContentViewControllers: [DPRightContentViewController]?
+  var transitionCompleted:((_ index: Int)->Void)?
+  private(set) var rightContentViewControllers: [DPRightContentViewController]?
   
-  open func setContentViewControllers(_ rightContentViewControllers: [DPRightContentViewController]) {
+  public func setContentViewControllers(_ rightContentViewControllers: [DPRightContentViewController]) {
     self.rightContentViewControllers = rightContentViewControllers
   }
 
@@ -22,7 +22,7 @@ public class DPRightPageViewController: UIPageViewController {
     self.basicUI()
   }
   
-  open func basicUI() {
+  public func basicUI() {
     guard let rightContentViewControllers = rightContentViewControllers,
       rightContentViewControllers.count > 0 else { return }
 
@@ -45,13 +45,13 @@ public class DPRightPageViewController: UIPageViewController {
                        direction: .reverse, animated: false, completion: nil)
   }
   
-  open func resetUI() {
+  public func resetUI() {
     view.frame = CGRect(x: 0, y: 0,
                         width: UIScreen.main.bounds.width - kDPDrawerControllerDrawerWidthGapOffset,
                         height: view.bounds.height)
   }
   
-  open func scrollToViewController(index newIndex: Int) {
+  public func scrollToViewController(index newIndex: Int) {
     guard let rightContentViewControllers = rightContentViewControllers,
       let firstViewController = viewControllers?.first as? DPRightContentViewController,
       let currentIndex = rightContentViewControllers.index(of: firstViewController) else {
@@ -63,8 +63,8 @@ public class DPRightPageViewController: UIPageViewController {
     scrollToViewController(nextViewController, direction: direction)
   }
   
-  open func scrollToViewController(_ viewController: UIViewController,
-                                   direction: UIPageViewController.NavigationDirection = .forward) {
+  public func scrollToViewController(_ viewController: UIViewController,
+                                     direction: UIPageViewController.NavigationDirection = .forward) {
     setViewControllers([viewController],
                        direction: direction,
                        animated: true,
