@@ -8,7 +8,12 @@ Slide menu kit with left and right pages. Just like Slack!
 
 <img src="https://github.com/HongliYu/DPSlideMenuKit-Swift/blob/master/Demo.gif?raw=true" alt="alt text"  height="400">
 
-# Usage
+
+## View Controllers Hierarchy
+<img src="https://github.com/HongliYu/DPSlideMenuKit-Swift/blob/master/ViewControllers.png?raw=true" alt="alt text"  height="400">
+
+
+## Usage
 
 ```  swift
   // 1. If embed in storyboard
@@ -18,9 +23,6 @@ Slide menu kit with left and right pages. Just like Slack!
       DPSlideMenuManager.shared.setDrawer(drawer: destination)
     }
   }
-
-
-
 ```
 <img src="https://github.com/HongliYu/DPSlideMenuKit-Swift/blob/master/EmbedDrawer.png?raw=true" alt="alt text"  height="400">
 
@@ -55,6 +57,5 @@ Slide menu kit with left and right pages. Just like Slack!
     DPSlideMenuManager.shared.setup(homeViewController,
                                     leftContentEmbedViewControllers: leftMenuViewControllers,
                                     rightContentEmbedViewControllers: rightMenuViewControllers)
-
 
 ```
