@@ -374,16 +374,17 @@ public class DPDrawerViewController: UIViewController, UIGestureRecognizerDelega
     leftView!.frame = frame
     
     // Start adding the left view controller to the container
-    addChild(leftMenuViewController!)
-    leftMenuViewController!.view.frame = leftView!.bounds
-    leftView!.addSubview(leftMenuViewController!.view)
+    guard let leftMenuViewController = self.leftMenuViewController else { return }
+    addChild(leftMenuViewController)
+    leftMenuViewController.view.frame = leftView!.bounds
+    leftView!.addSubview(leftMenuViewController.view)
     
     // Add the left view to the view hierarchy
     view.insertSubview(leftView!,
                        belowSubview: centerView!)
     
     // Notify the child view controllers that the drawer is about to open
-    leftMenuViewController?.drawerControllerWillOpen?()
+    leftMenuViewController.drawerControllerWillOpen?()
     centerContentViewController?.drawerControllerWillOpen?(true)
   }
   
@@ -397,16 +398,17 @@ public class DPDrawerViewController: UIViewController, UIGestureRecognizerDelega
     rightView!.frame = frame
     
     // Start adding the right view controller to the container
-    addChild(rightMenuViewController!)
-    rightMenuViewController!.view.frame = rightView!.bounds
-    rightView!.addSubview(rightMenuViewController!.view)
+    guard let rightMenuViewController = self.rightMenuViewController else { return }
+    addChild(rightMenuViewController)
+    rightMenuViewController.view.frame = rightView!.bounds
+    rightView!.addSubview(rightMenuViewController.view)
     
     // Add the right view to the view hierarchy
     view.insertSubview(rightView!,
                        aboveSubview: centerView!)
     
     // Notify the child view controllers that the drawer is about to open
-    rightMenuViewController?.drawerControllerWillOpen?()
+    rightMenuViewController.drawerControllerWillOpen?()
     centerContentViewController?.drawerControllerWillOpen?(false)
   }
   

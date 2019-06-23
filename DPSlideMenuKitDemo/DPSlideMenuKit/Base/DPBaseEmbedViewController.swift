@@ -10,7 +10,7 @@ import UIKit
 
 open class DPBaseEmbedViewController: UIViewController {
   
-  private(set) var positionState: DPEmbedViewControllerPositionState = .left
+  public var positionState: DPEmbedViewControllerPositionState = .left
   
   open func setPositionState(positionState: DPEmbedViewControllerPositionState) {
     self.positionState = positionState

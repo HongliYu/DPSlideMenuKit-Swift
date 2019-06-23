@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "DPSlideMenuKit"
-  s.version      = "0.3.1"
+  s.version      = "0.3.2"
   s.summary      = "slide menu"
 
   s.description  = <<-DESC
@@ -26,6 +26,6 @@ Pod::Spec.new do |s|
   s.source_files = "DPSlideMenuKitDemo/DPSlideMenuKit/", "DPSlideMenuKitDemo/DPSlideMenuKit/Base/", "DPSlideMenuKitDemo/DPSlideMenuKit/Left","DPSlideMenuKitDemo/DPSlideMenuKit/Right"
   s.frameworks   = 'UIKit', 'Foundation', 'QuartzCore'
   s.module_name  = 'DPSlideMenuKit'
-  s.swift_version = "4.2"
+  s.swift_version = "5.0"
 
 end

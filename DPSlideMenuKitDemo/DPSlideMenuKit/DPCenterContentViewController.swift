@@ -10,11 +10,11 @@ import UIKit
 
 open class DPCenterContentViewController: UIViewController {
   
-  private(set) var drawerControllerWillOpen:((_ drawerButtonAnimated: Bool)->Void)?
-  private(set) var drawerControllerDidOpen:((_ drawerButtonAnimated: Bool)->Void)?
-  private(set) var drawerControllerWillClose:((_ drawerButtonAnimated: Bool)->Void)?
-  private(set) var drawerControllerDidClose:((_ drawerButtonAnimated: Bool)->Void)?
-  private(set) var openDrawerButton: DPMenuButton = DPMenuButton(type:.custom)
+  open var drawerControllerWillOpen:((_ drawerButtonAnimated: Bool)->Void)?
+  open var drawerControllerDidOpen:((_ drawerButtonAnimated: Bool)->Void)?
+  open var drawerControllerWillClose:((_ drawerButtonAnimated: Bool)->Void)?
+  open var drawerControllerDidClose:((_ drawerButtonAnimated: Bool)->Void)?
+  open var openDrawerButton: DPMenuButton = DPMenuButton(type:.custom)
   
   override open func viewDidLoad() {
     super.viewDidLoad()
@@ -62,7 +62,7 @@ open class DPCenterContentViewController: UIViewController {
 
   }
   
-  @objc func openDrawer(_ sender: DPMenuButton) {
+  @objc open func openDrawer(_ sender: DPMenuButton) {
     if DPSlideMenuManager.shared.drawer?.drawerState == .leftOpen {
       DPSlideMenuManager.shared.drawer?.leftClose()
       sender.isSelected = false

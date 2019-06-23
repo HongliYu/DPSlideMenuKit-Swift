@@ -54,7 +54,7 @@ public class DPRightPageViewController: UIPageViewController {
   public func scrollToViewController(index newIndex: Int) {
     guard let rightContentViewControllers = rightContentViewControllers,
       let firstViewController = viewControllers?.first as? DPRightContentViewController,
-      let currentIndex = rightContentViewControllers.index(of: firstViewController) else {
+      let currentIndex = rightContentViewControllers.firstIndex(of: firstViewController) else {
         return
     }
     let direction: UIPageViewController.NavigationDirection =
@@ -72,7 +72,7 @@ public class DPRightPageViewController: UIPageViewController {
       guard let strongSelf = self else { return }
       guard let firstViewController = strongSelf.viewControllers?.first as? DPRightContentViewController,
         let rightContentViewControllers = strongSelf.rightContentViewControllers,
-        let index = rightContentViewControllers.index(of: firstViewController) else {
+        let index = rightContentViewControllers.firstIndex(of: firstViewController) else {
           return
       }
       strongSelf.transitionCompleted?(index)
@@ -91,7 +91,7 @@ extension DPRightPageViewController: UIPageViewControllerDataSource {
         return nil
     }
     
-    let index = rightContentViewControllers.index(of: viewController)
+    let index = rightContentViewControllers.firstIndex(of: viewController)
     let nextIndex = index! + 1
     let orderedViewControllersCount = rightContentViewControllers.count
     
@@ -114,7 +114,7 @@ extension DPRightPageViewController: UIPageViewControllerDataSource {
         return nil
     }
 
-    let index = rightContentViewControllers.index(of: viewController)
+    let index = rightContentViewControllers.firstIndex(of: viewController)
     let previousIndex = index! - 1
     
     // User is on the first view controller and swiped left to loop to
@@ -138,7 +138,7 @@ extension DPRightPageViewController: UIPageViewControllerDelegate {
                                  transitionCompleted completed: Bool) {
     if let pendingViewController = pageViewController.viewControllers?.first as? DPRightContentViewController,
       let rightContentViewControllers = rightContentViewControllers,
-      let index = rightContentViewControllers.index(of: pendingViewController) {
+      let index = rightContentViewControllers.firstIndex(of: pendingViewController) {
       if completed {
         self.transitionCompleted?(index)
       }
