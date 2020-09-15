@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-  // 1. If embed in storyboard
+  // 1. IF embed in storyboard
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let destination = segue.destination as? DPDrawerViewController,
       segue.identifier == "Main_Drawer" {
@@ -21,22 +21,19 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // 2. If not embed in storyboard, set drawer manually
+    // 2. IF NOT embed in storyboard, set drawer manually
     //    let drawer = DPDrawerViewController()
     //    addChild(drawer)
     //    view.addSubview(drawer.view)
     //    DPSlideMenuManager.shared.setDrawer(drawer: drawer)
     
-    // 3. Add view controllers in the left & right side,
-    // and they must be inherited from DPBaseEmbedViewController
+    // 3. Add view controllers in the left & right side, which shall be inherited from DPBaseEmbedViewController
 
-    // 4. If the viewcontroller is not generated from storyboard, set the storyboard param to nil,
+    // Tips: If the viewcontroller is not generated from storyboard, set the storyboard param to nil,
     //    let leftMenuVCTypes = [DPTestViewController.self]
-    //    let leftMenuViewControllers = UIViewController.baseEmbedControllers(leftMenuVCTypes,
-    //                                                                        storyboard: nil)
+    //    let leftMenuViewControllers = UIViewController.baseEmbedControllers(leftMenuVCTypes, storyboard: nil)
 
-    // 5. Center viewcontroller must inherited from DPCenterContentViewController, and can not be nil
-    // guard let homeViewController = instantiateVC(DPHomeViewController.self) else { return }
+    // 4. Center viewcontroller shall be inherited from DPCenterContentViewController, which also can not be nil
     let leftMenuVCTypes = [DPTeamViewController.self,
                            DPChannelListViewController.self,
                            DPMessageListViewController.self]
@@ -54,13 +51,13 @@ class ViewController: UIViewController {
       return
     }
 
-    // 6. Combine center, left, right, together. Meanwhile, left or right can be nil
+    // 5. Combine center, left, right, together. Meanwhile, left or right can be nil
     DPSlideMenuManager.shared.setup(homeViewController,
                                     leftContentEmbedViewControllers: leftMenuViewControllers,
                                     rightContentEmbedViewControllers: rightMenuViewControllers)
   }
 
-  // 7. Pass status bar hide/show operation delegate to drawer
+  // 6. Pass status bar hide/show delegate to drawer, let drawer manager the logic
   open override var childForStatusBarHidden: UIViewController? {
     return DPSlideMenuManager.shared.drawer
   }
