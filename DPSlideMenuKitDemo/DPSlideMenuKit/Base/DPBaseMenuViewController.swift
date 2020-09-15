@@ -15,7 +15,7 @@ public class DPBaseMenuViewController: UIViewController {
   private(set) var drawerControllerWillClose:(()->Void)?
   private(set) var drawerControllerDidClose:(()->Void)?
 
-  private(set) var pageControl: UIPageControl = UIPageControl()
+  private(set) var pageControl = UIPageControl()
   
   override public func viewDidLoad() {
     super.viewDidLoad()
@@ -57,9 +57,7 @@ public class DPBaseMenuViewController: UIViewController {
     }
   }
   
-  func bindActions() {
-    
-  }
+  func bindActions() { }
   
   override public func viewWillTransition(to size: CGSize,
                                           with coordinator: UIViewControllerTransitionCoordinator) {

@@ -9,9 +9,5 @@
 import UIKit
 
 class DPHomeViewController: DPCenterContentViewController {
-  
-  override var preferredStatusBarStyle: UIStatusBarStyle {
-    return .lightContent
-  }
 
 }

@@ -28,8 +28,4 @@ class DPChatViewController: DPCenterContentViewController {
     messageLabel.text = message
   }
   
-  override var preferredStatusBarStyle: UIStatusBarStyle {
-    return .lightContent
-  }
-
 }

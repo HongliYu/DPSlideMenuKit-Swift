@@ -22,18 +22,14 @@ public class DPRightPageViewController: UIPageViewController {
     self.basicUI()
   }
   
-  public func basicUI() {
+  private func basicUI() {
     guard let rightContentViewControllers = rightContentViewControllers,
       rightContentViewControllers.count > 0 else { return }
-
     delegate = self
     dataSource = self
     view.frame = CGRect(x: 0, y: 0,
                         width: UIScreen.main.bounds.width - kDPDrawerControllerDrawerWidthGapOffset,
                         height: view.bounds.height)
-    guard rightContentViewControllers.count > 0 else {
-      return
-    }
     if rightContentViewControllers.count == 1 {
       for view in view.subviews {
         if let scrollView = view as? UIScrollView {
@@ -45,7 +41,7 @@ public class DPRightPageViewController: UIPageViewController {
                        direction: .reverse, animated: false, completion: nil)
   }
   
-  public func resetUI() {
+  private func resetUI() {
     view.frame = CGRect(x: 0, y: 0,
                         width: UIScreen.main.bounds.width - kDPDrawerControllerDrawerWidthGapOffset,
                         height: view.bounds.height)
@@ -65,9 +61,7 @@ public class DPRightPageViewController: UIPageViewController {
   
   public func scrollToViewController(_ viewController: UIViewController,
                                      direction: UIPageViewController.NavigationDirection = .forward) {
-    setViewControllers([viewController],
-                       direction: direction,
-                       animated: true,
+    setViewControllers([viewController], direction: direction, animated: true,
                        completion: { [weak self](finished) -> Void in
       guard let strongSelf = self else { return }
       guard let firstViewController = strongSelf.viewControllers?.first as? DPRightContentViewController,
@@ -87,12 +81,11 @@ extension DPRightPageViewController: UIPageViewControllerDataSource {
                                  viewControllerAfter viewController: UIViewController) -> UIViewController? {
     guard let rightContentViewControllers = rightContentViewControllers,
       rightContentViewControllers.count >= 2,
-      let viewController = viewController as? DPRightContentViewController else {
+      let viewController = viewController as? DPRightContentViewController,
+      let firstIndex = rightContentViewControllers.firstIndex(of: viewController) else {
         return nil
     }
-    
-    let index = rightContentViewControllers.firstIndex(of: viewController)
-    let nextIndex = index! + 1
+    let nextIndex = firstIndex + 1
     let orderedViewControllersCount = rightContentViewControllers.count
     
     // User is on the last view controller and swiped right to loop to
@@ -110,12 +103,11 @@ extension DPRightPageViewController: UIPageViewControllerDataSource {
                                  viewControllerBefore viewController: UIViewController) -> UIViewController? {
     guard let rightContentViewControllers = rightContentViewControllers,
       rightContentViewControllers.count >= 2,
-      let viewController = viewController as? DPRightContentViewController else {
+      let viewController = viewController as? DPRightContentViewController,
+      let firstIndex = rightContentViewControllers.firstIndex(of: viewController) else {
         return nil
     }
-
-    let index = rightContentViewControllers.firstIndex(of: viewController)
-    let previousIndex = index! - 1
+    let previousIndex = firstIndex - 1
     
     // User is on the first view controller and swiped left to loop to
     // the last view controller.

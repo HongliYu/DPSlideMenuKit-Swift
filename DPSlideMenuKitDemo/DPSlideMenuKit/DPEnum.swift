@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum DPDrawerControllerState: Int {
+public enum DrawerControllerState: Int {
   
   case closed = 0
   case leftOpen
@@ -39,18 +39,53 @@ public enum DPDrawerControllerState: Int {
   
 }
 
-public enum DPEmbedViewControllerPositionState: Int {
+public enum MenuPosition {
   
-  case left = 0
+  case left
   case right
   
   var description: String {
     switch self {
     case .left:
-      return "left"
+      return "left menu"
     case .right:
-      return "right"
+      return "right menu"
     }
   }
   
+}
+
+public enum ScreenType: Int {
+  /// 3.5 inch iPhone (4, 4S)
+  case iPhone3_5
+
+  /// 4.0 inch iPhone (5, 5S, 5C, SE)
+  case iPhone4_0
+
+  /// 4.7 inch iPhone (6, 7, 8)
+  case iPhone4_7
+
+  /// 5.5 inch iPhone (6+, 7+, 8+)
+  case iPhone5_5
+
+  /// 5.8 inch iPhone (X, XS)
+  case iPhone5_8
+
+  /// 6.1 inch iPhone (XR)
+  case iPhone6_1
+
+  /// 6.5 inch iPhone (XS Max)
+  case iPhone6_5
+
+  /// 9.7 inch iPad
+  case iPad9_7
+
+  /// 10.5 inch iPad
+  case iPad10_5
+
+  /// 12.9 inch iPad
+  case iPad12_9
+
+  /// Couldn't determine device
+  case unknown
 }

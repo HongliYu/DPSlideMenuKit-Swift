@@ -49,8 +49,6 @@
 		F78D0B8021CF7C050075D189 /* DPConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0D1591F0CF04D006DC742 /* DPConst.swift */; };
 		F78D0B8121CF7C050075D189 /* DPEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0D15B1F0CF1A9006DC742 /* DPEnum.swift */; };
 		F78D0B8221CF7C050075D189 /* DPExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0D16F1F0D0020006DC742 /* DPExtension.swift */; };
-		F78D0B8321CF7C050075D189 /* ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79C1AA520459F3B007A29EC /* ScreenType.swift */; };
-		F79C1AA620459F3B007A29EC /* ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79C1AA520459F3B007A29EC /* ScreenType.swift */; };
 		F7C0D15A1F0CF04D006DC742 /* DPConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0D1591F0CF04D006DC742 /* DPConst.swift */; };
 		F7C0D15C1F0CF1A9006DC742 /* DPEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0D15B1F0CF1A9006DC742 /* DPEnum.swift */; };
 		F7C0D16D1F0CF45A006DC742 /* DPHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C0D1681F0CF45A006DC742 /* DPHomeViewController.swift */; };
@@ -132,7 +130,6 @@
 		F78D0B6821CF7B6B0075D189 /* DPSlideMenuKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPSlideMenuKit.h; sourceTree = "<group>"; };
 		F78D0B6921CF7B6B0075D189 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7992DB81F94F7B300965D77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pages.storyboard; sourceTree = "<group>"; };
-		F79C1AA520459F3B007A29EC /* ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenType.swift; sourceTree = "<group>"; };
 		F7C0D1591F0CF04D006DC742 /* DPConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPConst.swift; sourceTree = "<group>"; };
 		F7C0D15B1F0CF1A9006DC742 /* DPEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPEnum.swift; sourceTree = "<group>"; };
 		F7C0D1681F0CF45A006DC742 /* DPHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPHomeViewController.swift; sourceTree = "<group>"; };
@@ -328,7 +325,6 @@
 				F7C0D1591F0CF04D006DC742 /* DPConst.swift */,
 				F7C0D15B1F0CF1A9006DC742 /* DPEnum.swift */,
 				F7C0D16F1F0D0020006DC742 /* DPExtension.swift */,
-				F79C1AA520459F3B007A29EC /* ScreenType.swift */,
 			);
 			path = DPSlideMenuKit;
 			sourceTree = "<group>";
@@ -534,7 +530,6 @@
 				F78D0B8021CF7C050075D189 /* DPConst.swift in Sources */,
 				F78D0B8121CF7C050075D189 /* DPEnum.swift in Sources */,
 				F78D0B8221CF7C050075D189 /* DPExtension.swift in Sources */,
-				F78D0B8321CF7C050075D189 /* ScreenType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,7 +547,6 @@
 				F71FAEFE21CB25C900A57E76 /* DPRightContentViewController.swift in Sources */,
 				F766B5E51F14BE9C008F8F40 /* DPChannelViewModel.swift in Sources */,
 				F71FAEFB21CB25C900A57E76 /* DPLeftPageViewController.swift in Sources */,
-				F79C1AA620459F3B007A29EC /* ScreenType.swift in Sources */,
 				F766B5EA1F14BF3B008F8F40 /* DPSettingsViewController.swift in Sources */,
 				F766B5D41F1369D6008F8F40 /* DPChatViewController.swift in Sources */,
 				F766B5F01F14CCA5008F8F40 /* DPSettingsSectionView.swift in Sources */,

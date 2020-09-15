@@ -10,12 +10,12 @@ import UIKit
 
 open class DPCenterContentViewController: UIViewController {
   
-  open var drawerControllerWillOpen:((_ drawerButtonAnimated: Bool)->Void)?
-  open var drawerControllerDidOpen:((_ drawerButtonAnimated: Bool)->Void)?
-  open var drawerControllerWillClose:((_ drawerButtonAnimated: Bool)->Void)?
-  open var drawerControllerDidClose:((_ drawerButtonAnimated: Bool)->Void)?
+  open var drawerControllerWillOpen:((_ buttonAnimated: Bool)->Void)?
+  open var drawerControllerDidOpen:((_ buttonAnimated: Bool)->Void)?
+  open var drawerControllerWillClose:((_ buttonAnimated: Bool)->Void)?
+  open var drawerControllerDidClose:((_ buttonAnimated: Bool)->Void)?
   open var openDrawerButton: DPMenuButton = DPMenuButton(type:.custom)
-  
+
   override open func viewDidLoad() {
     super.viewDidLoad()
     

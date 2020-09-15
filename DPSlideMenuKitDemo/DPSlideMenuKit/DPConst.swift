@@ -28,5 +28,6 @@ public struct Palette {
   public static let blue = UIColor(red: 140.0 / 255.0, green: 155.0 / 255.0, blue: 237.0 / 255.0, alpha: 1.0)
   public static let pink = UIColor(red: 237.0 / 255.0, green: 140 / 255.0, blue: 200.0 / 255.0, alpha: 1.0)
   public static let red = UIColor(red: 237.0 / 255.0, green: 100.0 / 255.0, blue: 100.0 / 255.0, alpha: 1.0)
-  public static let green = UIColor(red: 86 / 255.0, green: 202 / 255.0, blue: 139 / 255.0, alpha: 1.0)
+  public static let green = UIColor(red: 86.0 / 255.0, green: 202.0 / 255.0, blue: 139.0 / 255.0, alpha: 1.0)
+  public static let gallery = UIColor(red: 237.0 / 255.0, green: 237.0 / 255.0, blue: 237.0 / 255.0, alpha: 1.0)
 }

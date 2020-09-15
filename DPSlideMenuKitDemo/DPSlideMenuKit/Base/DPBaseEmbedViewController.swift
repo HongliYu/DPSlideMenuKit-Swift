@@ -10,24 +10,14 @@ import UIKit
 
 open class DPBaseEmbedViewController: UIViewController {
   
-  public var positionState: DPEmbedViewControllerPositionState = .left
+  public var positionState: MenuPosition = .left
   
-  open func setPositionState(positionState: DPEmbedViewControllerPositionState) {
+  open func setPositionState(positionState: MenuPosition) {
     self.positionState = positionState
   }
   
   override open func viewDidLoad() {
     super.viewDidLoad()
-  }
-  
-  override open func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    hideStatusBar(true)
-  }
-  
-  public func hideStatusBar(_ hide: Bool) {
-    let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
-    statusBar.isHidden = hide
   }
 
 }

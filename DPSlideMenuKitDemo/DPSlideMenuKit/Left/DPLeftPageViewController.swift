@@ -22,7 +22,7 @@ public class DPLeftPageViewController: UIPageViewController {
     self.basicUI()
   }
   
-  public func basicUI() {
+  private func basicUI() {
     guard let leftContentViewControllers = leftContentViewControllers,
       leftContentViewControllers.count > 0 else { return }
     delegate = self
@@ -41,7 +41,7 @@ public class DPLeftPageViewController: UIPageViewController {
                        direction: .reverse, animated: false, completion: nil)
   }
   
-  public func resetUI() {
+  private func resetUI() {
     view.frame = CGRect(x: 0, y: 0,
                         width: UIScreen.main.bounds.width - kDPDrawerControllerDrawerWidthGapOffset,
                         height: view.bounds.height)
@@ -51,7 +51,7 @@ public class DPLeftPageViewController: UIPageViewController {
     guard let firstViewController = self.viewControllers?.first as? DPLeftContentViewController,
       let leftContentViewControllers = leftContentViewControllers,
       let currentIndex = leftContentViewControllers.firstIndex(of: firstViewController) else {
-      return
+        return
     }
     let direction: UIPageViewController.NavigationDirection =
       (newIndex >= currentIndex) ? .forward : .reverse
@@ -61,24 +61,19 @@ public class DPLeftPageViewController: UIPageViewController {
 
   public func scrollToViewController(_ viewController: UIViewController,
                                      direction: UIPageViewController.NavigationDirection = .forward) {
-    setViewControllers([viewController],
-                       direction: direction,
-                       animated: true,
-                       completion: { [weak self] (finished) -> Void in
-        // Setting the view controller programmatically does not fire
-        // any delegate methods, so we have to manually notify the new index.
-        guard let strongSelf = self else { return }
-        guard let firstViewController = strongSelf.viewControllers?.first as? DPLeftContentViewController,
-          let leftContentViewControllers = strongSelf.leftContentViewControllers,
-          let index = leftContentViewControllers.firstIndex(of: firstViewController) else {
-            return
-        }
-        strongSelf.transitionCompleted?(index)
+    setViewControllers([viewController], direction: direction, animated: true,
+                       completion: { [weak self] _ -> Void in
+      guard let strongSelf = self else { return }
+      guard let firstViewController = strongSelf.viewControllers?.first as? DPLeftContentViewController,
+        let leftContentViewControllers = strongSelf.leftContentViewControllers,
+        let index = leftContentViewControllers.firstIndex(of: firstViewController) else {
+          return
+      }
+      strongSelf.transitionCompleted?(index)
     })
   }
   
 }
-
 
 extension DPLeftPageViewController: UIPageViewControllerDataSource {
   
@@ -86,12 +81,11 @@ extension DPLeftPageViewController: UIPageViewControllerDataSource {
                                  viewControllerAfter viewController: UIViewController) -> UIViewController? {
     guard let leftContentViewControllers = leftContentViewControllers,
       leftContentViewControllers.count >= 2,
-      let viewController = viewController as? DPLeftContentViewController else {
-      return nil
+      let viewController = viewController as? DPLeftContentViewController,
+      let firstIndex = leftContentViewControllers.firstIndex(of: viewController) else {
+        return nil
     }
-    
-    let index = leftContentViewControllers.firstIndex(of: viewController)
-    let nextIndex = index! + 1
+    let nextIndex = firstIndex + 1
     let orderedViewControllersCount = leftContentViewControllers.count
     
     // User is on the last view controller and swiped right to loop to
@@ -107,14 +101,13 @@ extension DPLeftPageViewController: UIPageViewControllerDataSource {
   
   public func pageViewController(_ pageViewController: UIPageViewController,
                                  viewControllerBefore viewController: UIViewController) -> UIViewController? {
-    guard let leftContentViewControllers = leftContentViewControllers,
-      leftContentViewControllers.count >= 2,
-      let viewController = viewController as? DPLeftContentViewController else {
+    guard let leftContentViewControllers = leftContentViewControllers, leftContentViewControllers.count >= 2,
+      let viewController = viewController as? DPLeftContentViewController,
+      let firstIndex = leftContentViewControllers.firstIndex(of: viewController)
+      else {
         return nil
     }
-
-    let index = leftContentViewControllers.firstIndex(of: viewController)
-    let previousIndex = index! - 1
+    let previousIndex = firstIndex - 1
     
     // User is on the first view controller and swiped left to loop to
     // the last view controller.

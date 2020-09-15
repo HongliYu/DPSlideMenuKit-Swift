@@ -26,13 +26,8 @@ public class DPSlideMenuManager {
   }
   
   public func replaceCenter(_ viewController: DPCenterContentViewController,
-                            position: DPEmbedViewControllerPositionState) {
-    if position == .left {
-      drawer?.leftMenuReplaceCenterViewControllerWithViewController(viewController)
-    }
-    if position == .right {
-      drawer?.rightMenuReplaceCenterViewControllerWithViewController(viewController)
-    }
+                            position: MenuPosition) {
+    drawer?.replaceCenterViewController(viewController, menuPosition: position)
   }
   
   public func setup(_ centerContentViewController: DPCenterContentViewController,

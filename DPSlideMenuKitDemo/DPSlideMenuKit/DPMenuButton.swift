@@ -9,8 +9,6 @@
 import UIKit
 import QuartzCore
 
-let animateDuration : Double = 0.3
-let animateDelay: Double = 0.05
 
 public class DPMenuButton: UIButton {
   
@@ -18,6 +16,9 @@ public class DPMenuButton: UIButton {
   let midLayer = CAShapeLayer()
   let bottomLayer = CAShapeLayer()
   let sideLayer = CAShapeLayer()
+  
+  let animateDuration : Double = 0.3
+  let animateDelay: Double = 0.05
 
   var menuPath : CGPath {
     let path = CGMutablePath()
